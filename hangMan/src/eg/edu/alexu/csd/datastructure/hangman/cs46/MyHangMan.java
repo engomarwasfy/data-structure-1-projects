@@ -44,7 +44,7 @@ public class MyHangMan implements IHangman {
 		index = random.nextInt(countWords);
 		word = words[index];
 		// TODO Auto-generated method stub
-		return null;
+		return word;
 	}
 
 	@Override
