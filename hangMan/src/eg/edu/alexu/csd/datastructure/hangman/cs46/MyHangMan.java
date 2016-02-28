@@ -26,8 +26,13 @@ public class MyHangMan implements IHangman {
 	@Override
 	public void setDictionary(String[] words) {
 		for (i = 0; i < words.length; i++) {
-			this.words[i] = words[i].trim();
-			countWords++;
+			try {
+				this.words[i] = words[i].trim();
+				countWords++;
+			} catch (Exception e) {
+				// TODO: handle exception
+			
+			}
 		}
 		/*
 		 * int i=0; try { File x =new File("dictionary.txt"); Scanner sc = new
@@ -39,10 +44,14 @@ public class MyHangMan implements IHangman {
 
 	@Override
 	public String selectRandomSecretWord() {
-
-		Random random = new Random();
-		index = random.nextInt(countWords);
-		word = words[index];
+try {
+	Random random = new Random();
+	index = random.nextInt(countWords);
+	word = words[index];
+} catch (Exception e) {
+	// TODO: handle exception
+}
+		
 		// TODO Auto-generated method stub
 		return word;
 	}
@@ -52,11 +61,18 @@ public class MyHangMan implements IHangman {
 		boolean flag = false;
 		if (!createdWord)
 		{
-			char[] chars = new char[words[index].length()];
-			Arrays.fill(chars,'-');
-			word  = new String(chars);
-			createdWord=true;
+			try {
+				char[] chars = new char[words[index].length()];
+				
+				Arrays.fill(chars,'-');
+				word  = new String(chars);
+				createdWord=true;
+			} catch (Exception e) {
+				// TODO: handle exception
 			}
+			
+			}
+		try{
 		if (c != null) {
 			for (i = 0; i < words[index].length(); i++) {
 
@@ -77,8 +93,11 @@ public class MyHangMan implements IHangman {
 		} else {
 			return word;
 		}
-
-	}
+		}
+		catch (Exception e){
+		}
+		return word;
+		}
 
 	@Override
 	public void setMaxWrongGuesses(Integer max) {
