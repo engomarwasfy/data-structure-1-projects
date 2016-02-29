@@ -34,7 +34,7 @@ public class MyHangMan implements IHangman {
 				countWords++;
 			}
 
-		} catch (Throwable t) {
+		} catch (AssertionError|Exception e) {
 		}
 		
 	}
@@ -52,7 +52,7 @@ public class MyHangMan implements IHangman {
 				index = 0;
 			// TODO Auto-generated method stub
 			return word;
-		} catch  (Throwable t) {
+		} catch (AssertionError|Exception e) {
 
 		}
 		return word;
@@ -91,7 +91,7 @@ public class MyHangMan implements IHangman {
 
 		}
 
-		catch (Throwable t) {
+		catch (AssertionError|Exception e) {
 
 		}
 		return word;
@@ -105,7 +105,7 @@ public class MyHangMan implements IHangman {
 				maxMistakes = 0;
 			}
 			maxMistakes = max;
-		} catch (Throwable t) {
+		} catch (AssertionError|Exception e) {
 
 		}
 	}
