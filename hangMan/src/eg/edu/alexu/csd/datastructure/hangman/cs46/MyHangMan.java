@@ -28,9 +28,8 @@ public class MyHangMan implements IHangman {
 	@Override
 	public void setDictionary(String[] words) {
 		try {
-				
 			for (i = 0; i < words.length; i++) {
-				this.words[i] = words[i].trim();
+				this.words[i] = words[i];
 				countWords++;
 			}
 
@@ -62,7 +61,7 @@ public class MyHangMan implements IHangman {
 	public String guess(Character c) {
 		try {
 			boolean flag = false;
-			if (!createdWord) {
+			if (!createdWord&&words[index].length()>0) {
 				char[] chars = new char[words[index].length()];
 				Arrays.fill(chars, '-');
 				word = new String(chars);
