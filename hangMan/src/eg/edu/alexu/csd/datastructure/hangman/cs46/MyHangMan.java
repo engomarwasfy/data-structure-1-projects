@@ -16,11 +16,6 @@ public class MyHangMan implements IHangman {
 	static int countWords;
 	boolean createdWord = false;
 
-	public MyHangMan() {
-		super();
-		this.index = 0;
-	}
-
 	@Override
 	public void setDictionary(String[] words) {
 		try {
