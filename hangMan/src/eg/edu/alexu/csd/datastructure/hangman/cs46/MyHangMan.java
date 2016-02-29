@@ -107,13 +107,8 @@ public class MyHangMan implements IHangman {
 	}
 
 	public String changeCharInPosition(int position, char ch, String str) {
-	try{
 		char[] charArray = str.toCharArray();
 		charArray[position] = ch;
 		return new String(charArray);
-		}
-		catch (exception e)
-		{
-		}
 	}
 }
