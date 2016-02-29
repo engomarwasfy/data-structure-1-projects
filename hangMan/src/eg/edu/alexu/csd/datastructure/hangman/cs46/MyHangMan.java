@@ -24,13 +24,13 @@ public class MyHangMan implements IHangman {
 	@Override
 	public void setDictionary(String[] words) {
 		try {
-
+				
 			for (i = 0; i < words.length; i++) {
 				this.words[i] = words[i].trim();
 				countWords++;
 			}
 
-		} catch (Exception e) {
+		} catch (Exception exception) {
 		}
 		/*
 		 * int i=0; try { File x =new File("dictionary.txt"); Scanner sc = new
@@ -44,11 +44,16 @@ public class MyHangMan implements IHangman {
 	public String selectRandomSecretWord() {
 		try {
 			Random random = new Random();
+			if (countWords>0)
+			{
 			index = random.nextInt(countWords);
 			word = words[index];
+			}
+			else
+				index = 0;
 			// TODO Auto-generated method stub
 			return word;
-		} catch (Exception e) {
+		} catch (Exception exception) {
 
 		}
 		return word;
@@ -87,7 +92,7 @@ public class MyHangMan implements IHangman {
 
 		}
 
-		catch (Exception e) {
+		catch (Exception exception) {
 
 		}
 		return word;
@@ -101,7 +106,7 @@ public class MyHangMan implements IHangman {
 				maxMistakes = 0;
 			}
 			maxMistakes = max;
-		} catch (Exception e) {
+		} catch (Exception exception) {
 
 		}
 	}
