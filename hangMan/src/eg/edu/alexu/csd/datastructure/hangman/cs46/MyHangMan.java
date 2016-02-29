@@ -2,6 +2,10 @@ package eg.edu.alexu.csd.datastructure.hangman.cs46;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.concurrent.ExecutionException;
+
+import org.omg.CORBA.ExceptionList;
+
 import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 
 public class MyHangMan implements IHangman {
@@ -30,7 +34,7 @@ public class MyHangMan implements IHangman {
 				countWords++;
 			}
 
-		} catch (AssertionError e) {
+		} catch (AssertionError  | Exception e) {
 		}
 		
 	}
@@ -48,7 +52,7 @@ public class MyHangMan implements IHangman {
 				index = 0;
 			// TODO Auto-generated method stub
 			return word;
-		} catch (AssertionError e) {
+		} catch  (AssertionError | Exception e) {
 
 		}
 		return word;
@@ -87,7 +91,7 @@ public class MyHangMan implements IHangman {
 
 		}
 
-		catch (AssertionError e) {
+		catch (AssertionError | Exception e) {
 
 		}
 		return word;
@@ -101,7 +105,7 @@ public class MyHangMan implements IHangman {
 				maxMistakes = 0;
 			}
 			maxMistakes = max;
-		} catch (AssertionError e) {
+		} catch (AssertionError | Exception e) {
 
 		}
 	}
