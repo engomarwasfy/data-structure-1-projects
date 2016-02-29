@@ -14,9 +14,7 @@ public class MyHangMan implements IHangman {
 	static int maxMistakes;
 	static String word;
 	static int countWords;
-	boolean createdWord  = false;
-	
-	
+	boolean createdWord = false;
 
 	public MyHangMan() {
 		super();
@@ -25,14 +23,14 @@ public class MyHangMan implements IHangman {
 
 	@Override
 	public void setDictionary(String[] words) {
-		for (i = 0; i < words.length; i++) {
-			try {
+		try {
+
+			for (i = 0; i < words.length; i++) {
 				this.words[i] = words[i].trim();
 				countWords++;
-			} catch (Exception e) {
-				// TODO: handle exception
-			
 			}
+
+		} catch (Exception e) {
 		}
 		/*
 		 * int i=0; try { File x =new File("dictionary.txt"); Scanner sc = new
@@ -44,76 +42,78 @@ public class MyHangMan implements IHangman {
 
 	@Override
 	public String selectRandomSecretWord() {
-try {
-	Random random = new Random();
-	index = random.nextInt(countWords);
-	word = words[index];
-} catch (Exception e) {
-	// TODO: handle exception
-}
-		
-		// TODO Auto-generated method stub
+		try {
+			Random random = new Random();
+			index = random.nextInt(countWords);
+			word = words[index];
+			// TODO Auto-generated method stub
+			return word;
+		} catch (Exception e) {
+
+		}
 		return word;
 	}
 
 	@Override
 	public String guess(Character c) {
-		boolean flag = false;
-		if (!createdWord)
-		{
-			try {
+		try {
+			boolean flag = false;
+			if (!createdWord) {
 				char[] chars = new char[words[index].length()];
-				
-				Arrays.fill(chars,'-');
-				word  = new String(chars);
-				createdWord=true;
-			} catch (Exception e) {
-				// TODO: handle exception
+				Arrays.fill(chars, '-');
+				word = new String(chars);
+				createdWord = true;
 			}
-			
-			}
-		try{
-		if (c != null) {
-			for (i = 0; i < words[index].length(); i++) {
+			if (c != null) {
+				for (i = 0; i < words[index].length(); i++) {
 
-				if ((Character.toLowerCase(c) == words[index].charAt(i)||Character.toUpperCase(c) == words[index].charAt(i)) && word.charAt(i) == '-') {
-					
-					word =  changeCharInPosition(i,words[index].charAt(i),word);
-					flag=true;
+					if ((Character.toLowerCase(c) == words[index].charAt(i)
+							|| Character.toUpperCase(c) == words[index].charAt(i)) && word.charAt(i) == '-') {
+						word = changeCharInPosition(i, words[index].charAt(i), word);
+						flag = true;
+					}
 				}
+			} else {
+				flag = true;
 			}
-		} else {
-			flag = true;
+			if (flag == false) {
+				count++;
+			}
+			if (count > maxMistakes) {
+				return null;
+			} else {
+				return word;
+			}
+
 		}
-		if (flag == false) {
-			count++;
-		}
-		if (count > maxMistakes) {
-			return null;
-		} else {
-			return word;
-		}
-		}
-		catch (Exception e){
+
+		catch (Exception e) {
+
 		}
 		return word;
-		}
+	}
 
 	@Override
 	public void setMaxWrongGuesses(Integer max) {
 		// TODO Auto-generated method stub
+		try {
+			if (max == null) {
+				maxMistakes = 0;
+			}
+			maxMistakes = max;
+		} catch (Exception e) {
 
-		if (max == null) {
-			maxMistakes = 0;
 		}
-		maxMistakes = max;
-
 	}
 
-
-public String changeCharInPosition(int position, char ch, String str){
-    char[] charArray = str.toCharArray();
-    charArray[position] = ch;
-    return new String(charArray);
-}
+	public String changeCharInPosition(int position, char ch, String str) {
+	try{
+		char[] charArray = str.toCharArray();
+		charArray[position] = ch;
+		return new String(charArray);
+		}
+		catch (exception e)
+		{
+		}
+	}
 }
