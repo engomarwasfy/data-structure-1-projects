@@ -16,6 +16,11 @@ public class MyHangMan implements IHangman {
 	static int countWords;
 	boolean createdWord = false;
 
+	public MyHangMan() {
+		super();
+		this.index = 0;
+	}
+
 	@Override
 	public void setDictionary(String[] words) {
 		try {
@@ -25,14 +30,9 @@ public class MyHangMan implements IHangman {
 				countWords++;
 			}
 
-		} catch (Exception exception) {
+		} catch (AssertionError e) {
 		}
-		/*
-		 * int i=0; try { File x =new File("dictionary.txt"); Scanner sc = new
-		 * Scanner(x); while (sc.hasNext()) { words[i]=sc.next(); i++; }
-		 * sc.close(); } catch(FileNotFoundException e) {
-		 * System.out.println("error"); }
-		 */
+		
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class MyHangMan implements IHangman {
 				index = 0;
 			// TODO Auto-generated method stub
 			return word;
-		} catch (Exception exception) {
+		} catch (AssertionError e) {
 
 		}
 		return word;
@@ -87,7 +87,7 @@ public class MyHangMan implements IHangman {
 
 		}
 
-		catch (Exception exception) {
+		catch (AssertionError e) {
 
 		}
 		return word;
@@ -101,7 +101,7 @@ public class MyHangMan implements IHangman {
 				maxMistakes = 0;
 			}
 			maxMistakes = max;
-		} catch (Exception exception) {
+		} catch (AssertionError e) {
 
 		}
 	}
