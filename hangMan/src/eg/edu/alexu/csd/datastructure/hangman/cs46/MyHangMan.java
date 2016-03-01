@@ -29,7 +29,7 @@ public class MyHangMan implements IHangman {
 	public void setDictionary(String[] words) {
 		try {
 			for (i = 0; i < words.length; i++){
-				if(words[i]!=null)
+				if(!words[i].equals(null))
 				{
 				this.words[i] = words[i];
 				countWords++;
@@ -49,7 +49,7 @@ public class MyHangMan implements IHangman {
 			index=0;
 			word = words[index];
 			// TODO Auto-generated method stub
-			if (word!=null)
+			if (!word.equals(null))
 			{
 			return word;
 			}
@@ -69,11 +69,11 @@ public class MyHangMan implements IHangman {
 				word = new String(chars);
 				createdWord = true;
 			}
-			if (c != null) {
+			if (!c.equals(null)) {
 				for (i = 0; i < words[index].length(); i++) {
 
-					if ((Character.toLowerCase(c) == words[index].charAt(i)
-							|| Character.toUpperCase(c) == words[index].charAt(i)) && word.charAt(i) == '-') {
+					if ((Character.toLowerCase(c.charValue()) == words[index].charAt(i)
+							|| Character.toUpperCase(c.charValue()) == words[index].charAt(i)) && word.charAt(i) == '-') {
 						word = changeCharInPosition(i, words[index].charAt(i), word);
 						flag = true;
 					}
@@ -87,24 +87,26 @@ public class MyHangMan implements IHangman {
 			if (count > maxMistakes) {
 				return null;
 			} else {
-				return word;
+				return word ;
 			}
 		}
+		
 
 		catch (AssertionError|Exception e) {
 
 		}
 		return word;
+		
 	}
 
 	@Override
 	public void setMaxWrongGuesses(Integer max) {
 		// TODO Auto-generated method stub
 		try {
-			if (max == null) {
+			if (max.equals(null)) {
 				maxMistakes = 0;
 			}
-			maxMistakes = max;
+			maxMistakes = max.intValue();
 		} catch (AssertionError|Exception e) {
 
 		}
