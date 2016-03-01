@@ -89,12 +89,11 @@ public class MyHangMan implements IHangman {
 			if (flag == false) {
 				count++;
 			}
-			if (count > maxMistakes) {
+			if (count >= maxMistakes) {
 				return null;
 			} else {
 				return word;
 			}
-
 		}
 
 		catch (AssertionError|Exception e) {
