@@ -45,12 +45,19 @@ public class MyHangMan implements IHangman {
 			if (countWords>0)
 			{
 			index = random.nextInt(countWords);
+			if(index<0||index>=countWords)
+			{
+				index=0;
+			}
 			word = words[index];
 			}
 			else
 				index = 0;
 			// TODO Auto-generated method stub
+			if (word!=null)
+			{
 			return word;
+			}
 		} catch (AssertionError|Exception e) {
 
 		}
