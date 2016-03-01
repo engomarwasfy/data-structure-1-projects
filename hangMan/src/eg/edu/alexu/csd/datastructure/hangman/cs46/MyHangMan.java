@@ -44,9 +44,8 @@ public class MyHangMan implements IHangman {
 	@Override
 	public String selectRandomSecretWord() {
 		try {
-			//Random random=new Random();
-			//index=random.nextInt(countWords-1);
-			index=0;
+			Random random=new Random();
+			index=random.nextInt(countWords-1);
 			word = words[index];
 			// TODO Auto-generated method stub
 			if (!word.equals(null))
