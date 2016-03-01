@@ -28,9 +28,12 @@ public class MyHangMan implements IHangman {
 	@Override
 	public void setDictionary(String[] words) {
 		try {
-			for (i = 0; i < words.length; i++) {
+			for (i = 0; i < words.length; i++){
+				if(words[i]!=null)
+				{
 				this.words[i] = words[i];
 				countWords++;
+				}
 			}
 
 		} catch (AssertionError|Exception e) {
@@ -41,11 +44,8 @@ public class MyHangMan implements IHangman {
 	@Override
 	public String selectRandomSecretWord() {
 		try {
-			if(countWords==0)
-			index=0;
-			else
-				index=1;
-				
+			Random random=new Random();
+			index=random.nextInt(countWords-1);
 			word = words[index];
 			// TODO Auto-generated method stub
 			if (word!=null)
