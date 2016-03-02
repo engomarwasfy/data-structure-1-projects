@@ -42,16 +42,9 @@ public class MyHangMan implements IHangman {
 			// TODO Auto-generated method stub
 			
 		} catch (AssertionError|Exception e) {
-
 		}
-		if (!words[index].equals(null)&&!words[index].equals("")&&!words[index].equals(" "))
-		{
 		return words[index];
-		}
-		else
-		{
-			return "error";
-		}
+		
 	}
 
 	@Override
