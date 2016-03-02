@@ -1,19 +1,12 @@
 package eg.edu.alexu.csd.datastructure.hangman.cs46;
 
-import java.util.Arrays;
+
 import java.util.Random;
-import java.util.concurrent.ExecutionException;
-
-import org.omg.CORBA.ExceptionList;
-
 import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 
 public class MyHangMan implements IHangman {
-	public String[] words = new String[100];
-	static int i;
-	char[] visited = new char[1000];
-	static int counterOfCharacters;
-	public int index;
+	public   String[] words = new String[100];
+	static int index;
 	static int count;
 	static int maxMistakes;
 	static String word;
@@ -22,13 +15,12 @@ public class MyHangMan implements IHangman {
 
 	public MyHangMan() {
 		super();
-		this.index = 0;
 	}
 
 	@Override
 	public void setDictionary(String[] words) {
 		try {
-			for (i = 0; i < words.length; i++){
+			for (int i = 0; i < words.length; i++){
 				if(!words[i].equals(null))
 				{
 				this.words[i] = words[i];
@@ -44,19 +36,22 @@ public class MyHangMan implements IHangman {
 	@Override
 	public String selectRandomSecretWord() {
 		try {
-			//Random random=new Random();
-			//index=random.nextInt(countWords-1);
-			index =0;
-			word = words[index];
+			Random random=new Random();
+			index=random.nextInt(countWords-1);
+			
 			// TODO Auto-generated method stub
-			if (!word.equals(null))
-			{
-			return word;
-			}
+			
 		} catch (AssertionError|Exception e) {
 
 		}
-		return word;
+		if (!words[index].equals(null)&&!words[index].equals("")&&!words[index].equals(" "))
+		{
+		return words[index];
+		}
+		else
+		{
+			return "error";
+		}
 	}
 
 	@Override
@@ -65,12 +60,22 @@ public class MyHangMan implements IHangman {
 			boolean flag = false;
 			if (!createdWord&&words[index].length()>0) {
 				char[] chars = new char[words[index].length()];
-				Arrays.fill(chars, '-');
+				for (int i=0 ;i<words[index].length();i++)
+				{
+					if(words[index].charAt(i)!=' ')
+					{
+						chars[i]='-';
+					}
+					else
+					{
+						chars[i]=' ';
+					}
+				}
 				word = new String(chars);
 				createdWord = true;
 			}
 			if (!c.equals(null)) {
-				for (i = 0; i < words[index].length(); i++) {
+				for (int i = 0; i < words[index].length(); i++) {
 
 					if ((Character.toLowerCase(c.charValue()) == words[index].charAt(i)
 							|| Character.toUpperCase(c.charValue()) == words[index].charAt(i)) && word.charAt(i) == '-') {
