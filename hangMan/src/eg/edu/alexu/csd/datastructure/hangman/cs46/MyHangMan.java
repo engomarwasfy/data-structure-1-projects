@@ -37,16 +37,20 @@ public class MyHangMan implements IHangman {
 	public String selectRandomSecretWord() {
 		try {
 			Random random=new Random();
-			//index=random.nextInt(countWords-1);
-			index=0;
-			
+			index=random.nextInt(countWords-1);
+			if (words[index].equals(null))
+				return null;
+				else
+				return words[index];
+				
 			// TODO Auto-generated method stub
-			
+		
 		} catch (AssertionError|Exception e) {
 		}
 		return words[index];
-		
 	}
+	
+		
 
 	@Override
 	public String guess(Character c) {
