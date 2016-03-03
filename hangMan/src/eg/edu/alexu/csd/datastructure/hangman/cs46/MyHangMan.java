@@ -34,8 +34,16 @@ public class MyHangMan implements IHangman {
 		try {
 			Random random=new Random();
 		  //  index=random.nextInt(countWords);
-		  index=1;
+		  if(countWords==0)
+		  {
+		  index=0;
+				return words[0];
+				}
+				else
+				{
+				 index=1;
 				return words[1];
+				}
 				
 			// TODO Auto-generated method stub
 		
