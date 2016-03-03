@@ -22,7 +22,7 @@ public class MyHangMan implements IHangman {
 		try
 		{
 			countWords=words.length;
-			//this.words=words;
+			this.words=words;
 		}
 		catch(Exception e){
 		}
@@ -33,8 +33,9 @@ public class MyHangMan implements IHangman {
 	public String selectRandomSecretWord() {
 		try {
 			Random random=new Random();
-		    index=random.nextInt(countWords);
-			//	return words[index];
+		  //  index=random.nextInt(countWords);
+		  index=1;
+				return words[1];
 				
 			// TODO Auto-generated method stub
 		
