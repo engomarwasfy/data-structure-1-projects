@@ -1,11 +1,10 @@
 package eg.edu.alexu.csd.datastructure.hangman.cs46;
 
-
 import java.util.Random;
 import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 
 public class MyHangMan implements IHangman {
-	public   String[] words = new String[100];
+	public String[] words = new String[100];
 	static int index;
 	static int count;
 	static int maxMistakes;
@@ -19,48 +18,40 @@ public class MyHangMan implements IHangman {
 
 	@Override
 	public void setDictionary(String[] words) {
-		try
-		{
-			countWords=words.length;
-			this.words=words;
+		try {
+			countWords = words.length;
+			this.words = words;
+		} catch (Exception e) {
 		}
-		catch(Exception e){
-		}
-		
+
 	}
 
 	@Override
 	public String selectRandomSecretWord() {
 		try {
-			Random random=new Random();
-		    index = random.nextInt(countWords);
-				return words[index];
-				}
-				
-			// TODO Auto-generated method stub
-		
-		} catch (AssertionError|Exception e) {
+			Random random = new Random();
+			index = random.nextInt(countWords);
+			return words[index];
+
+		}
+		// TODO Auto-generated method stub
+
+		catch (AssertionError | Exception e) {
 		}
 		return words[index];
 	}
-	
-		
 
 	@Override
 	public String guess(Character c) {
 		try {
 			boolean flag = false;
-			if (!createdWord&&words[index].length()>0) {
+			if (!createdWord && words[index].length() > 0) {
 				char[] chars = new char[words[index].length()];
-				for (int i=0 ;i<words[index].length();i++)
-				{
-					if(words[index].charAt(i)!=' ')
-					{
-						chars[i]='-';
-					}
-					else
-					{
-						chars[i]=' ';
+				for (int i = 0; i < words[index].length(); i++) {
+					if (words[index].charAt(i) != ' ') {
+						chars[i] = '-';
+					} else {
+						chars[i] = ' ';
 					}
 				}
 				word = new String(chars);
@@ -70,7 +61,8 @@ public class MyHangMan implements IHangman {
 				for (int i = 0; i < words[index].length(); i++) {
 
 					if ((Character.toLowerCase(c.charValue()) == words[index].charAt(i)
-							|| Character.toUpperCase(c.charValue()) == words[index].charAt(i)) && word.charAt(i) == '-') {
+							|| Character.toUpperCase(c.charValue()) == words[index].charAt(i))
+							&& word.charAt(i) == '-') {
 						word = changeCharInPosition(i, words[index].charAt(i), word);
 						flag = true;
 					}
@@ -84,16 +76,15 @@ public class MyHangMan implements IHangman {
 			if (count > maxMistakes) {
 				return null;
 			} else {
-				return word ;
+				return word;
 			}
 		}
-		
 
-		catch (AssertionError|Exception e) {
+		catch (AssertionError | Exception e) {
 
 		}
 		return word;
-		
+
 	}
 
 	@Override
@@ -104,7 +95,7 @@ public class MyHangMan implements IHangman {
 				maxMistakes = 0;
 			}
 			maxMistakes = max.intValue();
-		} catch (AssertionError|Exception e) {
+		} catch (AssertionError | Exception e) {
 
 		}
 	}
