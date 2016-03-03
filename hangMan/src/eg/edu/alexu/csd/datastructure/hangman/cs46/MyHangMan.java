@@ -33,8 +33,7 @@ public class MyHangMan implements IHangman {
 	public String selectRandomSecretWord() {
 		try {
 			Random random=new Random();
-	//		index=random.nextInt(countWords);
-		index=0	;
+		index=random.nextInt(countWords);
 			while (words[index].isEmpty()||words[index]==null)
 			{
 				index=random.nextInt(countWords);
