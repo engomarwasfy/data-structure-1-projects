@@ -43,7 +43,6 @@ public class MyHangMan implements IHangman {
 
 	@Override
 	public String guess(Character c) {
-		try {
 			boolean flag = false;
 			if (!createdWord && words[index].length() > 0) {
 				char[] chars = new char[words[index].length()];
@@ -78,14 +77,9 @@ public class MyHangMan implements IHangman {
 			} else {
 				return word;
 			}
+
+		
 		}
-
-		catch (AssertionError | Exception e) {
-
-		}
-		return word;
-
-	}
 
 	@Override
 	public void setMaxWrongGuesses(Integer max) {
