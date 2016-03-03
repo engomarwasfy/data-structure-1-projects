@@ -30,7 +30,7 @@ public class MyHangMan implements IHangman {
 	public String selectRandomSecretWord() {
 		try {
 			Random random = new Random();
-			index = random.nextInt(countWords);
+			index = random.nextInt(countWords-1);
 			return words[index];
 
 		}
