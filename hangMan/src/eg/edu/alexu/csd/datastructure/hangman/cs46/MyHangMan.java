@@ -22,7 +22,7 @@ public class MyHangMan implements IHangman {
 		try
 		{
 			countWords=words.length;
-			this.words=words;
+			//this.words=words;
 		}
 		catch(Exception e){
 		}
@@ -34,7 +34,7 @@ public class MyHangMan implements IHangman {
 		try {
 			Random random=new Random();
 		    index=random.nextInt(countWords);
-				return words[index];
+			//	return words[index];
 				
 			// TODO Auto-generated method stub
 		
