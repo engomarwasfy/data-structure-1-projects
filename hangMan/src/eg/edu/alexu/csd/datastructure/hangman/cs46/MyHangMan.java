@@ -31,7 +31,6 @@ public class MyHangMan implements IHangman {
 		try {
 			Random random = new Random();
 			index = random.nextInt(countWords);
-			
 			return words[index];
 
 		}
@@ -58,12 +57,12 @@ public class MyHangMan implements IHangman {
 				word = new String(chars);
 				createdWord = true;
 			}
-			if (!c.equals(null)) {
+			if (c != null) {
 				for (int i = 0; i < words[index].length(); i++) {
 
 					if ((Character.toLowerCase(c.charValue()) == words[index].charAt(i)
 							|| Character.toUpperCase(c.charValue()) == words[index].charAt(i))
-							&& word.charAt(i) == '-') {
+							     ) {
 						word = changeCharInPosition(i, words[index].charAt(i), word);
 						flag = true;
 					}
