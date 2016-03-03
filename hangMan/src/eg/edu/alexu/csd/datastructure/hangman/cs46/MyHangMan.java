@@ -19,16 +19,12 @@ public class MyHangMan implements IHangman {
 
 	@Override
 	public void setDictionary(String[] words) {
-		try {
-			for (int i = 0; i < words.length; i++){
-				if(!words[i].equals(null))
-				{
-				this.words[i] = words[i];
-				countWords++;
-				}
-			}
-
-		} catch (AssertionError|Exception e) {
+		try
+		{
+			countWords=words.length;
+			this.words=words;
+		}
+		catch(Exception e){
 		}
 		
 	}
@@ -37,10 +33,13 @@ public class MyHangMan implements IHangman {
 	public String selectRandomSecretWord() {
 		try {
 			Random random=new Random();
-			index=random.nextInt(countWords-1);
-			if (words[index].equals(null))
-				return null;
-				else
+	//		index=random.nextInt(countWords);
+		index=0	;
+			while (words[index].isEmpty()||words[index]==null)
+			{
+				index=random.nextInt(countWords);
+			}
+				
 				return words[index];
 				
 			// TODO Auto-generated method stub
