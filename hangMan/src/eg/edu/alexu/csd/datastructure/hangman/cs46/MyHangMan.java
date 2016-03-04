@@ -4,7 +4,7 @@ import java.util.Random;
 import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 
 public class MyHangMan implements IHangman {
-	public String[] words = new String[100];
+	static String[] words = new String[100];
 	static int index;
 	static int count;
 	static int maxMistakes;
