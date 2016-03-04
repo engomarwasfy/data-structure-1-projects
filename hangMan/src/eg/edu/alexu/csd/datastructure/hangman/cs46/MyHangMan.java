@@ -4,13 +4,14 @@ import java.util.Random;
 import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 
 public class MyHangMan implements IHangman {
-	public static String[] words = new String[]{ "BELGIUM", "BURUNDI", "COLOMBIA", "EGYPT", "KAZAKHSTAN", "MAURITANIA", "SINGAPORE", "UZBEKISTAN" };
+	public String[] words = new String[100];
 	static int index;
 	static int count;
 	static int maxMistakes;
 	static String word;
 	static int countWords;
 	boolean createdWord = false;
+
 	public MyHangMan() {
 		super();
 	}
@@ -18,7 +19,8 @@ public class MyHangMan implements IHangman {
 	@Override
 	public void setDictionary(String[] words) {
 		try {
-			
+			countWords = words.length;
+			this.words = words;
 		} catch (Exception e) {
 		}
 
@@ -28,7 +30,7 @@ public class MyHangMan implements IHangman {
 	public String selectRandomSecretWord() {
 		try {
 			Random random = new Random();
-			index = random.nextInt(words.length);
+			index = random.nextInt(countWords);
 			return words[index];
 
 		}
