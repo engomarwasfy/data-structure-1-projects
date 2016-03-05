@@ -5,11 +5,11 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 
 public class MyHangMan implements IHangman {
 	public String[] words = new String[100];
-	static int index;
-	static int count;
-	static int maxMistakes;
-	static String word;
-	static int countWords;
+	 int index;
+	 int count;
+	 int maxMistakes;
+	 String word;
+	 int countWords;
 	boolean createdWord = false;
 
 	public MyHangMan() {
