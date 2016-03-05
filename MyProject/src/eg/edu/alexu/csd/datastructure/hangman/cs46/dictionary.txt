@@ -1,0 +1,5 @@
+airplane   cow     maps    make    run
+sigh     golf    running hat     television
+games    hangman pearl   cat     dog
+snake    black   white   cabin   trees
+birds    animals 
