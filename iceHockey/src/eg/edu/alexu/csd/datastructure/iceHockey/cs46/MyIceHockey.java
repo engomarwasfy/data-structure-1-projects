@@ -19,13 +19,16 @@ public class MyIceHockey implements IPlayersFinder {
 	int pointCounter;
 	int length;
 	@Override
-	public Point[] findPlayers(String[] photo, int team, int threshold) {
+	public Point[]findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
+		
 		this.photo = photo;
 		this.team=(char)team;
 		
-		Point[] arr=new Point[1000];
 		
+		Point[] arr=new Point[1000];
+		try
+		{
 		for(row = 0; row<photo.length;row++)
 		{
 			for(col=0 ;col<photo[row].length();col++)
@@ -45,12 +48,21 @@ public class MyIceHockey implements IPlayersFinder {
 			  }
 			}
 			sort(arr);
+			
+		}
+		}
+		catch(Exception e)
+		{
+			
 		}
 		return arr;
+		
 	}
 	
  public void findNext(int row,int col)
  {
+	 try
+	 {
 	 if(row<=0||col<=0||visited[row][col]||row>photo.length||col<photo[0].length())
 	 {
 		 return;
@@ -69,11 +81,23 @@ public class MyIceHockey implements IPlayersFinder {
 	findNext(row,col-1);
 	return;
 	 }
+	 }
+	 catch(Exception e)
+	 {
+		 
+	 }
 	 
  }
 public void sort(Point[]arr)
 {
+	try
+	{
 	Arrays.sort(arr);
+	}
+	catch(Exception e)
+	{
+		
+	}
 }
 
 
