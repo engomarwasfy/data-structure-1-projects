@@ -1,11 +1,10 @@
 package eg.edu.alexu.csd.datastructure.iceHockey.cs46;
-
 import java.awt.Point;
 import java.util.Arrays;
+import java.util.Comparator;
 
-import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 
-public class MyIceHockey implements IPlayersFinder {
+public class MyIceHockey  {
 
 	int row;
 	int col;
@@ -19,30 +18,47 @@ public class MyIceHockey implements IPlayersFinder {
 	int pointCounter;
 	int length;
 	Point[] firstarr=new Point[1000];
-	@Override
+
 	public Point[]findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
 		
 		this.photo = photo;
-		this.team=(char)team;
+		switch(team)
+		{
+		case 0: this.team='0';break;
+		case 1: this.team='1';break;
+		case 2: this.team='2';break;
+		case 3: this.team='3';break;
+		case 4: this.team='4';break;
+		case 5: this.team='5';break;
+		case 6: this.team='6';break;
+		case 7: this.team='7';break;
+		case 8: this.team='8';break;
+		case 9: this.team='9';break;
+		
+		}
 		try
 		{
-		for(row = 0; row<photo.length;row++)
+		for(int i = 0; i<photo.length;i++)
 		{
-			for(col=0 ;col<photo[row].length();col++)
+			for(int j=0 ;j<photo[row].length();j++)
 			{
-				if(team==photo[row].charAt(col)||!visited[row][col])
+				if(this.team == photo[i].charAt(j)&&!visited[i][j])
 				{
+					// System.out.println("row="+i+"col="+j);
 			  length=0;
-			  maxRow=row;
-			  maxCol=col;
-			  minCol=col;
-			  minRow=row;
-			  findNext(row,col);
-				}
+			  maxRow=i;
+			  maxCol=j;
+			  minCol=j;
+			  minRow=i;
+			  findNext(i,j);
+				
 			  if(length*4>=threshold)
 			  {
-				  firstarr[pointCounter]=new Point(maxCol+minCol,maxRow+minCol);
+				 //System.out.println("maxRow="+maxRow+"maxCol="+maxCol+"minRow="+minRow+"minCol="+minCol);
+				  
+				  firstarr[pointCounter]=new Point(maxCol+minCol+1,maxRow+minRow+1);
+				 
 				  pointCounter++;
 				 
 			  }
@@ -50,6 +66,7 @@ public class MyIceHockey implements IPlayersFinder {
 			
 			
 			
+		}
 		}
 		}
 		catch(Exception e)
@@ -70,18 +87,19 @@ public class MyIceHockey implements IPlayersFinder {
  {
 	 try
 	 {
-	 if(row<=0||col<=0||visited[row][col]||row>photo.length||col<photo[0].length())
+	 if(row<0||col<0||visited[row][col]||row>=photo.length||col>=photo[0].length()||this.team != photo[row].charAt(col))
 	 {
 		 return;
 	 }
 	 else
 	 {
+		
 		 visited[row][col]=true;
 		 length++;
-	maxRow=Math.max(row, maxRow);
-	maxCol=Math.max(col, maxCol);
-	minCol=Math.min(col, minCol);
-	minRow=Math.min(row,minRow);
+	maxRow=Math.max(maxRow, row);
+	maxCol=Math.max(maxCol, col);
+	minCol=Math.min(minCol, col);
+	minRow=Math.min(minRow,row);
 	findNext(row+1,col);
 	findNext(row-1,col);
 	findNext(row,col+1);
@@ -99,7 +117,16 @@ public void sort(Point[]arr)
 {
 	try
 	{
-	Arrays.sort(arr);
+		
+		Arrays.sort(arr, new Comparator<Point>() {
+		    public int compare(Point a, Point b) {
+		        int xComp = Integer.compare(a.x, b.x);
+		        if(xComp == 0)
+		            return Integer.compare(a.y, b.y);
+		        else
+		            return xComp;
+		    }
+		});
 	}
 	catch(Exception e)
 	{
