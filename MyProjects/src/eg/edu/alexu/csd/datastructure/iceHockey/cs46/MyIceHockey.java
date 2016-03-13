@@ -87,12 +87,9 @@ public class MyIceHockey implements IPlayersFinder {
 		}
 		else
 		{
-			Point[] arr=new Point[1];
-			return arr;
-			
+			return null;
 		}
-		}
-	
+	}
 	
  public void findNext(int row,int col)
  {
