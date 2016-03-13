@@ -64,7 +64,6 @@ public class MyIceHockey implements IPlayersFinder {
 				 
 			  }
 			}
-				
 			
 			
 			
@@ -75,8 +74,6 @@ public class MyIceHockey implements IPlayersFinder {
 		{
 			
 		}
-		if (pointCounter>0)
-		{
 		Point[] arr=new Point[pointCounter];
 		for(int i = 0;i<pointCounter;i++)
 		{
@@ -84,11 +81,7 @@ public class MyIceHockey implements IPlayersFinder {
 		}
 		sort(arr);
 		return arr ;
-		}
-		else
-		{
-			return null;
-		}
+		
 	}
 	
  public void findNext(int row,int col)
