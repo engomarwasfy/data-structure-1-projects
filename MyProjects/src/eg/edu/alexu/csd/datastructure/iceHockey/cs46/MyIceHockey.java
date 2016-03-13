@@ -3,8 +3,10 @@ import java.awt.Point;
 import java.util.Arrays;
 import java.util.Comparator;
 
+import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 
-public class MyIceHockey  {
+
+public class MyIceHockey implements IPlayersFinder {
 
 	int row;
 	int col;
@@ -21,7 +23,6 @@ public class MyIceHockey  {
 
 	public Point[]findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
-		
 		this.photo = photo;
 		switch(team)
 		{
@@ -41,7 +42,7 @@ public class MyIceHockey  {
 		{
 		for(int i = 0; i<photo.length;i++)
 		{
-			for(int j=0 ;j<photo[row].length();j++)
+			for(int j=0 ;j<photo[i].length();j++)
 			{
 				if(this.team == photo[i].charAt(j)&&!visited[i][j])
 				{
