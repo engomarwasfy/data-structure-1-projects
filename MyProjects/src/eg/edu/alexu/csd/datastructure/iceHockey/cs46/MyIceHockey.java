@@ -24,7 +24,7 @@ public class MyIceHockey implements IPlayersFinder {
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
 		this.photo = photo;
-		if (photo != null) {
+		if (photo.length != 0) {
 			switch (team) {
 			case 0:
 				this.team = '0';
