@@ -89,7 +89,10 @@ public class MyIceHockey implements IPlayersFinder {
 				if (pointCounter != 0) {
 					Point[] arr = new Point[pointCounter];
 					for (int i = 0; i < pointCounter; i++) {
+						if(firstarr[i]!=null)
+						{
 						arr[i] = firstarr[i];
+						}
 					}
 					sort(arr);
 					return arr;
