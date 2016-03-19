@@ -92,7 +92,7 @@ public class MyIceHockey implements IPlayersFinder {
 						arr[i] = firstarr[i];
 					}
 					sort(arr);
-					return a;
+					return arr;
 				} else {
 					return a;
 				}
