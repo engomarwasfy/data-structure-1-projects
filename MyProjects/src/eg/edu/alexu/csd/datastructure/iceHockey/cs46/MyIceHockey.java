@@ -23,6 +23,10 @@ public class MyIceHockey implements IPlayersFinder {
 
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
+		for(int j=0;j<photo.length;j++)
+		{
+			System.out.println(photo[j]);
+		}
 		if (photo.length != 0) {
 			this.photo = photo;
 			switch (team) {
