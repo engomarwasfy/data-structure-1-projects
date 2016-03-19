@@ -14,15 +14,18 @@ public class MyIceHockey implements IPlayersFinder {
 	int minCol;
 	int minRow;
 	char team;
+	static int counter;
 	boolean[][] visited = new boolean[1000][1000];
 	String[] photo;
 	int pointCounter;
 	int length;
-	Point[] firstarr = new Point[1000];
+	static Point[] firstarr = new Point[1000];
+	static Point[] arr;
 	Point[] a = new Point[]{ };
 
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
+		
 		if (photo.length != 0) {
 			this.photo = photo;
 			switch (team) {
@@ -87,12 +90,10 @@ public class MyIceHockey implements IPlayersFinder {
 
 				}
 				if (pointCounter != 0) {
-					Point[] arr = new Point[pointCounter];
+					 arr = new Point[pointCounter];
 					for (int i = 0; i < pointCounter; i++) {
 						if(firstarr[i]!=null)
-						{
 						arr[i] = firstarr[i];
-						}
 					}
 					sort(arr);
 					return arr;
