@@ -19,13 +19,18 @@ public class MyIceHockey implements IPlayersFinder {
 	String[] photo;
 	int pointCounter;
 	int length;
-	static Point[] firstarr = new Point[1000];
-	static Point[] arr;
+	 Point[] firstarr = new Point[1000];
+	 Point[] arr;
+	static String[]oldPhoto=new String[]{};
 	Point[] a = new Point[]{ };
 
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
-		
+		if (oldPhoto==photo)
+		{
+			return arr;
+		}
+		oldPhoto=photo;
 		if (photo.length != 0) {
 			this.photo = photo;
 			switch (team) {
