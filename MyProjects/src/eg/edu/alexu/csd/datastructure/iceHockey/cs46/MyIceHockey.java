@@ -7,25 +7,30 @@ import java.util.Comparator;
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 
 public class MyIceHockey implements IPlayersFinder {
-	 int maxRow;
-	 int maxCol;
-	 int minCol;
-	 int minRow;
+	
+	int maxRow;
+	int maxCol;
+	int minCol;
+	int minRow;
 	char team;
-	 int counter;
-	 boolean[][] visited = new boolean[1000][1000];
-	 String[] photo;
-	 int pointCounter;
-	 int length;
-	  Point[] firstarr ;
-	 	 Point[] arr;
-	 
+	boolean[][] visited ;
+	String[] photo;
+	int pointCounter;
+	int length;
+	Point[] firstarr;
 	Point[] a = new Point[]{ };
+	Point[]arr;
 
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
-		firstarr=new Point[1000];
-		
+		maxRow=0;
+		 maxCol=0;
+		 minCol=0;
+		 minRow=0;
+		 firstarr= new Point[1000];
+		visited=new boolean [1000][1000];
+		length=0;
+		pointCounter=0;
 		if (photo.length != 0) {
 			this.photo = photo;
 			switch (team) {
@@ -92,7 +97,6 @@ public class MyIceHockey implements IPlayersFinder {
 				if (pointCounter != 0) {
 					 arr = new Point[pointCounter];
 					for (int i = 0; i < pointCounter; i++) {
-						if(firstarr[i]!=null)
 						arr[i] = firstarr[i];
 					}
 					sort(arr);
