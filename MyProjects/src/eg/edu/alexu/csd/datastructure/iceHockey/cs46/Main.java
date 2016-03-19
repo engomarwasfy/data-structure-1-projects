@@ -7,7 +7,7 @@ public class Main {
 		
 		
 		MyIceHockey test = new MyIceHockey();
-		String[] arr={"sd88888fsg"};
+		String[] arr={};
 		Point []p = test.findPlayers(arr,8,9);
 		
 	
