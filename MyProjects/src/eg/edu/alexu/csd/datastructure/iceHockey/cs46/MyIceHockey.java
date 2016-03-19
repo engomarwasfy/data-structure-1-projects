@@ -7,24 +7,24 @@ import java.util.Comparator;
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
 
 public class MyIceHockey implements IPlayersFinder {
-	static int maxRow;
-	static int maxCol;
-	static int minCol;
-	static int minRow;
-static	char team;
-	static int counter;
-	static boolean[][] visited = new boolean[1000][1000];
-	static String[] photo;
-	static int pointCounter;
-	static int length;
-	 static Point[] firstarr = new Point[1000];
-	 static	 Point[] arr;
-	static String[]oldPhoto=new String[]{};
+	 int maxRow;
+	 int maxCol;
+	 int minCol;
+	 int minRow;
+	char team;
+	 int counter;
+	 boolean[][] visited = new boolean[1000][1000];
+	 String[] photo;
+	 int pointCounter;
+	 int length;
+	  Point[] firstarr ;
+	 	 Point[] arr;
+	 
 	Point[] a = new Point[]{ };
 
 	public Point[] findPlayers(String[] photo, int team, int threshold) {
 		// TODO Auto-generated method stub
-		
+		firstarr=new Point[1000];
 		
 		if (photo.length != 0) {
 			this.photo = photo;
