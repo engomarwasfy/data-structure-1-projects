@@ -4,9 +4,7 @@ import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 
 public class SLL implements ILinkedList {
 
-	Object[]arr1=new Object[100];
-	Integer counter =new Integer(0);
-	
+	Integer counter =new Integer(0);	
 	private int size = 0;
 	private snode Head;
 	private snode cur;
@@ -16,8 +14,8 @@ public class SLL implements ILinkedList {
 		
 		if(counter>0)
 		{
-			Integer s= new Integer(size);
-			throw new RuntimeException(s.toString());
+			
+			throw new RuntimeException();
 		}
 		Head = null;
 		cur = Head;
