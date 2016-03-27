@@ -3,20 +3,12 @@ package eg.edu.alexu.csd.datastructure.linkedList.cs46;
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 
 public class SLL implements ILinkedList {
-
-	Integer counter =new Integer(0);	
+	
 	private int size = 0;
 	private snode Head;
 	private snode cur;
 
 	public SLL() {
-		counter++;
-		
-		if(counter>0)
-		{
-			
-			throw new RuntimeException();
-		}
 		Head = null;
 		cur = Head;
 		size=0;
