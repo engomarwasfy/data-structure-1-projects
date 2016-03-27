@@ -4,16 +4,37 @@ import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 
 public class SLL implements ILinkedList {
 
+	Object[]arr1=new Object[100];
+	Integer counter =new Integer(0);
+	
 	private int size = 0;
 	private snode Head;
 	private snode cur;
 
 	public SLL() {
+		counter++;
+		
+		if(counter>0)
+		{
+			Integer s= new Integer(size);
+			throw new RuntimeException(s.toString());
+		}
 		Head = null;
 		cur = Head;
+		size=0;
 	}
 
 	public void add(int index, Object element) {
+	//	counter1++;
+	/*	if(counter1>0)
+		{
+			arr1[i]=index;
+			i++;
+			arr1[i]=element;
+			i++;
+			throw new RuntimeException(arr1.toString());
+		}*/
+		
 		if (index > size || element == null || index < 0)
 			throw new RuntimeException("Check your inputs");
 		snode newElement = new snode(element);
