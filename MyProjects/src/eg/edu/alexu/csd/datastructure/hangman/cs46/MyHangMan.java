@@ -17,7 +17,7 @@ public class MyHangMan implements IHangman {
 	}
 
 	@Override
-	public void setDictionary(String[] words) {
+	public void setDictionary(final String[] words) {
 		try {
 			countWords = words.length;
 			this.words = words;
@@ -42,7 +42,7 @@ public class MyHangMan implements IHangman {
 	}
 
 	@Override
-	public String guess(Character c) {
+	public String guess(final Character c) {
 			boolean flag = false;
 			if (!createdWord && words[index].length() > 0) {
 				char[] chars = new char[words[index].length()];
@@ -82,7 +82,7 @@ public class MyHangMan implements IHangman {
 		}
 
 	@Override
-	public void setMaxWrongGuesses(Integer max) {
+	public void setMaxWrongGuesses(final Integer max) {
 		// TODO Auto-generated method stub
 		try {
 			if (max.equals(null)) {
@@ -94,7 +94,7 @@ public class MyHangMan implements IHangman {
 		}
 	}
 
-	public String changeCharInPosition(int position, char ch, String str) {
+	public String changeCharInPosition(final int position, final char ch, final String str) {
 		char[] charArray = str.toCharArray();
 		charArray[position] = ch;
 		return new String(charArray);

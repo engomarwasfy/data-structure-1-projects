@@ -2,7 +2,7 @@ package eg.edu.alexu.csd.datastructure.iceHockey.cs46;
 
 import java.awt.Point;
 public class Main {
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		// TODO Auto-generated method stub
 		
 		

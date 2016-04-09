@@ -21,7 +21,7 @@ public class MyIceHockey implements IPlayersFinder {
 	Point[] a = new Point[]{ };
 	Point[]arr;
 
-	public Point[] findPlayers(String[] photo, int team, int threshold) {
+	public Point[] findPlayers(final String[] photo, final int team, final int threshold) {
 		// TODO Auto-generated method stub
 		maxRow=0;
 		 maxCol=0;
@@ -64,54 +64,54 @@ public class MyIceHockey implements IPlayersFinder {
 			case 9:
 				this.team = '9';
 				break;
+            default:
+                break;
 
 			}
-			{
-				try {
-					for (int i = 0; i < photo.length; i++) {
-						for (int j = 0; j < photo[i].length(); j++) {
-							if (this.team == photo[i].charAt(j) && !visited[i][j]) {
-								// System.out.println("row="+i+"col="+j);
-								length = 0;
-								maxRow = i;
-								maxCol = j;
-								minCol = j;
-								minRow = i;
-								findNext(i, j);
+			try {
+            	for (int i = 0; i < photo.length; i++) {
+            		for (int j = 0; j < photo[i].length(); j++) {
+            			if (this.team == photo[i].charAt(j) && !visited[i][j]) {
+            				// System.out.println("row="+i+"col="+j);
+            				length = 0;
+            				maxRow = i;
+            				maxCol = j;
+            				minCol = j;
+            				minRow = i;
+            				findNext(i, j);
 
-								if (length * 4 >= threshold) {
-									// System.out.println("maxRow="+maxRow+"maxCol="+maxCol+"minRow="+minRow+"minCol="+minCol);
+            				if (length * 4 >= threshold) {
+            					// System.out.println("maxRow="+maxRow+"maxCol="+maxCol+"minRow="+minRow+"minCol="+minCol);
 
-									firstarr[pointCounter] = new Point(maxCol + minCol + 1, maxRow + minRow + 1);
+            					firstarr[pointCounter] = new Point(maxCol + minCol + 1, maxRow + minRow + 1);
 
-									pointCounter++;
+            					pointCounter++;
 
-								}
-							}
+            				}
+            			}
 
-						}
-					}
-				} catch (Exception e) {
+            		}
+            	}
+            } catch (Exception e) {
 
-				}
-				if (pointCounter != 0) {
-					 arr = new Point[pointCounter];
-					for (int i = 0; i < pointCounter; i++) {
-						arr[i] = firstarr[i];
-					}
-					sort(arr);
-					return arr;
-				} else {
-					return a;
-				}
-			}
+            }
+            if (pointCounter != 0) {
+            	 arr = new Point[pointCounter];
+            	for (int i = 0; i < pointCounter; i++) {
+            		arr[i] = firstarr[i];
+            	}
+            	sort(arr);
+            	return arr;
+            } else {
+            	return a;
+            }
 
 		} else {
 			return a;
 		}
 	}
 
-	public void findNext(int row, int col) {
+	public void findNext(final int row, final int col) {
 		try {
 			if (row < 0 || col < 0 || visited[row][col] || row >= photo.length || col >= photo[0].length()
 					|| this.team != photo[row].charAt(col)) {
@@ -136,16 +136,17 @@ public class MyIceHockey implements IPlayersFinder {
 
 	}
 
-	public void sort(Point[] arr) {
+	public void sort(final Point[] arr) {
 		try {
 
 			Arrays.sort(arr, new Comparator<Point>() {
-				public int compare(Point a, Point b) {
+				public int compare(final Point a, final Point b) {
 					int xComp = Integer.compare(a.x, b.x);
-					if (xComp == 0)
-						return Integer.compare(a.y, b.y);
-					else
-						return xComp;
+					if (xComp == 0) {
+                        return Integer.compare(a.y, b.y);
+                    } else {
+                        return xComp;
+                    }
 				}
 			});
 		} catch (Exception e) {

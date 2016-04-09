@@ -7,7 +7,7 @@ class nodeD {
 	public nodeD next;
 	public nodeD pre;
 
-	public nodeD(Object value) {
+	public nodeD(final Object value) {
 		this.value = value;
 		next = null;
 		pre = null;
@@ -24,13 +24,14 @@ public class OurDoubleLinkedList implements ILinkedList {
 		cur = Head;
 	}
 
-	public void add(int index, Object element) {
-		if (index > size || element == null || index < 0)
-			throw new RuntimeException("Check your inputs");
+	public void add(final int index, final Object element) {
+		if (index > size || element == null || index < 0) {
+            throw new RuntimeException("Check your inputs");
+        }
 		nodeD newElement = new nodeD(element);
-		if (Head == null)
-		    Head = newElement;
-    else if (index == 0)
+		if (Head == null) {
+            Head = newElement;
+        } else if (index == 0)
     {
       newElement.next =Head;
       Head.pre = newElement;
@@ -38,8 +39,9 @@ public class OurDoubleLinkedList implements ILinkedList {
     }
 		else {
 			cur = Head;
-			for (int i = 1; i < index; i++)
-				cur = cur.next;
+			for (int i = 1; i < index; i++) {
+                cur = cur.next;
+            }
 			newElement.next = cur.next;
 			 cur.next = newElement;
 			(cur.next).pre=newElement;
@@ -48,15 +50,16 @@ public class OurDoubleLinkedList implements ILinkedList {
 		size++;
 	}
 
-	public void add(Object element) {
+	public void add(final Object element) {
 		if (element != null) {
 			nodeD newElement = new nodeD(element);
 			cur = Head;
-			if (Head == null)
-				Head = newElement;
-			else {
-				for (int i = 0; i < size - 1; i++)
-					cur = cur.next;
+			if (Head == null) {
+                Head = newElement;
+            } else {
+				for (int i = 0; i < size - 1; i++) {
+                    cur = cur.next;
+                }
 				newElement.next = null;
 				newElement.pre = cur;
 				cur.next = newElement;
@@ -65,21 +68,24 @@ public class OurDoubleLinkedList implements ILinkedList {
 		}
 	}
 
-	public Object get(int index) {
+	public Object get(final int index) {
 		// TODO Auto-generated method stub
-		if (index >= size || index < 0)
-			throw new RuntimeException("Check your inputs");
+		if (index >= size || index < 0) {
+            throw new RuntimeException("Check your inputs");
+        }
 		cur = Head;
-		for (int i = 0; i < index; i++)
-			cur = cur.next;
+		for (int i = 0; i < index; i++) {
+            cur = cur.next;
+        }
 		return cur.value;
 	}
 
-	public void set(int index, Object element) {
+	public void set(final int index, final Object element) {
 		// TODO Auto-generated method stub
 		cur = Head;
-		for (int i = 0; i < index; i++)
-			cur = cur.next;
+		for (int i = 0; i < index; i++) {
+            cur = cur.next;
+        }
 		cur.value = element;
 	}
 
@@ -93,10 +99,11 @@ public class OurDoubleLinkedList implements ILinkedList {
 		return Head == null || size == 0;
 	}
 
-	public void remove(int index) {
+	public void remove(final int index) {
 		// TODO Auto-generated method stub
-		if (index >= size || index < 0)
-			throw new RuntimeException("Check your inputs");
+		if (index >= size || index < 0) {
+            throw new RuntimeException("Check your inputs");
+        }
 		if (index == 0)
 			{
 		    Head = Head.next;
@@ -104,10 +111,12 @@ public class OurDoubleLinkedList implements ILinkedList {
 			}
 		else {
 			cur = Head;
-			for (int i = 0; i < index - 1; i++)
-				cur = cur.next;
-	     if (index+1 != size) 
-	       ((cur.next).next).pre= cur;
+			for (int i = 0; i < index - 1; i++) {
+                cur = cur.next;
+            }
+	     if (index+1 != size) {
+            ((cur.next).next).pre= cur;
+        }
 			cur.next = (cur.next).next;
 			}
 		size--;
@@ -118,13 +127,15 @@ public class OurDoubleLinkedList implements ILinkedList {
 
 	}
 
-	public ILinkedList sublist(int fromIndex, int toIndex) {
+	public ILinkedList sublist(final int fromIndex, final int toIndex) {
 		// TODO Auto-generated method stub
-	  if (fromIndex >= size || toIndex >= size || fromIndex < 0 || toIndex < 0)
-			throw new RuntimeException("Check your inputs");
+	  if (fromIndex >= size || toIndex >= size || fromIndex < 0 || toIndex < 0) {
+        throw new RuntimeException("Check your inputs");
+    }
 		cur = Head;
-		for (int i = 0; i < fromIndex; i++)
-			cur = cur.next;
+		for (int i = 0; i < fromIndex; i++) {
+            cur = cur.next;
+        }
 		OurSingleLinked sub = new OurSingleLinked();
 		for (int i = fromIndex; i <= toIndex; i++) {
 			sub.add(cur.value);
@@ -133,12 +144,13 @@ public class OurDoubleLinkedList implements ILinkedList {
 		return sub;
 	}
 
-	public boolean contains(Object o) {
+	public boolean contains(final Object o) {
 		// TODO Auto-generated method stub
 		cur = Head;
 		for (int i = 0; i < size; i++) {
-			if (o.equals(cur.value))
-				return true;
+			if (o.equals(cur.value)) {
+                return true;
+            }
 			cur = cur.next;
 		}
 		return false;

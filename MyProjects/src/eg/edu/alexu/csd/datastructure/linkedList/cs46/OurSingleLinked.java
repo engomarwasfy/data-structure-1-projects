@@ -8,7 +8,7 @@ class node {
 	public Object value;
 	public node next;
 
-	public node(Object value) {
+	public node(final Object value) {
 		this.value = value;
 		next = null;
 	}
@@ -27,36 +27,39 @@ public class OurSingleLinked implements ILinkedList {
 
 	
 	 
-	public void add(int index, Object element) {
-		if (index > size || element == null || index < 0)
-			throw new RuntimeException("Check your inputs");
+	public void add(final int index, final Object element) {
+		if (index > size || element == null || index < 0) {
+            throw new RuntimeException("Check your inputs");
+        }
 		node newElement = new node(element);
-		if (Head == null )
-			Head = newElement;
-		else if (index == 0)
+		if (Head == null ) {
+            Head = newElement;
+        } else if (index == 0)
 		{
 		  newElement.next =Head;
 		  Head = newElement;
 		}
 		else {
 			cur = Head;
-			for (int i = 1; i < index; i++)
-				cur = cur.next;
+			for (int i = 1; i < index; i++) {
+                cur = cur.next;
+            }
 			newElement.next = cur.next;
 			cur.next = newElement;
 		}
 		size++;
 	}
 
-	public void add(Object element) {
+	public void add(final Object element) {
 		if (element != null) {
 			node newElement = new node(element);
 			cur = Head;
-			if (Head == null)
-				Head = newElement;
-			else {
-				for (int i = 0; i < size - 1; i++)
-					cur = cur.next;
+			if (Head == null) {
+                Head = newElement;
+            } else {
+				for (int i = 0; i < size - 1; i++) {
+                    cur = cur.next;
+                }
 				newElement.next = null;
 				cur.next = newElement;
 			}
@@ -64,21 +67,24 @@ public class OurSingleLinked implements ILinkedList {
 		}
 	}
 
-	public Object get(int index) {
+	public Object get(final int index) {
 		//throw new RuntimeException(String.valueOf(index));
-		if (index >= size || index < 0)
-			throw new RuntimeException("Check your inputs");
+		if (index >= size || index < 0) {
+            throw new RuntimeException("Check your inputs");
+        }
 		cur = Head;
-		for (int i = 0; i < index; i++)
-			cur = cur.next;
+		for (int i = 0; i < index; i++) {
+            cur = cur.next;
+        }
 		return cur.value;
 	}
 
-	public void set(int index, Object element) {
+	public void set(final int index, final Object element) {
 		// TODO Auto-generated method stub
 		cur = Head;
-		for (int i = 0; i < index; i++)
-			cur = cur.next;
+		for (int i = 0; i < index; i++) {
+            cur = cur.next;
+        }
 		cur.value = element;
 	}
 
@@ -92,16 +98,18 @@ public class OurSingleLinked implements ILinkedList {
 		return Head == null ;
 	}
 
-	public void remove(int index) {
+	public void remove(final int index) {
 		// TODO Auto-generated method stub
-		if (index >= size || index < 0)
-			throw new RuntimeException("Check your inputs");
-		if (index == 0)
-			Head = Head.next;
-		else {
+		if (index >= size || index < 0) {
+            throw new RuntimeException("Check your inputs");
+        }
+		if (index == 0) {
+            Head = Head.next;
+        } else {
 			cur = Head;
-			for (int i = 0; i < index - 1; i++)
-				cur = cur.next;
+			for (int i = 0; i < index - 1; i++) {
+                cur = cur.next;
+            }
 			cur.next = (cur.next).next;
 		}
 		size--;
@@ -112,13 +120,15 @@ public class OurSingleLinked implements ILinkedList {
 
 	}
 
-	public ILinkedList sublist(int fromIndex, int toIndex) {
+	public ILinkedList sublist(final int fromIndex, final int toIndex) {
 		// TODO Auto-generated method stub
-		if (fromIndex >= size || toIndex >= size || fromIndex < 0 || toIndex < 0)
-			throw new RuntimeException("Check your inputs");
+		if (fromIndex >= size || toIndex >= size || fromIndex < 0 || toIndex < 0) {
+            throw new RuntimeException("Check your inputs");
+        }
 		cur = Head;
-		for (int i = 0; i < fromIndex; i++)
-			cur = cur.next;
+		for (int i = 0; i < fromIndex; i++) {
+            cur = cur.next;
+        }
 		OurSingleLinked sub = new OurSingleLinked();
 		for (int i = fromIndex; i <= toIndex; i++) {
 			sub.add(cur.value);
@@ -127,12 +137,13 @@ public class OurSingleLinked implements ILinkedList {
 		return sub;
 	}
 
-	public boolean contains(Object o) {
+	public boolean contains(final Object o) {
 		// TODO Auto-generated method stub
 		cur = Head;
 		for (int i = 0; i < size; i++) {
-			if (o.equals(cur.value))
-				return true;
+			if (o.equals(cur.value)) {
+                return true;
+            }
 			cur = cur.next;
 		}
 		return false;
