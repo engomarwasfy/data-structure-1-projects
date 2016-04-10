@@ -63,52 +63,58 @@ public class PolynomialSolver implements IPolynomialSolver {
     String message = new String();
     switch (poly) {
     case 'A':
-      if (Acoff.isEmpty())
+      if (Acoff.isEmpty()) {
         return null;
+      }
       for (int i = 0; i < Acoff.size(); i++) {
-        if (Acoff.get(i).equals(0))
+        if (Acoff.get(i).equals(0)) {
           continue;
-        if (!Acoff.get(i).equals(1) || !Acoff.get(i).equals(-1))
+        }
+        if ((!Acoff.get(i).equals(1) && !Acoff.get(i).equals(-1)) || Aexp.get(i).equals(0)) {
           message += Acoff.get(i);
-        else if (Acoff.get(i).equals(-1))
+        } else if (Acoff.get(i).equals(-1) && Aexp.get(i).equals(1)) {
           message += "-";
-        else
-          message += "+";
+        }
         if (!Aexp.get(i).equals(0)) {
-          if (Aexp.get(i).equals(1))
+          if (Aexp.get(i).equals(1)) {
             message += "x";
-          else
+          } else {
             message += "x^" + Aexp.get(i);
+          }
           if (i + 1 != Aexp.size()) {
             if (!Acoff.get(i + 1).equals(1) || !Acoff.get(i + 1).equals(-1)) {
-              if (Integer.valueOf(Acoff.get(i + 1).toString()) > 1)
+              if (Integer.valueOf(Acoff.get(i + 1).toString()) > 0) {
                 message += "+";
+              }
             }
           }
         }
       }
       break;
     case 'B':
-      if (Bcoff.isEmpty())
+      if (Bcoff.isEmpty()) {
         return null;
+      }
       for (int i = 0; i < Bcoff.size(); i++) {
-        if (Bcoff.get(i).equals(0))
+        if (Bcoff.get(i).equals(0)) {
           continue;
-        if (!Bcoff.get(i).equals(1) || !Bcoff.get(i).equals(-1))
+        }
+        if ((!Bcoff.get(i).equals(1) && !Bcoff.get(i).equals(-1)) || Bexp.get(i).equals(0)) {
           message += Bcoff.get(i);
-        else if (Bcoff.get(i).equals(-1))
+        } else if (Bcoff.get(i).equals(-1) && Bexp.get(i).equals(1)) {
           message += "-";
-        else
-          message += "+";
+        }
         if (!Bexp.get(i).equals(0)) {
-          if (Bexp.get(i).equals(1))
+          if (Bexp.get(i).equals(1)) {
             message += "x";
-          else
+          } else {
             message += "x^" + Bexp.get(i);
+          }
           if (i + 1 != Bexp.size()) {
             if (!Bcoff.get(i + 1).equals(1) || !Bcoff.get(i + 1).equals(-1)) {
-              if (Integer.valueOf(Bcoff.get(i + 1).toString()) > 1)
+              if (Integer.valueOf(Bcoff.get(i + 1).toString()) > 1) {
                 message += "+";
+              }
             }
           }
         }
@@ -116,26 +122,29 @@ public class PolynomialSolver implements IPolynomialSolver {
 
       break;
     case 'C':
-      if (Ccoff.isEmpty())
+      if (Ccoff.isEmpty()) {
         return null;
+      }
       for (int i = 0; i < Ccoff.size(); i++) {
-        if (Ccoff.get(i).equals(0))
+        if (Ccoff.get(i).equals(0)) {
           continue;
-        if (!Ccoff.get(i).equals(1) || !Ccoff.get(i).equals(-1))
+        }
+        if ((!Ccoff.get(i).equals(1) && !Ccoff.get(i).equals(-1)) || Cexp.get(i).equals(0)) {
           message += Ccoff.get(i);
-        else if (Ccoff.get(i).equals(-1))
+        } else if (Ccoff.get(i).equals(-1) && Cexp.get(i).equals(1)) {
           message += "-";
-        else
-          message += "+";
+        }
         if (!Cexp.get(i).equals(0)) {
-          if (Cexp.get(i).equals(1))
+          if (Cexp.get(i).equals(1)) {
             message += "x";
-          else
+          } else {
             message += "x^" + Cexp.get(i);
+          }
           if (i + 1 != Cexp.size()) {
             if (!Ccoff.get(i + 1).equals(1) || !Ccoff.get(i + 1).equals(-1)) {
-              if (Integer.valueOf(Ccoff.get(i + 1).toString()) > 1)
+              if (Integer.valueOf(Ccoff.get(i + 1).toString()) > 1) {
                 message += "+";
+              }
             }
           }
         }
@@ -143,31 +152,36 @@ public class PolynomialSolver implements IPolynomialSolver {
 
       break;
     case 'R':
-      if (Rcoff.isEmpty())
+      if (Rcoff.isEmpty()) {
         return null;
+      }
       for (int i = 0; i < Rcoff.size(); i++) {
-        if (Rcoff.get(i).equals(0))
+        if (Rcoff.get(i).equals(0)) {
           continue;
-        if (!Rcoff.get(i).equals(1) || !Rcoff.get(i).equals(-1))
+        }
+        if ((!Rcoff.get(i).equals(1) && !Rcoff.get(i).equals(-1)) || Rexp.get(i).equals(0)) {
           message += Rcoff.get(i);
-        else if (Rcoff.get(i).equals(-1))
+        } else if (Rcoff.get(i).equals(-1) && Rexp.get(i).equals(1)) {
           message += "-";
-        else
-          message += "+";
+        }
         if (!Rexp.get(i).equals(0)) {
-          if (Rexp.get(i).equals(1))
+          if (Rexp.get(i).equals(1)) {
             message += "x";
-          else
+          } else {
             message += "x^" + Rexp.get(i);
+          }
           if (i + 1 != Rexp.size()) {
             if (!Rcoff.get(i + 1).equals(1) || !Rcoff.get(i + 1).equals(-1)) {
-              if (Integer.valueOf(Rcoff.get(i + 1).toString()) > 0)
+              if (Integer.valueOf(Rcoff.get(i + 1).toString()) > 0) {
                 message += "+";
+              }
             }
           }
         }
       }
 
+      break;
+    default:
       break;
     }
     return message;
@@ -181,22 +195,27 @@ public class PolynomialSolver implements IPolynomialSolver {
       if (!Aexp.isEmpty()) {
         Aexp.clear();
         Acoff.clear();
-      } else
+      } else {
         throw new RuntimeException("Check Clear");
+      }
       break;
     case 'B':
       if (!Bexp.isEmpty()) {
         Bexp.clear();
         Bcoff.clear();
-      } else
+      } else {
         throw new RuntimeException("Check Clear");
+      }
       break;
     case 'C':
       if (!Cexp.isEmpty()) {
         Cexp.clear();
         Ccoff.clear();
-      } else
+      } else {
         throw new RuntimeException("Check Clear");
+      }
+      break;
+    default:
       break;
     }
 
@@ -213,8 +232,9 @@ public class PolynomialSolver implements IPolynomialSolver {
           result += (Float.valueOf(Acoff.get(i).toString())
               * Math.pow(value, Float.valueOf(Aexp.get(i).toString())));
         }
-      } else
+      } else {
         throw new RuntimeException("Check Evaluate");
+      }
       break;
     case 'B':
       if (!Bexp.isEmpty()) {
@@ -223,8 +243,9 @@ public class PolynomialSolver implements IPolynomialSolver {
               * Math.pow(value, Float.valueOf(Bexp.get(i).toString())));
         }
 
-      } else
+      } else {
         throw new RuntimeException("Check Evaluate");
+      }
       break;
     case 'C':
       if (!Cexp.isEmpty()) {
@@ -233,11 +254,13 @@ public class PolynomialSolver implements IPolynomialSolver {
               * Math.pow(value, Float.valueOf(Cexp.get(i).toString())));
         }
 
-      } else
+      } else {
         throw new RuntimeException("Check Evaluate");
+      }
       break;
     default:
       throw new RuntimeException("Check Evaluate");
+
     }
     return result;
   }
@@ -330,8 +353,9 @@ public class PolynomialSolver implements IPolynomialSolver {
           }
         }
       } else if (poly1 == 'B' && !Bexp.isEmpty()) {
-        if (poly2 == 'A')
+        if (poly2 == 'A') {
           return add('A', 'B');
+        }
         if (poly2 == 'C') {
           int i = 0, j = 0;
           while (i < Bexp.size() && j < Cexp.size()) {
@@ -365,14 +389,17 @@ public class PolynomialSolver implements IPolynomialSolver {
           }
         }
       } else if (poly1 == 'C' && !Cexp.isEmpty()) {
-        if (poly2 == 'A')
+        if (poly2 == 'A') {
           return add('A', 'C');
-        if (poly2 == 'B')
+        }
+        if (poly2 == 'B') {
           return add('B', 'C');
+        }
       }
     }
-    if (Rexp.isEmpty())
+    if (Rexp.isEmpty()) {
       throw new RuntimeException("Check ");
+    }
     int[][] result = new int[Rexp.size()][2];
     for (int i = 0; i < Rexp.size(); i++) {
       result[i][0] = Integer.valueOf(Rcoff.get(i).toString());
@@ -405,17 +432,20 @@ public class PolynomialSolver implements IPolynomialSolver {
       }
     } else {
       if (poly2 == 'A') {
-        for (int i = 0; i < Aexp.size(); i++)
+        for (int i = 0; i < Aexp.size(); i++) {
           Acoff.set(i, -1 * Integer.valueOf(Acoff.get(i).toString()));
+        }
         return add(poly1, 'A');
       } else if (poly2 == 'B') {
-        for (int i = 0; i < Bexp.size(); i++)
+        for (int i = 0; i < Bexp.size(); i++) {
           Bcoff.set(i, -1 * Integer.valueOf(Bcoff.get(i).toString()));
+        }
         return add(poly1, 'B');
 
       } else if (poly2 == 'C') {
-        for (int i = 0; i < Cexp.size(); i++)
+        for (int i = 0; i < Cexp.size(); i++) {
           Ccoff.set(i, -1 * Integer.valueOf(Ccoff.get(i).toString()));
+        }
         return add(poly1, 'C');
       }
     }
@@ -449,8 +479,9 @@ public class PolynomialSolver implements IPolynomialSolver {
           + Integer.valueOf(Bexp.get(0).toString()); i >= Integer
               .valueOf(Aexp.get(Aexp.size() - 1).toString())
               + Integer.valueOf(Bexp.get((Bexp.size() - 1)).toString()); i--) {
-        if (arr[i] == 0)
+        if (arr[i] == 0) {
           continue;
+        }
         Rexp.add(i);
         Rcoff.add(arr[i]);
       }
@@ -475,8 +506,9 @@ public class PolynomialSolver implements IPolynomialSolver {
       for (int i = Integer.valueOf(Aexp.get(0).toString()) + Integer.valueOf(
           Cexp.get(0).toString()); i >= (Integer.valueOf(Aexp.get((Aexp.size() - 1)).toString())
               + Integer.valueOf(Cexp.get((Cexp.size() - 1)).toString())); i--) {
-        if (arr[i] == 0)
+        if (arr[i] == 0) {
           continue;
+        }
         Rexp.add(i);
         Rcoff.add(arr[i]);
       }
@@ -500,8 +532,9 @@ public class PolynomialSolver implements IPolynomialSolver {
       for (int i = Integer.valueOf(Bexp.get(0).toString()) + Integer.valueOf(
           Cexp.get(0).toString()); i >= (Integer.valueOf(Bexp.get((Bexp.size() - 1)).toString())
               + Integer.valueOf(Cexp.get((Cexp.size() - 1)).toString())); i--) {
-        if (arr[i] == 0)
+        if (arr[i] == 0) {
           continue;
+        }
         Rexp.add(i);
         Rcoff.add(arr[i]);
       }
@@ -529,8 +562,9 @@ public class PolynomialSolver implements IPolynomialSolver {
         for (int i = Integer.valueOf(Aexp.get(0).toString()) + Integer.valueOf(
             Aexp.get(0).toString()); i >= (Integer.valueOf(Aexp.get((Aexp.size() - 1)).toString())
                 + Integer.valueOf(Aexp.get((Aexp.size() - 1)).toString())); i--) {
-          if (arr[i] == 0)
+          if (arr[i] == 0) {
             continue;
+          }
           Rexp.add(i);
           Rcoff.add(arr[i]);
         }
@@ -556,8 +590,9 @@ public class PolynomialSolver implements IPolynomialSolver {
         for (int i = Integer.valueOf(Bexp.get(0).toString()) + Integer.valueOf(
             Bexp.get(0).toString()); i >= (Integer.valueOf(Bexp.get((Bexp.size() - 1)).toString())
                 + Integer.valueOf(Bexp.get((Bexp.size() - 1)).toString())); i--) {
-          if (arr[i] == 0)
+          if (arr[i] == 0) {
             continue;
+          }
           Rexp.add(i);
           Rcoff.add(arr[i]);
         }
@@ -584,8 +619,9 @@ public class PolynomialSolver implements IPolynomialSolver {
         for (int i = Integer.valueOf(Cexp.get(0).toString()) + Integer.valueOf(
             Cexp.get(0).toString()); i >= (Integer.valueOf(Cexp.get((Cexp.size() - 1)).toString())
                 + Integer.valueOf(Cexp.get((Cexp.size() - 1)).toString())); i--) {
-          if (arr[i] == 0)
+          if (arr[i] == 0) {
             continue;
+          }
           Rexp.add(i);
           Rcoff.add(arr[i]);
         }
@@ -596,6 +632,7 @@ public class PolynomialSolver implements IPolynomialSolver {
           arrayC[i][1] = Integer.valueOf(Rexp.get(i).toString());
         }
         return arrayC;
+      default:
       }
     }
     return null;
