@@ -4,21 +4,14 @@ import java.util.Scanner;
 
 public class Polynomial_GUI {
 
-  private static Scanner sc;
   static char VarName;
   static PolynomialSolver poly = new PolynomialSolver();
+  static Scanner sc = new Scanner(System.in);
 
   public static void main(final String[] args) {
     // TODO Auto-generated method stub
-    OurSingleLinked Tmpcoff = new OurSingleLinked();
-    OurSingleLinked Tmpexp = new OurSingleLinked();
-
-    sc = new Scanner(System.in);
-    String polyTaker = new String();
     boolean wrong = true;
-    boolean coeff = true;
-    int chooseOperation;
-
+    String chooseOperation;
     while (wrong) {
       System.out.println("Please choose an action");
       System.out.println("--------------------------------------");
@@ -30,102 +23,55 @@ public class Polynomial_GUI {
       System.out.println("6- Evaluate a polynomial at some point");
       System.out.println("7- Clear a polynomial variable");
       System.out.println("====================================================================");
-      chooseOperation = sc.nextInt();
+      chooseOperation = sc.nextLine();
       switch (chooseOperation) {
-      case 1:
+      case "1":
         // wrong = false;
         System.out.println("Insert the variable name : A, B or C");
-        VarName = sc.next().charAt(0);
-        try {
-          switch (VarName) {
-          case 'A':
+        VarName = sc.nextLine().charAt(0);
+        if (VarName == 'A' || VarName == 'B' || VarName == 'C') {
+          try {
             System.out.println(
                 "Insert the polynomial terms in the form : (coeff1 , exponent1 ), (coeff2 , exponent2 ), ..");
-            polyTaker = sc.next();
-            for (int i = 0; i < polyTaker.length(); i++) {
-              if (polyTaker.charAt(i) != '(' && polyTaker.charAt(i) != ')'
-                  && polyTaker.charAt(i) != ' ' && polyTaker.charAt(i) != ',') {
-                if (coeff) {
-                  Tmpcoff.add(polyTaker.charAt(i));
-                } else {
-                  Tmpexp.add(polyTaker.charAt(i));
-                }
-                coeff = !coeff;// true to false to true an so on
-              }
-            }
-            int[][] arrayA = new int[Tmpexp.size()][2];
-            for (int k = 0; k < Tmpexp.size(); k++) {
-              // arrayA[k][0] = Integer.valueOf(Tmpcoff.get(k).toString());
-              arrayA[k][0] = Integer.parseInt(Tmpcoff.get(k).toString());
-              arrayA[k][1] = Integer.valueOf(Tmpexp.get(k).toString());
-            }
-            poly.setPolynomial('A', arrayA);
-            System.out.println("Polynomial A is set");
-            break;
+            String polyTaker = sc.nextLine();
+            polyTaker = polyTaker.replace(" ", "");
+            polyTaker = polyTaker.replace(",", " ");
+            polyTaker = polyTaker.replace(")", "");
+            polyTaker = polyTaker.replace("(", "");
+            String[] taken = polyTaker.split(" ");
 
-          case 'B':
-            System.out.println(
-                "Insert the polynomial terms in the form : (coeff1 , exponent1 ), (coeff2 , exponent2 ), ..");
-            polyTaker = sc.next();
-            for (int i = 0; i < polyTaker.length(); i++) {
-              if (polyTaker.charAt(i) != '(' && polyTaker.charAt(i) != ')'
-                  && polyTaker.charAt(i) != ' ' && polyTaker.charAt(i) != ',') {
-                if (coeff) {
-                  Tmpcoff.add(polyTaker.charAt(i));
-                } else {
-                  Tmpexp.add(polyTaker.charAt(i));
-                }
-                coeff = !coeff;// true to false to true an so on
-              }
+            int[][] array = new int[taken.length / 2][2];
+            for (int i = 0; i < taken.length; i += 2) {
+              array[i / 2][0] = Integer.parseInt(taken[i]);
+              array[i / 2][1] = Integer.parseInt(taken[i + 1]);
             }
-            int[][] arrayB = new int[Tmpexp.size()][2];
-            for (int k = 0; k < Tmpexp.size(); k++) {
-              arrayB[k][0] = Integer.valueOf(Tmpcoff.get(k).toString());
-              arrayB[k][1] = Integer.valueOf(Tmpexp.get(k).toString());
+            switch (VarName) {
+            case 'A':
+              poly.setPolynomial('A', array);
+              System.out.println("Polynomial A is set");
+              break;
+            case 'B':
+              poly.setPolynomial('B', array);
+              System.out.println("Polynomial B is set");
+              break;
+            case 'C':
+              poly.setPolynomial('C', array);
+              System.out.println("Polynomial C is set");
             }
-            poly.setPolynomial('B', arrayB);
-            System.out.println("Polynomial B is set");
-            break;
-
-          case 'C':
-            System.out.println(
-                "Insert the polynomial terms in the form : (coeff1 , exponent1 ), (coeff2 , exponent2 ), ..");
-            polyTaker = sc.next();
-            for (int i = 0; i < polyTaker.length(); i++) {
-              if (polyTaker.charAt(i) != '(' && polyTaker.charAt(i) != ')'
-                  && polyTaker.charAt(i) != ' ' && polyTaker.charAt(i) != ',') {
-                if (coeff) {
-                  Tmpcoff.add(polyTaker.charAt(i));
-                } else {
-                  Tmpexp.add(polyTaker.charAt(i));
-                }
-                coeff = !coeff;// true to false to true an so on
-              }
-            }
-            int[][] arrayC = new int[Tmpexp.size()][2];
-            for (int k = 0; k < Tmpexp.size(); k++) {
-              arrayC[k][0] = Integer.valueOf(Tmpcoff.get(k).toString());
-              arrayC[k][1] = Integer.valueOf(Tmpexp.get(k).toString());
-            }
-            poly.setPolynomial('C', arrayC);
-            System.out.println("Polynomial C is set");
-        default:
-            break;
+          } catch (RuntimeException e) {
+            System.out.println("Can't set this variable");
           }
-        } catch (RuntimeException e) {
-          System.out.println("Error");
-        }
-
-        break;
-      case 2:
-        // wrong = false;
-        if (poly.print('R') != null) {
-          System.out.println("Insert the variable name : A, B, C or R");
         } else {
-          System.out.println("Insert the variable name : A, B or C ");
-
+          System.out.println("Can't set this variable");
         }
-        VarName = sc.next().charAt(0);
+        break;
+      case "2":
+        System.out.println("Insert the variable name : A, B, C or R");
+        VarName = sc.nextLine().charAt(0);
+        if (!poly.isValid(VarName)) {
+          System.out.println("Variable is not set");
+          break;
+        }
         switch (VarName) {
         case 'A':
           System.out.println("Value in A : " + poly.print('A'));
@@ -140,89 +86,56 @@ public class Polynomial_GUI {
           System.out.println("Value in R : " + poly.print('R'));
           break;
         default:
-          System.out.println("error");
+          System.out.println("Variable not found");
         }
         break;
-      case 3:
-        // wrong = false;
-
+      case "3":
         take('a');
         break;
-      case 4:
-        // wrong = false;
+      case "4":
         take('s');
         break;
-      case 5:
-        // wrong = false;
+      case "5":
         take('m');
         break;
-      case 6:
-        // wrong = false;
+      case "6":
         boolean finished = false;
         float point;
 
-        System.out.println("Insert first operand variable name : A, B or C");
-        VarName = sc.next().charAt(0);
-        try {
-          switch (VarName) {
-          case 'A':
-            if (poly.print('A') == null) {
-              System.out.println("Variable not set");
-            } else {
-              finished = true;
-            }
-            break;
-
-          case 'B':
-            if (poly.print('B') == null) {
-              System.out.println("Variable not set");
-            } else {
-              finished = true;
-            }
-            break;
-
-          case 'C':
-            if (poly.print('C') == null) {
-              System.out.println("Variable not set");
-            } else {
-              finished = true;
-            }
-            break;
-
-          case 'R':
-            if (poly.print('R') == null) {
-              System.out.println("Variable not set");
-            } else {
-              finished = true;
-            }
-        default:
-            break;
-          }
-        } catch (RuntimeException e) {
-          System.out.println("Error");
+        System.out.println("Insert polynomial variable name : A, B, C or E to go to main");
+        VarName = sc.nextLine().charAt(0);
+        if (poly.isValid(VarName)) {
+          finished = true;
+        } else if (VarName != 'E') {
+          System.out.println("Variable not set yet");
+        } else {
+          break;
         }
         if (finished) {
-          point = sc.nextFloat();
-          System.out.println("The result is" + poly.evaluatePolynomial(VarName, point));
+          System.out.println("Enter the point : ");
+          point = Float.parseFloat(sc.nextLine());
+          System.out.println("The result is " + poly.evaluatePolynomial(VarName, point));
         }
         break;
-      case 7:
-        // wrong = false;
+      case "7":
         System.out.println("choose variable A, B or C to clear");
-        VarName = sc.next().charAt(0);
+        VarName = sc.nextLine().charAt(0);
         try {
           switch (VarName) {
           case 'A':
             poly.clearPolynomial('A');
+            break;
           case 'B':
             poly.clearPolynomial('B');
+            break;
           case 'C':
             poly.clearPolynomial('C');
-        default:
             break;
+          default:
+            System.out.println("No such variable");
           }
         } catch (RuntimeException e) {
-          System.out.println("Error");
+          System.out.println("Varable is not yet set");
         }
         break;
       default:
@@ -231,136 +144,66 @@ public class Polynomial_GUI {
     }
   }
 
-  public static void take(final char operation) {
-    char varName1;
-    char varName2;
+  public static void take(char operation) {
+    char varName1 = ' ';
+    char varName2 = ' ';
     boolean finished = false;
-    int[][] add;
-    int[][] sub;
-    int[][] multiply;
-
+    int[][] result;
     while (!finished) {
-      System.out.println("Insert first operand variable name : A, B or C");
-      varName1 = sc.next().charAt(0);
-      switch (varName1) {
-      case 'A':
-        if (poly.print('A') == null) {
-          System.out.println("Variable not set");
-          return;
-        } else {
-          finished = true;
-        }
-        break;
-
-      case 'B':
-        if (poly.print('B') == null) {
-          System.out.println("Variable not set");
-          return;
-
-        } else {
-          finished = true;
-        }
-        break;
-
-      case 'C':
-        if (poly.print('C') == null) {
-          System.out.println("Variable not set");
-          return;
-
-        } else {
-          finished = true;
-        }
-        break;
-
-      case 'R':
-        if (poly.print('R') == null) {
-          System.out.println("Variable not set");
-          return;
-
-        } else {
-          finished = true;
-        }
-        break;
-      default:
-        System.out.println("error");
+      System.out.println("Insert first operand variable name : A, B, C or E to go to the main ");
+      varName1 = sc.nextLine().charAt(0);
+      if (poly.isValid(varName1)) {
+        finished = true;
+      } else if (varName1 == 'E') {
+        return;
+      } else {
+        System.out.println("Variable not set\n");
       }
-      boolean finished2 = false;
-
-      while (!finished2) {
-        System.out.println("Insert second operand variable name : A, B or C");
-        varName2 = sc.next().charAt(0);
-        switch (varName2) {
-        case 'A':
-          if (poly.print('A') == null) {
-            System.out.println("Variable not set");
-            return;
-
-          } else {
-            finished2 = true;
-          }
-          break;
-
-        case 'B':
-          if (poly.print('B') == null) {
-            System.out.println("Variable not set");
-            return;
-
-          } else {
-            finished2 = true;
-          }
-          break;
-
-        case 'C':
-          if (poly.print('C') == null) {
-            System.out.println("Variable not set");
-            return;
-
-          } else {
-            finished2 = true;
-          }
-          break;
-
-        case 'R':
-          if (poly.print('R') == null) {
-            System.out.println("Variable not set");
-            return;
-
-          } else {
-            finished2 = true;
-          }
-          break;
-        default:
-          System.out.println("error");
-        }
-
-        switch (operation) {
-        case 'a':
-          add = poly.add(varName1, varName2);
-          System.out.print("Result set in R:");
-          for (int i = 0; i < add.length; i++) {
-            System.out.print("(" + add[i][0] + "," + add[i][1] + ")" + ",");
-          }
-          break;
-
-        case 's':
-          sub = poly.subtract(varName1, varName2);
-          System.out.print("Result set in R:");
-          for (int i = 0; i < sub.length; i++) {
-            System.out.print("(" + sub[i][0] + "," + sub[i][1] + ")" + ",");
-          }
-          break;
-        case 'm':
-          multiply = poly.multiply(varName1, varName2);
-          System.out.print("Result set in R:");
-          for (int i = 0; i < multiply.length; i++) {
-            System.out.print("(" + multiply[i][0] + "," + multiply[i][1] + ")" + ",");
-          }
-        default:
-            break;
-        }
-        System.out.println("\n");
-      }
-
     }
+    boolean finished2 = false;
+    while (!finished2) {
+      System.out.println("Insert second operand variable name : A, B or C");
+      varName2 = sc.nextLine().charAt(0);
+      if (poly.isValid(varName2)) {
+        finished2 = true;
+      } else if (varName2 == 'E') {
+        return;
+      } else {
+        System.out.println("Variable not set");
+      }
+    }
+    switch (operation) {
+    case 'a':
+      result = poly.add(varName1, varName2);
+      System.out.print("Result set in R:");
+      for (int i = 0; i < result.length; i++) {
+        System.out.print("(" + result[i][0] + "," + result[i][1] + ")");
+        if (i + 1 != result.length) {
+          System.out.print(" ,");
+        }
+      }
+      break;
+
+    case 's':
+      result = poly.subtract(varName1, varName2);
+      System.out.print("Result set in R: ");
+      for (int i = 0; i < result.length; i++) {
+        System.out.print("(" + result[i][0] + "," + result[i][1] + ")");
+        if (i + 1 != result.length) {
+          System.out.print(" ,");
+        }
+      }
+      break;
+    case 'm':
+      result = poly.multiply(varName1, varName2);
+      System.out.print("Result set in R:");
+      for (int i = 0; i < result.length; i++) {
+        System.out.print("(" + result[i][0] + "," + result[i][1] + ")");
+        if (i + 1 != result.length) {
+          System.out.print(" ,");
+        }
+      }
+    }
+    System.out.println("\n");
   }
 }
