@@ -109,6 +109,8 @@ public class Polynomial_GUI {
             }
             poly.setPolynomial('C', arrayC);
             System.out.println("Polynomial C is set");
+        default:
+            break;
           }
         } catch (RuntimeException e) {
           System.out.println("Error");
@@ -193,6 +195,8 @@ public class Polynomial_GUI {
             } else {
               finished = true;
             }
+        default:
+            break;
           }
         } catch (RuntimeException e) {
           System.out.println("Error");
@@ -214,6 +218,8 @@ public class Polynomial_GUI {
             poly.clearPolynomial('B');
           case 'C':
             poly.clearPolynomial('C');
+        default:
+            break;
           }
         } catch (RuntimeException e) {
           System.out.println("Error");
@@ -225,7 +231,7 @@ public class Polynomial_GUI {
     }
   }
 
-  public static void take(char operation) {
+  public static void take(final char operation) {
     char varName1;
     char varName2;
     boolean finished = false;
@@ -349,6 +355,8 @@ public class Polynomial_GUI {
           for (int i = 0; i < multiply.length; i++) {
             System.out.print("(" + multiply[i][0] + "," + multiply[i][1] + ")" + ",");
           }
+        default:
+            break;
         }
         System.out.println("\n");
       }
