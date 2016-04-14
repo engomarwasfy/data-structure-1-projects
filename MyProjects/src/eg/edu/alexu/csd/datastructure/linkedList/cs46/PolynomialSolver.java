@@ -544,7 +544,7 @@ public class PolynomialSolver implements IPolynomialSolver {
       }
     }
     if (poly == 'R') {
-      if (!Cexp.isEmpty()) {
+      if (!Rexp.isEmpty()) {
         {
           return true;
         }
