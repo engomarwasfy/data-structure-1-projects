@@ -14,7 +14,7 @@ public class MyStack implements IStack {
     @Override
     public void add(final int index, final Object element) {
         // TODO Auto-generated method stub
-        if (index > 0 && index <= size + 1) {
+        if (index >= 0 && index <= size + 1) {
             MyStack help = new MyStack();
             for (int i = size; i <= index; i--) {
                 help.push(this.pop());
@@ -72,4 +72,4 @@ public class MyStack implements IStack {
         return size;
     }
 }
-//
+
