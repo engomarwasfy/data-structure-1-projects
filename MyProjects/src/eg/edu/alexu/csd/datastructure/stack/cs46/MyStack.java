@@ -26,7 +26,7 @@ public class MyStack implements IStack {
             }
         }
         else {
-            throw new RuntimeException("Check your inputs");
+            throw new RuntimeException("Check your inputs from add");
         }
     }
 
@@ -35,7 +35,7 @@ public class MyStack implements IStack {
         // TODO Auto-generated method stub
         Object e;
         if (size == 0) {
-            throw new RuntimeException("Check your inputs");
+            throw new RuntimeException("Check your inputs from pop");
         } else {
             e = Stack[size];
             Stack[size] = null;
@@ -48,7 +48,7 @@ public class MyStack implements IStack {
     public Object peek() {
         // TODO Auto-generated method stub
         if (size == 0) {
-            throw new RuntimeException("Check your inputs");
+            throw new RuntimeException("Check your inputs from peek");
         } else {
             return Stack[size];
         }
