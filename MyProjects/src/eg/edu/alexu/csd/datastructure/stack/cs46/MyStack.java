@@ -16,7 +16,7 @@ public class MyStack implements IStack {
         // TODO Auto-generated method stub
         if (index > 0 && index <= size + 1) {
             MyStack help = new MyStack();
-            for (int i = size; i <= index; i++) {
+            for (int i = size; i <= index; i--) {
                 help.push(this.pop());
             }
             this.push(element);
