@@ -24,20 +24,8 @@ public class MyStack implements IStack {
         for(int i=0;i<helplinked.size();i++){
             Stack[i]=helplinked.get(i);
         }
-    /*    if (index >=0  && index <= size + 1) {
-            MyStack help = new MyStack();
-            for (int i = size; i >= index; i--) {
-                help.push(this.pop());
-            }
-            this.push(element);
-            while (help.size != 0) {
-                this.push(help.pop());
-            }
-        }
-        else {
-            throw new RuntimeException("Check your inputs from add");
-        }
-    }*/
+        size++;
+    
     }
     @Override
     public Object pop() {
@@ -82,4 +70,20 @@ public class MyStack implements IStack {
         return size;
     }
 }
+
+/*    if (index >=0  && index <= size + 1) {
+MyStack help = new MyStack();
+for (int i = size; i >= index; i--) {
+    help.push(this.pop());
+}
+this.push(element);
+while (help.size != 0) {
+    this.push(help.pop());
+}
+}
+else {
+throw new RuntimeException("Check your inputs from add");
+}
+}*/
+
 
