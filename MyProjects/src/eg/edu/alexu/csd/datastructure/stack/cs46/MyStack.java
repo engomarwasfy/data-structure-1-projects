@@ -23,7 +23,7 @@ public class MyStack implements IStack {
     @Override
     public void add(int index, Object element) {
         // TODO Auto-generated method stub
-        if (index > size || element == null || index < 0) {
+    /*    if (index > size || element == null || index < 0) {
             throw new RuntimeException("Check your inputs");
         }
         node newElement = new node(element);
@@ -43,8 +43,11 @@ public class MyStack implements IStack {
             cur.next = newElement;
         }
         size++;
-    }
     
+    
+    */
+    }
+
 
     @Override
     public Object pop() {
