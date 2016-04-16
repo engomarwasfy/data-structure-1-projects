@@ -15,7 +15,8 @@ public class MyStack implements IStack {
     @Override
     public void add(final int index, final Object element) {
         // TODO Auto-generated method stub
-        if (index >=0  && index <= size + 1) {
+        throw new RuntimeException("Check your inputs from add");
+    /*    if (index >=0  && index <= size + 1) {
             MyStack help = new MyStack();
             for (int i = size; i >= index; i--) {
                 help.push(this.pop());
@@ -28,8 +29,8 @@ public class MyStack implements IStack {
         else {
             throw new RuntimeException("Check your inputs from add");
         }
+    }*/
     }
-
     @Override
     public Object pop() {
         // TODO Auto-generated method stub
