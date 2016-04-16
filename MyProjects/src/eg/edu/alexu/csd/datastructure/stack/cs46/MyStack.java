@@ -15,7 +15,7 @@ public class MyStack implements IStack {
     @Override
     public void add(final int index, final Object element) {
         // TODO Auto-generated method stub
-        if (index >= 0 && index <= size + 1) {
+        if (index >=0  && index <= size + 1) {
             MyStack help = new MyStack();
             for (int i = size; i >= index; i--) {
                 help.push(this.pop());
@@ -35,7 +35,7 @@ public class MyStack implements IStack {
         // TODO Auto-generated method stub
         Object e;
         if (size == 0) {
-            throw new RuntimeException("Check your inputs");
+            return null;
         } else {
             e = Stack[size];
             Stack[size] = null;
