@@ -8,7 +8,7 @@ public class MyStack implements IStack {
     private Object[] Stack;
 
     public MyStack() {
-       Stack = new Object[999999999];
+       Stack = new Object[999999];
     }
 
     @Override
