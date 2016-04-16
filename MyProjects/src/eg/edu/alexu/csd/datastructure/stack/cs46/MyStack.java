@@ -1,102 +1,70 @@
 package eg.edu.alexu.csd.datastructure.stack.cs46;
-import eg.edu.alexu.csd.datastructure.stack.IStack;
-class node {
-    public Object value;
-    public node next;
 
-    public node(final Object value) {
-        this.value = value;
-        next = null;
-    }
-}
+import eg.edu.alexu.csd.datastructure.stack.IStack;
 
 public class MyStack implements IStack {
 
     private int size = 0;
-    private node Head;
-    private node cur;
+    public Object[] Stack;
 
     public MyStack() {
-        Head = null;
-        cur = Head;
-    }
-    @Override
-    public void add(int index, Object element) {
-        // TODO Auto-generated method stub
-    /*    if (index > size || element == null || index < 0) {
-            throw new RuntimeException("Check your inputs");
-        }
-        node newElement = new node(element);
-        if (Head == null ) {
-            Head = newElement;
-        } else if (index == 0)
-        {
-          newElement.next =Head;
-          Head = newElement;
-        }
-        else {
-            cur = Head;
-            for (int i = 1; i < index; i++) {
-                cur = cur.next;
-            }
-            newElement.next = cur.next;
-            cur.next = newElement;
-        }
-        size++;
-    
-    
-    */
+        Stack = new Object[10000];
     }
 
+    @Override
+    public void add(final int index, final Object element) {
+        // TODO Auto-generated method stub
+        if (index > 0 && index <= size + 1) {
+            MyStack help = new MyStack();
+            for (int i = size; i <= index; i++) {
+                help.push(this.pop());
+            }
+            this.push(element);
+            while (help.size != 0) {
+                this.push(help.pop());
+            }
+        }
+
+        else {
+            throw new RuntimeException("Check your inputs");
+        }
+    }
 
     @Override
     public Object pop() {
         // TODO Auto-generated method stub
-        cur = Head;
-        for (int i = 0; i < size-1; i++) {
-            cur = cur.next;
+        Object e;
+        if (size == 0) {
+            throw new RuntimeException("Check your inputs");
+        } else {
+            e = Stack[size];
+            Stack[size] = null;
+            size--;
+            return e;
         }
-        Object  get=cur.value;
-        remove(size-1);
-        size--;
-        return get;
-        
     }
 
     @Override
     public Object peek() {
         // TODO Auto-generated method stub
-        cur = Head;
-        for (int i = 0; i < size; i++) {
-            cur = cur.next;
+        if (size == 0) {
+            throw new RuntimeException("Check your inputs");
+        } else {
+            return Stack[size];
         }
-        return cur.value;
     }
 
     @Override
-    public void push(Object element) {
+    public void push(final Object element) {
         // TODO Auto-generated method stub
-        if (element != null) {
-            node newElement = new node(element);
-            cur = Head;
-            if (Head == null) {
-                Head = newElement;
-            } else {
-                for (int i = 0; i < size - 1; i++) {
-                    cur = cur.next;
-                }
-                newElement.next = null;
-                cur.next = newElement;
-            }
-            size++;
-        }
+        size++;
+        Stack[size] = element;
     }
-    
 
     @Override
     public boolean isEmpty() {
         // TODO Auto-generated method stub
-        return size==0;
+        return size == 0;
     }
 
     @Override
@@ -104,20 +72,5 @@ public class MyStack implements IStack {
         // TODO Auto-generated method stub
         return size;
     }
-// i decremented the size in the method above not here
-    public void remove(final int index) {
-        // TODO Auto-generated method stub
-        if (index >= size || index < 0) {
-            throw new RuntimeException("Check your inputs");
-        }
-        if (index == 0) {
-            Head = Head.next;
-        } else {
-            cur = Head;
-            for (int i = 0; i < index - 1; i++) {
-                cur = cur.next;
-            }
-            cur.next = (cur.next).next;
-        }
-    }
 }
+//
