@@ -21,6 +21,9 @@ public class MyStack implements IStack {
             helplinked.add(Stack[i]);
         }
         helplinked.add(index, element);
+        for(int i=0;i<size;i++){
+            Stack[i]=null;
+        }
         for(int i=0;i<helplinked.size();i++){
             Stack[i]=helplinked.get(i);
         }
