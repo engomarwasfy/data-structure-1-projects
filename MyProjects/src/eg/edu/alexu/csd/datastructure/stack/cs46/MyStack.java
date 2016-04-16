@@ -35,7 +35,7 @@ public class MyStack implements IStack {
         // TODO Auto-generated method stub
         Object e;
         if (size == 0) {
-            return null;
+            throw new RuntimeException("Check your inputs");
         } else {
             e = Stack[size];
             Stack[size] = null;
