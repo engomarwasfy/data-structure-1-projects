@@ -9,6 +9,7 @@ public class MyStack implements IStack {
 
     public MyStack() {
        Stack = new Object[999999];
+       size=0;
     }
 
     @Override
