@@ -5,10 +5,10 @@ import eg.edu.alexu.csd.datastructure.stack.IStack;
 public class MyStack implements IStack {
 
     private int size = 0;
-    public Object[] Stack;
+    private Object[] Stack;
 
     public MyStack() {
-        Stack = new Object[10000];
+       Stack = new Object[10000];
     }
 
     @Override
@@ -24,7 +24,6 @@ public class MyStack implements IStack {
                 this.push(help.pop());
             }
         }
-
         else {
             throw new RuntimeException("Check your inputs");
         }
