@@ -1,5 +1,6 @@
 package eg.edu.alexu.csd.datastructure.stack.cs46;
 
+import eg.edu.alexu.csd.datastructure.linkedList.cs46.OurDoubleLinkedList;
 import eg.edu.alexu.csd.datastructure.linkedList.cs46.OurSingleLinked;
 import eg.edu.alexu.csd.datastructure.stack.IStack;
 
@@ -16,7 +17,7 @@ public class MyStack implements IStack {
     @Override
     public void add(final int index, final Object element) {
         // TODO Auto-generated method stub
-        OurSingleLinked helplinked=new OurSingleLinked();
+        OurDoubleLinkedList helplinked=new OurDoubleLinkedList();
         for(int i=0;i<size;i++){
             helplinked.add(Stack[i]);
         }
@@ -28,7 +29,6 @@ public class MyStack implements IStack {
             Stack[i]=helplinked.get(i);
         }
         size++;
-    
     }
     @Override
     public Object pop() {
