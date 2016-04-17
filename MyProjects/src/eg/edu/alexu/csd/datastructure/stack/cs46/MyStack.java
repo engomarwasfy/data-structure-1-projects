@@ -20,11 +20,12 @@ public class MyStack implements IStack {
         OurDoubleLinkedList helplinked=new OurDoubleLinkedList();
         for(int i=0;i<size;i++){
             helplinked.add(Stack[i]);
+           // System.out.println(Stack[i]);
         }
         helplinked.add(index, element);
-        for(int i=0;i<size;i++){
-            Stack[i]=null;
-        }
+    //    for(int i=0;i<size;i++){
+      //      Stack[i]=null;
+       // }
         for(int i=0;i<helplinked.size();i++){
             Stack[i]=helplinked.get(i);
         }
@@ -35,7 +36,7 @@ public class MyStack implements IStack {
         // TODO Auto-generated method stub
         Object e;
         if (size == 0) {
-            return null;
+            throw new RuntimeException("Check your inputs from pop");
         } else {
             e = Stack[size];
             Stack[size] = null;
@@ -48,7 +49,7 @@ public class MyStack implements IStack {
     public Object peek() {
         // TODO Auto-generated method stub
         if (size == 0) {
-            return null;
+            throw new RuntimeException("Check your inputs from peek");
         } else {
             return Stack[size];
         }
@@ -57,8 +58,9 @@ public class MyStack implements IStack {
     @Override
     public void push(final Object element) {
         // TODO Auto-generated method stub
-        size++;
+        
         Stack[size] = element;
+        size++;
     }
 
     @Override
@@ -72,7 +74,12 @@ public class MyStack implements IStack {
         // TODO Auto-generated method stub
         return size;
     }
-}
+    public Object[] get(){
+        
+        return Stack;
+    }
+    }
+
 
 /*    if (index >=0  && index <= size + 1) {
 MyStack help = new MyStack();
@@ -88,4 +95,5 @@ else {
 throw new RuntimeException("Check your inputs from add");
 }
 }*/
+
 
