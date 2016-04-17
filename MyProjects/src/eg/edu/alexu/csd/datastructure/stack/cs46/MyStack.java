@@ -7,11 +7,13 @@ import eg.edu.alexu.csd.datastructure.stack.IStack;
 public class MyStack implements IStack {
 
     private int size = 0;
+    private int top =-1;
     private Object[] Stack;
 
     public MyStack() {
        Stack = new Object[999999];
        size=0;
+       top=-1;
     }
 
     @Override
@@ -30,6 +32,7 @@ public class MyStack implements IStack {
             Stack[i]=helplinked.get(i);
         }
         size++;
+        top++;
     }
     @Override
     public Object pop() {
@@ -38,8 +41,9 @@ public class MyStack implements IStack {
         if (size == 0) {
             throw new RuntimeException("Check your inputs from pop");
         } else {
-            e = Stack[size];
-            Stack[size] = null;
+            e = Stack[top];
+            Stack[top] = null;
+            top--;
             size--;
             return e;
         }
@@ -51,16 +55,17 @@ public class MyStack implements IStack {
         if (size == 0) {
             throw new RuntimeException("Check your inputs from peek");
         } else {
-            return Stack[size];
+            return Stack[top];
         }
     }
 
     @Override
     public void push(final Object element) {
         // TODO Auto-generated method stub
-        
-        Stack[size] = element;
+        top++;
+        Stack[top] = element;
         size++;
+        
     }
 
     @Override

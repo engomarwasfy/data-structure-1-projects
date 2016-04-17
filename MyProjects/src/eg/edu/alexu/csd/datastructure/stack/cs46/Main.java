@@ -9,10 +9,11 @@ public class Main {
         test.push(4);
         test.push(5);
        test.add(2, 20);
-      //  while(!test.isEmpty()){
+      
+       while(!test.isEmpty()){
             
-            //System.out.println(test.pop());
-      //  }
+            System.out.println(test.pop());
+        }
     }
 
 }
