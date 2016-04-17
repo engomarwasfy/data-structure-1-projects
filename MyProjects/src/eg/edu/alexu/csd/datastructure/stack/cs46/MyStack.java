@@ -1,10 +1,10 @@
 package eg.edu.alexu.csd.datastructure.stack.cs46;
-import eg.edu.alexu.csd.datastructure.linkedList.cs46.OurSingleLinked;
+import eg.edu.alexu.csd.datastructure.linkedList.cs46.OurDoubleLinkedList;
 import eg.edu.alexu.csd.datastructure.stack.IStack;
 public class MyStack implements IStack {
-    OurSingleLinked help;
+    OurDoubleLinkedList help;
     public MyStack() {
-        help=new OurSingleLinked();
+        help = new OurDoubleLinkedList();
     }
     @Override
     public void add(final int index, final Object element) {
