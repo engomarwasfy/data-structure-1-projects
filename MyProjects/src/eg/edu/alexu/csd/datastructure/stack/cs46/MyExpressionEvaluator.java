@@ -8,9 +8,9 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
 
     @Override
     public String infixToPostfix(String expression){
-        throw new RuntimeException("exp "+expression);
+      
         
-   /*     // TODO Auto-generated method stub
+       // TODO Auto-generated method stub
         String postfixString = " ";
         MyStack S =new MyStack();
 
@@ -102,25 +102,8 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
     
      boolean isop(String ch) {
         return (ch == "*" || ch == "/" || ch == "+" || ch == "-");
-    }*/
-
-
-//public static void main(String[] args) {
-    /*MyExpressionEvaluator  test = new MyExpressionEvaluator();
-    System.out.println("Type in an expression like (1+2)*(3+4)/(12-5)\n "
-            + "with no monadic operators like in-5 or +5 followed by key");
-    Scanner scan = new Scanner(System.in);
-    String str = scan.next();
-    System.out.println("The Expression you have typed in infix form :\n"+str);
-    System.out.println("The Equivalent Postfix Expression is :\n"+test.infixToPostfix(str));
-}*/
-
-//}
+    
+     }
 }
-
-    @Override
-    public int evaluate(String expression) {
-        // TODO Auto-generated method stub
-        throw new RuntimeException("eva  "+expression);
-    }
-}
+    
+     
