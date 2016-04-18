@@ -7,103 +7,98 @@ import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
 public class MyExpressionEvaluator implements IExpressionEvaluator {
 
     @Override
-    public String infixToPostfix(String expression){
-      
-        
-       // TODO Auto-generated method stub
-        String postfixString = " ";
-        MyStack S =new MyStack();
+    public String infixToPostfix(String expression) {
+        // TODO Auto-generated method stub
+        String answer = "";
+if(expression.length()!=0 && !isoperator(expression.charAt(expression.length()-1))&&!isoperator(expression.charAt(0))){
+        MyStack s = new MyStack();
+        for (int i = 0; i < expression.length(); i++) {
 
-        for (int index = 0; index < expression.length(); ++index) {
-            char ch = expression.charAt(index);
-            if (ch == '(') {
-               S.push('(');
-            } else if (ch == ')') {
-                char oper = S.peek().toString().charAt(0);
-                while (!(oper=='(') && !S.isEmpty()) {
-                    postfixString += oper;
-                    S.pop();
-                    oper = S.peek().toString().charAt(0);
+            char ch = expression.charAt(i);
+            if(ch ==' ') continue; 
+            if (isOperand(ch)) {
+                answer += " "+ch;
+            } else if(isoperator(ch)){
+                while (!s.isEmpty()
+                        && HasHigherPrec(s.peek().toString().charAt(0), ch)&& s.peek().toString().charAt(0)!='(' ){
+                    answer += " "+s.peek();
+                    s.pop();
                 }
-                S.pop();
-            } else if (ch == '+' || ch == '-') {
-                //Stack is empty
-                if (S.isEmpty()) {
-                   S.push(ch);
-                    //current Stack is not empty
-                } else {
-                    char oper = S.peek().toString().charAt(0);
-                    while (!S.isEmpty() || oper=='(' || oper==')') {
-                        S.pop();
-                        postfixString += oper;
-                    }
-                    S.push(ch);
+                s.push(ch);
+            }
+                else if(ch=='('){
+                    s.push(ch);
                 }
-            } else if (ch == '*' || ch == '/') {
-                if (S.isEmpty()) {
-                    S.push(ch);
-                } else {
-                    char oper = S.peek().toString().charAt(0);
-                    while (!(oper=='+') && !(oper=='-') && !S.isEmpty()) {
-                        S.pop();
-                        postfixString += oper;
-                    }
-                    S.push(ch);
+                else if(ch==')'){
+                while(!s.isEmpty()&&s.peek().toString().charAt(0)!='('){
+                    
+                   answer+=" "+s.peek();
+                    s.pop();
                 }
-            } else {
-                postfixString += ch;
+                s.pop();
             }
         }
-        while (!S.isEmpty()) {
-            char oper = S.peek().toString().charAt(0);
-            if (!(oper=='(')) {
-                S.pop();
-                postfixString += oper;
-            }
+      
+        while(!s.isEmpty()){
+            
+            answer+=" "+s.peek();
+            s.pop();
         }
-        return postfixString;
+
     }
 
-   
-    
+else{
+    throw new RuntimeException("Check your inputs");
+}
+        return answer;
+  }
 
     @Override
     public int evaluate(String expression) {
         // TODO Auto-generated method stub
-        MyStack s =new MyStack();
-        String []array; 
-      array= expression.split(" ");
-        for (int i = 0; i < array.length; i++) {
-            
+        return 0;
+    }
+        
+    
+    
+    public boolean isOperand(char x){
+        if(x >= '0' && x <= '9') return true;
+        if(x >= 'a' && x <= 'z') return true;
+        if(x >= 'A' && x <= 'Z') return true;
+        return false;
+    }
+    
+    
+  public boolean isoperator(char x){
+      
+      if(x == '+' || x == '-' || x == '*' || x== '/')
+          return true;
 
-            if (isop(array[i])) {
-                int  op2=(int)s.pop();
-                int op1 =(int)s.pop();
-                switch (array[i].charAt(0)) {
-                    case '+': s.push(op1+op2);   break;
-                    case '-': s.push(op1-op2);   break;
-                    case '*': s.push (op1*op2); break;
-                    case '/':s.push(op1/op2);break;
-                }
-            } else  {
-               
-                s.push(Integer.valueOf(array[i]));
-            }
-        }
-        if (s.size()==1) {
-            return Integer.valueOf(s.pop().toString());
+      return false;
+  }
+  int GetOperatorval(char x){
+      int weight = 0; 
+      switch(x)
+      {
+      case '+':weight = 1;break;
+      case '-':weight = 1;break;
+      case '*':weight=2;break;
+      case '/':weight=2;break;
+      }
+      return weight;
+  }
+
+
+    
+ boolean  HasHigherPrec(char x,char y){
+        if(GetOperatorval(x)>=GetOperatorval(y)){
+            return true;
         }
         else{
-            throw new RuntimeException("Check your inputs ");
-        }
-            
-    }
-
-    
-     boolean isop(String ch) {
-        return (ch == "*" || ch == "/" || ch == "+" || ch == "-");
-    
-     }
+            return false;
+         }
+        
+        
+        
 }
-    
-     
+}
