@@ -10,11 +10,10 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
     public String infixToPostfix(final String expression) {
         // TODO Auto-generated method stub
         StringBuilder answer = new StringBuilder();
-        StringBuilder finalanswer = new StringBuilder();
         StringBuilder check = new StringBuilder();
         char ch2;
         String str;
-        StringBuilder ans = new StringBuilder();
+        
       
 if(expression.length()!=0 && !isoperator(expression.charAt(expression.length()-1))&&!isoperator(expression.charAt(0))){
         MyStack s = new MyStack();
@@ -29,6 +28,7 @@ if(expression.length()!=0 && !isoperator(expression.charAt(expression.length()-1
                 ch2=expression.charAt(i+1);
                  str = new StringBuilder().append(ch).append(ch2).toString();
                //answer+=" "+str;
+                 
                  answer.append(' ');
                  answer.append(str.toString());
                i++;
@@ -95,7 +95,7 @@ else{
            evaluate(check.toString());
        }
     
-        
+        answer.deleteCharAt(0); 
         return answer.toString();
     }    
         
