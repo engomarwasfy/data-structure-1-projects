@@ -9,37 +9,13 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
     @Override
     public String infixToPostfix(final String expression) {
         // TODO Auto-generated method stub
-        String answer = "";
-        String finalanswer="";
+        StringBuilder answer = new StringBuilder();
+        StringBuilder finalanswer = new StringBuilder();
         StringBuilder check = new StringBuilder();
         char ch2;
         String str;
         StringBuilder ans = new StringBuilder();
-        ans.append('1');
-        ans.append(' ');
-        ans.append('1');
-        boolean switcher= true;
-        
-        if(expression.charAt(0)=='1') {
-            for(int i=1;i<expression.length()-1;i++){
-                if(switcher==true){
-                    ans.append(' ');
-                    ans.append('+');
-                    
-                }
-                else
-                {
-                    ans.append(' ');
-                    ans.append('1');
-                    
-                }
-                
-                switcher=!switcher;
-                
-            }
-            return ans.toString();
-            
-        }
+      
 if(expression.length()!=0 && !isoperator(expression.charAt(expression.length()-1))&&!isoperator(expression.charAt(0))){
         MyStack s = new MyStack();
         for (int i = 0; i < expression.length(); i++) {
@@ -52,16 +28,22 @@ if(expression.length()!=0 && !isoperator(expression.charAt(expression.length()-1
             if((i+1)!=expression.length()&&isOperand(ch)&&isOperand(expression.charAt(i+1))){
                 ch2=expression.charAt(i+1);
                  str = new StringBuilder().append(ch).append(ch2).toString();
-               answer+=" "+str;
+               //answer+=" "+str;
+                 answer.append(' ');
+                 answer.append(str.toString());
                i++;
             }
             else if(isOperand(ch)){
-                answer+=" "+ch;
+               // answer+=" "+ch;
+                answer.append(' ');
+                answer.append(ch);
             } 
              else if(isoperator(ch)){
                 while (!s.isEmpty()
                         && HasHigherPrec(s.peek().toString().charAt(0), ch)&& s.peek().toString().charAt(0)!='(' ){
-                    answer += " "+s.peek();
+                   // answer += " "+s.peek();
+                    answer.append(' ');
+                    answer.append(s.peek());
                     s.pop();
                 }
                 s.push(ch);
@@ -72,7 +54,9 @@ if(expression.length()!=0 && !isoperator(expression.charAt(expression.length()-1
                 else if(ch==')'){
                 while(!s.isEmpty()&&s.peek().toString().charAt(0)!='('){
                     
-                   answer+=" "+s.peek();
+                  // answer+=" "+s.peek();
+                    answer.append(' ');
+                    answer.append(s.peek());
                     s.pop();
                 }
                 s.pop();
@@ -81,7 +65,9 @@ if(expression.length()!=0 && !isoperator(expression.charAt(expression.length()-1
       
         while(!s.isEmpty()){
             
-            answer+=" "+s.peek();
+          //  answer+=" "+s.peek();
+            answer.append(' ');
+            answer.append(s.peek());
             s.pop();
         }
 
@@ -92,10 +78,10 @@ else{
 }       
         
         for(int i=1;i<answer.length();i++){
-            finalanswer+=answer.charAt(i);
+            finalanswer.append (answer.toString().charAt(i));
         }
         if(finalanswer.charAt(0)>='0'&&finalanswer.charAt(0)<='9'){
-       evaluate(finalanswer);
+       evaluate(finalanswer.toString());
         }
        else{
            for(int i=0;i<answer.length();i++){
@@ -110,7 +96,7 @@ else{
        }
     
         
-        return finalanswer;
+        return finalanswer.toString();
     }    
         
  
@@ -123,11 +109,11 @@ else{
         MyStack st =new MyStack();
         int op1;
         int op2;
-        int answer;
+        float answer;
         char ch2;
-        if((expression.equals("5 3 + 2 * 3 / 3 * 4 2 * - 16 2 / -"))){
-            return 0;
-        }
+      //  if((expression.equals("5 3 + 2 * 3 / 3 * 4 2 * - 16 2 / -"))){
+        //    return 0;
+      //  }
         
         if (!isoperator(expression.charAt(0))&& expression.length()!=0)
                 {
@@ -153,7 +139,7 @@ else{
                                 op2=Integer.parseInt("" + st.pop());
                                 op1=Integer.parseInt("" + st.pop());
                                 answer=get(op1,op2,ch);
-                                st.push(answer);
+                                st.push((int)answer);
                            }
                             
                             
@@ -216,18 +202,18 @@ else{
         return GetOperatorval(x)>=GetOperatorval(y);
 }
 
-int get(final int op1,final int op2,final char ex){
+float get(final int op1,final int op2,final char ex){
     switch (ex) {
     case '+':
-        return(op1 + op2);
+        return((float)op1 + op2);
         
     case '-':
-        return(op1 - op2);
+        return((float)op1 - op2);
        
     case '*':
-        return(op1 * op2);
+        return((float)op1 * op2);
     case '/':
-        return(op1 / op2);
+        return((float)op1 / op2);
     default:
         break;
  
