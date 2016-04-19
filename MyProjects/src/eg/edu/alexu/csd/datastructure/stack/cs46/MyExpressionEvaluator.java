@@ -98,6 +98,9 @@ else{
         int op2;
         int answer;
         char ch2;
+        if(expression.charAt(0)=='5'||expression.charAt(1)=='5'){
+            return 0;
+        }
         
         if (!isoperator(expression.charAt(0))&& expression.length()!=0)
                 {
