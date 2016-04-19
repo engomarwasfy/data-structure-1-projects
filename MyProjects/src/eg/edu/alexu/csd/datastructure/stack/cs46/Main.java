@@ -18,7 +18,7 @@ public class Main {
         
         String ans;
         int ans2;
-       String in="((5+3)*2/3)*3-4*2-16/2";
+       String in="((a+b)*c/d)*e-f*g-h/k";
       // String in="5 3 + 2 * 3 / 3 * 4 2 * - 16 2 / -";
         
       //  String t="1+1+1+1+1+1";

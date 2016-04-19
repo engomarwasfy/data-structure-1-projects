@@ -11,6 +11,7 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
         // TODO Auto-generated method stub
         String answer = "";
         String finalanswer="";
+        StringBuilder check = new StringBuilder();
         char ch2;
         String str;
         if(expression.charAt(0)=='1') throw new RuntimeException("Check your inputs");
@@ -71,10 +72,23 @@ else{
         if(finalanswer.charAt(0)>='0'&&finalanswer.charAt(0)<='9'){
        evaluate(finalanswer);
         }
+       else{
+           for(int i=0;i<answer.length();i++){
+               if(isOperand(answer.charAt(i))){
+                   check.append('3');//replace with character 3
+               }
+               else{
+                   check.append(answer.charAt(i));
+               }   
+           }
+           evaluate(check.toString());
+       }
+        
         return finalanswer;
         
         
   }
+
 
     @Override
     public int evaluate(final String expression) {
