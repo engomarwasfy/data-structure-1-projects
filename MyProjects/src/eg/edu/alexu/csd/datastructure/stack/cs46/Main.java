@@ -21,7 +21,7 @@ public class Main {
         String in="((5+3)*2/3)*3-4*2-16/2 ";
       //  String in="2 + 3 * 4";
         String t="1+1+1+1+1+1";
-        ans=testy.infixToPostfix(t);
+        ans=testy.infixToPostfix(in);
         //ans2=testy.evaluate(t);
         System.out.println(ans);
         
