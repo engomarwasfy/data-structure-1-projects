@@ -77,11 +77,11 @@ else{
     throw new RuntimeException("Check your inputs");
 }       
         
-        for(int i=1;i<answer.length();i++){
+        /*for(int i=1;i<answer.length();i++){
             finalanswer.append (answer.toString().charAt(i));
-        }
-        if(finalanswer.charAt(0)>='0'&&finalanswer.charAt(0)<='9'){
-       evaluate(finalanswer.toString());
+        }*/
+        if(answer.charAt(1)>='0'&&answer.charAt(1)<='9'){
+       evaluate(answer.toString());
         }
        else{
            for(int i=0;i<answer.length();i++){
@@ -96,7 +96,7 @@ else{
        }
     
         
-        return finalanswer.toString();
+        return answer.toString();
     }    
         
  
