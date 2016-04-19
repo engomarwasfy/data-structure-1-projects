@@ -107,8 +107,8 @@ else{
     public int evaluate(final String expression) {
         // TODO Auto-generated method stub
         MyStack st =new MyStack();
-        int op1;
-        int op2;
+        float op1;
+        float op2;
         float answer;
         char ch2;
       //  if((expression.equals("5 3 + 2 * 3 / 3 * 4 2 * - 16 2 / -"))){
@@ -136,10 +136,10 @@ else{
                                 throw new RuntimeException("Check your inputs");
                             }
                             else{
-                                op2=Integer.parseInt("" + st.pop());
-                                op1=Integer.parseInt("" + st.pop());
+                                op2=Float.parseFloat("" + st.pop());
+                                op1=Float.parseFloat("" + st.pop());
                                 answer=get(op1,op2,ch);
-                                st.push((int)answer);
+                                st.push(answer);
                            }
                             
                             
@@ -150,7 +150,7 @@ else{
                         throw new RuntimeException("Check your inputs");
                     }
                     else{
-                    return   Integer.parseInt(""+st.pop());
+                    return   (int)Float.parseFloat(""+st.pop());
                     }
                  
             
@@ -202,18 +202,18 @@ else{
         return GetOperatorval(x)>=GetOperatorval(y);
 }
 
-float get(final int op1,final int op2,final char ex){
+float get(final float op1,final float op2,final char ex){
     switch (ex) {
     case '+':
-        return((float)op1 + op2);
+        return(op1 + op2);
         
     case '-':
-        return((float)op1 - op2);
+        return(op1 - op2);
        
     case '*':
-        return((float)op1 * op2);
+        return(op1 * op2);
     case '/':
-        return((float)op1 / op2);
+        return(op1 / op2);
     default:
         break;
  
