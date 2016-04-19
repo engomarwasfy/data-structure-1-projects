@@ -19,7 +19,7 @@ public class Main {
         String ans;
         int ans2;
        //String in="((a+b)*c/d)*e-f*g-h/k";
-       String in="1+1+1+1+1+1+1+1+1+1";
+       String in="1+1+1+1+1+1+1";
         
       //  String t="1+1+1+1+1+1";
         ans=testy.infixToPostfix(in);

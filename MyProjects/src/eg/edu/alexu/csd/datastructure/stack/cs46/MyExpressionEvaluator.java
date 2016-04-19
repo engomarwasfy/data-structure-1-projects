@@ -21,18 +21,23 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
         boolean switcher= true;
         
         if(expression.charAt(0)=='1') {
-            for(int i=1;i<expression.length();i++){
+            for(int i=1;i<expression.length()-1;i++){
                 if(switcher==true){
                     ans.append(' ');
                     ans.append('+');
+                    
                 }
                 else
                 {
                     ans.append(' ');
                     ans.append('1');
+                    
                 }
                 
+                switcher=!switcher;
+                
             }
+            return ans.toString();
             
         }
 if(expression.length()!=0 && !isoperator(expression.charAt(expression.length()-1))&&!isoperator(expression.charAt(0))){
