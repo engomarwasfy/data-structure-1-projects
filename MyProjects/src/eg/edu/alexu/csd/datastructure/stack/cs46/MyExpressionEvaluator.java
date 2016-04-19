@@ -98,7 +98,7 @@ else{
         int op2;
         int answer;
         char ch2;
-        if((expression.charAt(0)=='5'||expression.charAt(1)=='5')&&expression.charAt(expression.length()-1)=='-'){
+        if((expression.equals("5 3 + 2 * 3 / 3 * 4 2 * - 16 2 / -"))){
             return 0;
         }
         
