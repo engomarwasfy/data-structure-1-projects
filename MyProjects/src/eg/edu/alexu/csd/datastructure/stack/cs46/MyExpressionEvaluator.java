@@ -11,6 +11,8 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
         // TODO Auto-generated method stub
         String answer = "";
         String finalanswer="";
+        char ch2;
+        String str;
         if(expression.charAt(0)=='1') throw new RuntimeException("Check your inputs");
 if(expression.length()!=0 && !isoperator(expression.charAt(expression.length()-1))&&!isoperator(expression.charAt(0))){
         MyStack s = new MyStack();
@@ -20,16 +22,16 @@ if(expression.length()!=0 && !isoperator(expression.charAt(expression.length()-1
             if(ch ==' ') {
                 continue;
             } 
-            if (isOperand(ch)) {
-                    if(i>=1)
-                    {
-                if(isOperand(expression.charAt(i-1))){
-                    answer+=ch;
-                }
-                }
-                
-                answer += " "+ch;
-                }
+            
+            if((i+1)!=expression.length()&&isOperand(ch)&&isOperand(expression.charAt(i+1))){
+                ch2=expression.charAt(i+1);
+                 str = new StringBuilder().append(ch).append(ch2).toString();
+               answer+=" "+str;
+               i++;
+            }
+            else if(isOperand(ch)){
+                answer+=" "+ch;
+            } 
              else if(isoperator(ch)){
                 while (!s.isEmpty()
                         && HasHigherPrec(s.peek().toString().charAt(0), ch)&& s.peek().toString().charAt(0)!='(' ){
@@ -66,7 +68,9 @@ else{
         for(int i=1;i<answer.length();i++){
             finalanswer+=answer.charAt(i);
         }
-        evaluate(finalanswer);
+        if(finalanswer.charAt(0)>='0'&&finalanswer.charAt(0)<='9'){
+       evaluate(finalanswer);
+        }
         return finalanswer;
         
         

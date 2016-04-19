@@ -18,13 +18,13 @@ public class Main {
         
         String ans;
         int ans2;
-       // String in="((5+3)*2/3)*3-4*2-16/2 ";
-        String in="26 3 / 3 14 + 2 / -";
+       String in="((5+3)*2/3)*3-4*2-16/2";
+      // String in="5 3 + 2 * 3 / 3 * 4 2 * - 16 2 / -";
         
       //  String t="1+1+1+1+1+1";
-       // ans=testy.infixToPostfix(in);
-        ans2=testy.evaluate(in);
-        System.out.println(ans2);
+        ans=testy.infixToPostfix(in);
+        //ans2=testy.evaluate(in);
+        System.out.println(ans);
         
         
     }
