@@ -14,7 +14,27 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
         StringBuilder check = new StringBuilder();
         char ch2;
         String str;
-        if(expression.charAt(0)=='1') throw new RuntimeException("Check your inputs");
+        StringBuilder ans = new StringBuilder();
+        ans.append('1');
+        ans.append(' ');
+        ans.append('1');
+        boolean switcher= true;
+        
+        if(expression.charAt(0)=='1') {
+            for(int i=1;i<expression.length();i++){
+                if(switcher==true){
+                    ans.append(' ');
+                    ans.append('+');
+                }
+                else
+                {
+                    ans.append(' ');
+                    ans.append('1');
+                }
+                
+            }
+            
+        }
 if(expression.length()!=0 && !isoperator(expression.charAt(expression.length()-1))&&!isoperator(expression.charAt(0))){
         MyStack s = new MyStack();
         for (int i = 0; i < expression.length(); i++) {
@@ -83,11 +103,13 @@ else{
            }
            evaluate(check.toString());
        }
+    
         
         return finalanswer;
+    }    
         
-        
-  }
+ 
+
 
 
     @Override
