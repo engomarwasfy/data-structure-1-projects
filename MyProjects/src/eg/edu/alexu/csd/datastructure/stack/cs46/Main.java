@@ -15,9 +15,14 @@ public class Main {
             System.out.println(test.pop());
         }*/
         MyExpressionEvaluator testy=new MyExpressionEvaluator();
+        
         String ans;
+        int ans2;
         String in="((5+3)*2/3)*3-4*2-16/2 ";
-        ans=testy.infixToPostfix(in);
+      //  String in="2 + 3 * 4";
+        String t="1+1+1+1+1+1";
+        ans=testy.infixToPostfix(t);
+        //ans2=testy.evaluate(t);
         System.out.println(ans);
         
         
