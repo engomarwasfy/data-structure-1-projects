@@ -62,9 +62,11 @@ if(expression.length()!=0 && !isoperator(expression.charAt(expression.length()-1
 else{
     throw new RuntimeException("Check your inputs");
 }       
+        
         for(int i=1;i<answer.length();i++){
             finalanswer+=answer.charAt(i);
         }
+        evaluate(finalanswer);
         return finalanswer;
         
         
@@ -77,6 +79,8 @@ else{
         int op1;
         int op2;
         int answer;
+        char ch2;
+        
         if (!isoperator(expression.charAt(0))&& expression.length()!=0)
                 {
                     for(int i=0;i<expression.length();i++){
@@ -84,8 +88,14 @@ else{
                         if(ch==' ') {
                             continue;
                         }
-                        if(isOperand(ch)){
-                           st.push(ch);
+                        if(isOperand(ch)&&isOperand(expression.charAt(i+1))){
+                            ch2=expression.charAt(i+1);
+                            String s = new StringBuilder().append(ch).append(ch2).toString();
+                           st.push(s);
+                           i++;
+                        }
+                        else if(isOperand(ch)&&expression.charAt(i+1)==' '){
+                            st.push(ch);
                         }
                         else if(isoperator(ch)){
                             if (st.size()<2){
