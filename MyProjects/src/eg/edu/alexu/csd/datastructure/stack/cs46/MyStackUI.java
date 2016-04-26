@@ -2,6 +2,12 @@ package eg.edu.alexu.csd.datastructure.stack.cs46;
 
 import java.util.Scanner;
 
+
+/**
+ * @author wasfy
+ * this is the stack UI
+ *
+ */
 public class MyStackUI {
 
     public static void main(String[] args) {

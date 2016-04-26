@@ -3,7 +3,11 @@ package eg.edu.alexu.csd.datastructure.stack.cs46;
 import eg.edu.alexu.csd.datastructure.linkedList.cs46.OurDoubleLinkedList;
 import eg.edu.alexu.csd.datastructure.linkedList.cs46.OurSingleLinked;
 import eg.edu.alexu.csd.datastructure.stack.IStack;
-
+/**
+ * @author wasfy
+ * this is the stack implementation using linked list
+ *
+ */
 public class MyStack implements IStack {
 
    
