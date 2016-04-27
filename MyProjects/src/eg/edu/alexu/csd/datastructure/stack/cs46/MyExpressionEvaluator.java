@@ -104,7 +104,7 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
                 if (ch == ' ') {
                     continue;
                 }
-                if (isOperand(ch) && isOperand(expression.charAt(i + 1))) {
+                if (isOperand(ch) && isOperand(expression.charAt(i + 1))&&(i+1)<expression.length()) {
                     ch2 = expression.charAt(i + 1);
                     String s = new StringBuilder().append(ch).append(ch2)
                             .toString();

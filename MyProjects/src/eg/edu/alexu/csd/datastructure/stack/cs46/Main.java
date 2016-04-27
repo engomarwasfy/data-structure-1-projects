@@ -21,7 +21,7 @@ public class Main {
         String ans;
         int ans2;
        //String in="((a+b)(c+d))+ab+c*t";
-       String in="5 3 /";
+       String in="5 2 +";
         
        //ans=testy.infixToPostfix(in);
        ans2=testy.evaluate(in);

@@ -10,9 +10,10 @@ import java.util.Scanner;
  */
 public class MyStackUI {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // TODO Auto-generated method stub
         int choose=1;
+        int index;
         Object ob;
         Object poped;
         boolean check;
@@ -25,6 +26,7 @@ public class MyStackUI {
             System.out.println("3: Peek");
             System.out.println("4: Get size");
             System.out.println("5: Check if empty");
+            System.out.println("6: add at index");
             choose= sc.nextInt();
             switch(choose){
             case 1: System.out.println("please enter a value");
@@ -39,7 +41,7 @@ public class MyStackUI {
                 System.out.println("the peeked value is"+help.peek());
                 break;
             case 4:
-                System.out.println("the size is"+help.size());
+                System.out.println("the size is "+help.size());
                 break;
             case 5:
                 check = help.isEmpty();
@@ -50,8 +52,13 @@ public class MyStackUI {
                     System.out.println("stack is not empty");
                 }
                 break;
-            default:
-                System.out.println("wrong choosen please enter again ");
+            case 6 :System.out.println("Enter index");
+            index = sc.nextInt();
+            System.out.println("Enter value");
+            ob = sc.next();
+            help.add(index, ob);
+            break;
+                default :System.out.println("wrong choosen please enter again ");
             }
             
             }
