@@ -1,7 +1,11 @@
 package eg.edu.alexu.csd.datastructure.stack.cs46;
 
 import java.util.Scanner;
-
+/**
+ * @author wasfy
+ * this is app of  project
+ *
+ */
 public class MyExpressionEvaluatorUI {
 
     public static void main(final String[] args) {
