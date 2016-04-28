@@ -8,12 +8,31 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
-
+/**
+ * @author wasfy
+ * this is linkedlist test
+ *
+ */
 public class LinkedListTest {
 
+    /**
+     * @author wasfy
+     * this is linked
+     *
+     */
   OurSingleLinked test = new OurSingleLinked();
+  /**
+   * @author wasfy
+   * this is  linked
+   *
+   */
   ILinkedList sub;
 
+  /**
+   * @author wasfy
+   * this is test
+   *
+   */
   @Test
   public void add() {
     test.add(1); // 1
@@ -21,9 +40,14 @@ public class LinkedListTest {
     test.add(6); // 5 1 6
     test.add(3, 6); // 5 1 6 6
     assertEquals(test.get(2), 6);
- 
+
   }
 
+  /**
+   * @author wasfy
+   * this is test
+   *
+   */
   @Test
   public void empty() {
     test.add(1); // 1
@@ -34,6 +58,11 @@ public class LinkedListTest {
     assertTrue(test.isEmpty());
   }
 
+  /**
+   * @author wasfy
+   * this is test
+   *
+   */
   @Test(expected = RuntimeException.class)
   public void addingOutOfList() {
     test.add(1); // 1
@@ -43,6 +72,11 @@ public class LinkedListTest {
     test.add(9, 6); // 5 1 6 6
   }
 
+  /**
+   * @author wasfy
+   * this is test
+   *
+   */
   @Test
   public void get() {
     test.add(1); // 1
@@ -57,6 +91,11 @@ public class LinkedListTest {
     assertArrayEquals(toget, ar);
   }
 
+  /**
+   * @author wasfy
+   * this is test
+   *
+   */
   @Test
   public void contain() {
     test.add(1); // 1
@@ -66,6 +105,11 @@ public class LinkedListTest {
     assertTrue(test.contains(1));
   }
 
+  /**
+   * @author wasfy
+   * this is test
+   *
+   */
   @Test
   public void notContain() {
     test.add(1); // 1
@@ -76,6 +120,11 @@ public class LinkedListTest {
     assertFalse(test.contains(40));
   }
 
+  /**
+   * @author wasfy
+   * this is test
+   *
+   */
   @Test
   public void size() {
     test.add(1); // 1
@@ -88,6 +137,11 @@ public class LinkedListTest {
     assertEquals(test.size(), sizeTest - 1);
   }
 
+  /**
+   * @author wasfy
+   * this is test
+   *
+   */
   @Test
   public void afterRemove() {
     test.add(1); // 1
@@ -104,6 +158,11 @@ public class LinkedListTest {
     assertArrayEquals(toget, ar);
   }
 
+  /**
+   * @author wasfy
+   * this is test
+   *
+   */
   @Test(expected = RuntimeException.class)
   public void removeOutOfRange() {
     test.add(1); // 1
@@ -114,6 +173,11 @@ public class LinkedListTest {
     test.remove(-1);
   }
 
+  /**
+   * @author wasfy
+   * this is test
+   *
+   */
   @Test
   public void set() {
     test.add(1); // 1
@@ -125,6 +189,11 @@ public class LinkedListTest {
     assertEquals(test.get(2), 60);
   }
 
+  /**
+   * @author wasfy
+   * this is test
+   *
+   */
   @Test
   public void subList() {
     test.add(1); // 1
@@ -140,6 +209,11 @@ public class LinkedListTest {
     assertArrayEquals(inSubList, taken);
   }
 
+  /**
+   * @author wasfy
+   * this is test
+   *
+   */
   @Test
   public void subListSize() {
     test.add(1); // 1
@@ -150,6 +224,11 @@ public class LinkedListTest {
     assertEquals(sub.size(), 2);
   }
 
+  /**
+   * @author wasfy
+   * this is test
+   *
+   */
   @Test(expected = RuntimeException.class)
   public void addingNull() {
     test.add(1); // 1

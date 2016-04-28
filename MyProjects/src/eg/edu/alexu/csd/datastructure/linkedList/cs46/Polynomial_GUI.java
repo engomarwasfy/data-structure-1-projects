@@ -2,12 +2,39 @@ package eg.edu.alexu.csd.datastructure.linkedList.cs46;
 
 import java.util.Scanner;
 
+/**
+ * @author wasfy
+ * this is test
+ *
+ */
 public class Polynomial_GUI {
 
+    /**
+     * @author wasfy
+     * this is test
+     *
+     */
   static char VarName;
+
+  /**
+   * @author wasfy
+   * this is test
+   *
+   */
   static PolynomialSolver poly = new PolynomialSolver();
+
+  /**
+   * @author wasfy
+   * this is test
+   *
+   */
   static Scanner sc = new Scanner(System.in);
 
+  /**
+   * @author wasfy
+   * this is test
+   *
+   */
   public static void main(final String[] args) {
     // TODO Auto-generated method stub
     boolean wrong = true;
@@ -57,6 +84,8 @@ public class Polynomial_GUI {
             case 'C':
               poly.setPolynomial('C', array);
               System.out.println("Polynomial C is set");
+            default:
+                break;
             }
           } catch (RuntimeException e) {
             System.out.println("Can't set this variable");
@@ -144,6 +173,11 @@ public class Polynomial_GUI {
     }
   }
 
+  /**
+   * @author wasfy
+   * this is test
+   *
+   */
   public static void take(char operation) {
     char varName1 = ' ';
     char varName2 = ' ';
@@ -203,6 +237,8 @@ public class Polynomial_GUI {
           System.out.print(" ,");
         }
       }
+    default:
+        break;
     }
     System.out.println("\n");
   }

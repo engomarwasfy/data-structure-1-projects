@@ -8,24 +8,19 @@ import eg.edu.alexu.csd.datastructure.stack.IStack;
  * this is the stack implementation using linked list
  *
  */
-public class MyStack implements IStack {
+public class MyStack implements IStack { 
 
-   
-    
-    OurSingleLinked helplinked=new OurSingleLinked();
-   
-
+OurSingleLinked helplinked = new OurSingleLinked();
     @Override
     public void add(final int index, final Object element) {
         // TODO Auto-generated method stub
-       
        helplinked.add(helplinked.size() - index, element);
     }
     @Override
     public Object pop() {
         // TODO Auto-generated method stub
         Object e;
-        e= helplinked.get(0);
+        e =  helplinked.get(0);
         helplinked.remove(0);
         return e;
     }
@@ -40,7 +35,6 @@ public class MyStack implements IStack {
     public void push(final Object element) {
         // TODO Auto-generated method stub
         helplinked.add(0, element);
-        
     }
 
     @Override
@@ -54,5 +48,4 @@ public class MyStack implements IStack {
         // TODO Auto-generated method stub
         return helplinked.size();
     }
-  
 }

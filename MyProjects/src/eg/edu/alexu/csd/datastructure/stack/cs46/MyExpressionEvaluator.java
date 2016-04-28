@@ -1,5 +1,7 @@
 package eg.edu.alexu.csd.datastructure.stack.cs46;
 
+import org.junit.runners.Parameterized.Parameter;
+
 import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
 
 //with check style
@@ -77,7 +79,7 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
         } else {
             for (int i = 0; i < answer.length(); i++) {
                 if (isOperand(answer.charAt(i))) {
-                    check.append('3') ;  
+                    check.append('3');
  // replace with character 3 to test with evaluate or any number
                 } else {
                     check.append(answer.charAt(i));
@@ -104,7 +106,7 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
                 if (ch == ' ') {
                     continue;
                 }
-                if (isOperand(ch) && isOperand(expression.charAt(i + 1))&&(i+1)<expression.length()) {
+                if (isOperand(ch) && isOperand(expression.charAt(i + 1)) && (i + 1) < expression.length()) {
                     ch2 = expression.charAt(i + 1);
                     String s = new StringBuilder().append(ch).append(ch2)
                             .toString();
@@ -133,6 +135,12 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
         }
         return 0;
     }
+    /**
+     * @author wasfy
+     * this is app of  project
+     * @param x
+     * @ return boolean
+     */
 
     public boolean isOperand(final char x) {
         if (x >= '0' && x <= '9') {
@@ -146,6 +154,11 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
         }
         return false;
     }
+    /**
+     * @author wasfy
+     * this is app of  project
+     *
+     */
 
     public boolean isoperator(final char x) {
 
@@ -156,6 +169,11 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
         return false;
     }
 
+    /**
+     * @author wasfy
+     * this is app of  project
+     * @param x
+     */
     int GetOperatorval(final char x) {
         int weight = 0;
         switch (x) {
@@ -176,10 +194,20 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
         }
         return weight;
     }
+    /**
+     * @author wasfy
+     * this is app of  project
+     *
+     */
 
     boolean HasHigherPrec(final char x, final char y) {
         return GetOperatorval(x) >= GetOperatorval(y);
     }
+    /**
+     * @author wasfy
+     * this is app of  project
+     *
+     */
 
     float get(final float op1, final float op2, final char ex) {
         switch (ex) {
@@ -197,7 +225,7 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
             break;
 
         }
-        return 0;// ?????? i don't know but it can't work without this
+        return 0; // ?????? i don't know but it can't work without this
 
     }
 }

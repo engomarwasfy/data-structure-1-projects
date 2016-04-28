@@ -2,28 +2,91 @@ package eg.edu.alexu.csd.datastructure.linkedList.cs46;
 
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 
+/**
+ * @author wasfy
+ * this is test
+ *
+ */
 class nodeD {
-	public Object value;
-	public nodeD next;
+
+    /**
+     * @author wasfy
+     * this is test
+     *
+     */
+public Object value;
+
+/**
+ * @author wasfy
+ * this is test
+ *
+ */
+public nodeD next;
+       /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	public nodeD pre;
 
+
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	public nodeD(final Object value) {
 		this.value = value;
 		next = null;
 		pre = null;
 	}
 }
+
+/**
+ * @author wasfy
+ * this is test
+ *
+ */
 public class OurDoubleLinkedList implements ILinkedList {
 
+
+    /**
+     * @author wasfy
+     * this is test
+     *
+     */
 	private int size = 0;
+
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	private nodeD Head;
+
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	private nodeD cur;
 
+
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	public OurDoubleLinkedList() {
 		Head = null;
 		cur = Head;
 	}
 
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	public void add(final int index, final Object element) {
 		if (index > size || element == null || index < 0) {
             throw new RuntimeException("Check your inputs");
@@ -31,9 +94,8 @@ public class OurDoubleLinkedList implements ILinkedList {
 		nodeD newElement = new nodeD(element);
 		if (Head == null) {
             Head = newElement;
-        } else if (index == 0)
-    {
-      newElement.next =Head;
+        } else if (index == 0) {
+      newElement.next = Head;
       Head.pre = newElement;
       Head = newElement;
     }
@@ -44,12 +106,17 @@ public class OurDoubleLinkedList implements ILinkedList {
             }
 			newElement.next = cur.next;
 			 cur.next = newElement;
-			(cur.next).pre=newElement;
+			(cur.next).pre = newElement;
 			newElement.pre = cur;
 		}
 		size++;
 	}
 
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	public void add(final Object element) {
 		if (element != null) {
 			nodeD newElement = new nodeD(element);
@@ -68,6 +135,12 @@ public class OurDoubleLinkedList implements ILinkedList {
 		}
 	}
 
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
+
 	public Object get(final int index) {
 		// TODO Auto-generated method stub
 		if (index >= size || index < 0) {
@@ -80,6 +153,12 @@ public class OurDoubleLinkedList implements ILinkedList {
 		return cur.value;
 	}
 
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
+
 	public void set(final int index, final Object element) {
 		// TODO Auto-generated method stub
 		cur = Head;
@@ -89,43 +168,71 @@ public class OurDoubleLinkedList implements ILinkedList {
 		cur.value = element;
 	}
 
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
+
 	public void clear() {
 		// TODO Auto-generated method stub
 		Head = null;
 		size = 0;
 	}
 
+
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	public boolean isEmpty() {
 		return Head == null || size == 0;
 	}
+
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 
 	public void remove(final int index) {
 		// TODO Auto-generated method stub
 		if (index >= size || index < 0) {
             throw new RuntimeException("Check your inputs");
         }
-		if (index == 0)
-			{
+		if (index == 0) {
 		    Head = Head.next;
-		    Head.pre = null ;
+		    Head.pre = null;
 			}
 		else {
 			cur = Head;
 			for (int i = 0; i < index - 1; i++) {
                 cur = cur.next;
             }
-	     if (index+1 != size) {
-            ((cur.next).next).pre= cur;
+	     if (index + 1 != size) {
+            ((cur.next).next).pre = cur;
         }
 			cur.next = (cur.next).next;
 			}
 		size--;
 	}
 
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	public int size() {
 		return size;
 
 	}
+
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 
 	public ILinkedList sublist(final int fromIndex, final int toIndex) {
 		// TODO Auto-generated method stub
@@ -144,6 +251,11 @@ public class OurDoubleLinkedList implements ILinkedList {
 		return sub;
 	}
 
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	public boolean contains(final Object o) {
 		// TODO Auto-generated method stub
 		cur = Head;

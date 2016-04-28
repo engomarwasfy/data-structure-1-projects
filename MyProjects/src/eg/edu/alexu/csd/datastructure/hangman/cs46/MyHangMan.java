@@ -1,22 +1,78 @@
 package eg.edu.alexu.csd.datastructure.hangman.cs46;
-//hello 
 import java.util.Random;
 import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 
+/**
+ * @author wasfy
+ * this is test
+ *
+ */
 public class MyHangMan implements IHangman {
+
+    /**
+     * @author wasfy
+     * this is test
+     *
+     */
 	public String[] words = new String[100];
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	 int index;
+
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	 int count;
+
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	 int maxMistakes;
+
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	 String word;
+
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	 int countWords;
+
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	boolean createdWord = false;
 
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	public MyHangMan() {
 		super();
 	}
 
 	@Override
+
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	public void setDictionary(final String[] words) {
 		try {
 			countWords = words.length;
@@ -32,8 +88,7 @@ public class MyHangMan implements IHangman {
 			Random random = new Random();
 			index = random.nextInt(countWords);
 			return words[index];
-
-		}
+			}
 		// TODO Auto-generated method stub
 
 		catch (AssertionError | Exception e) {
@@ -78,7 +133,6 @@ public class MyHangMan implements IHangman {
 				return word;
 			}
 
-		
 		}
 
 	@Override
@@ -94,6 +148,11 @@ public class MyHangMan implements IHangman {
 		}
 	}
 
+	  /**
+	   * @author wasfy
+	   * this is test
+	   *
+	   */
 	public String changeCharInPosition(final int position, final char ch, final String str) {
 		char[] charArray = str.toCharArray();
 		charArray[position] = ch;

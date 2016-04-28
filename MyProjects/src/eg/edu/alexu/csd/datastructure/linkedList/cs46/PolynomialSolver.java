@@ -10,16 +10,82 @@ import eg.edu.alexu.csd.datastructure.linkedList.IPolynomialSolver;
 
 public class PolynomialSolver implements IPolynomialSolver {
 
+
+    /**
+     * @author wasfy
+     * this is test
+     *
+     */
     private OurSingleLinked Acoff = new OurSingleLinked();
+
+    /**
+     * @author wasfy
+     * this is test
+     *
+     */
     private OurSingleLinked Aexp = new OurSingleLinked();
+
+    /**
+     * @author wasfy
+     * this is test
+     *
+     */
     private OurSingleLinked Bcoff = new OurSingleLinked();
+
+    /**
+     * @author wasfy
+     * this is test
+     *
+     */
     private OurSingleLinked Bexp = new OurSingleLinked();
+
+    /**
+     * @author wasfy
+     * this is test
+     *
+     */
     private OurSingleLinked Ccoff = new OurSingleLinked();
+
+    /**
+     * @author wasfy
+     * this is test
+     *
+     */
     private OurSingleLinked Cexp = new OurSingleLinked();
+
+    /**
+     * @author wasfy
+     * this is test
+     *
+     */
     private OurSingleLinked Rcoff = new OurSingleLinked();
+
+    /**
+     * @author wasfy
+     * this is test
+     *
+     */
     private OurSingleLinked Rexp = new OurSingleLinked();
+
+    /**
+     * @author wasfy
+     * this is test
+     *
+     */
     private OurSingleLinked tmpexp = new OurSingleLinked();
+
+    /**
+     * @author wasfy
+     * this is test
+     *
+     */
     private OurSingleLinked tmpcoff = new OurSingleLinked();
+
+    /**
+     * @author wasfy
+     * this is test
+     *
+     */
     private boolean operation = false;
 
     @Override
@@ -313,7 +379,7 @@ public class PolynomialSolver implements IPolynomialSolver {
         // TODO Auto-generated method stub
         if (poly1 == poly2) {
             operation = true;
-            int[][] returnValue = new int[][]{{0,0}};
+            int[][] returnValue = new int[][]{{0, 0 } };
             if (poly1 == 'A' && !Aexp.isEmpty()) {
                 setPolynomial('R', returnValue);
                 operation = false;
@@ -458,25 +524,16 @@ public class PolynomialSolver implements IPolynomialSolver {
             }
         }
         if (result[0][0] == 0) {
-            return new int[][]{{0,0}};
+            return new int[][]{{0, 0}};
         }
         return result;
     }
 
+
     /**
-     * Returns an Image object that can then be painted on the screen. 
-     * The url argument must specify an absolute {@link URL}. The name
-     * argument is a specifier that is relative to the url argument. 
-     * <p>
-     * This method always returns immediately, whether or not the 
-     * image exists. When this applet attempts to draw the image on
-     * the screen, the data will be loaded. The graphics primitives 
-     * that draw the image will incrementally paint on the screen. 
+     * @author wasfy
+     * this is test
      *
-     * @param  url  an absolute URL giving the base location of the image
-     * @param  name the location of the image, relative to the url argument
-     * @return      the image at the specified URL
-     * @see         Image
      */
     private String printpoly(final int[][] poly) {
         // TODO Auto-generated method stub
@@ -511,20 +568,11 @@ public class PolynomialSolver implements IPolynomialSolver {
         return message;
     }
 
+
     /**
-     * Returns an Image object that can then be painted on the screen. 
-     * The url argument must specify an absolute {@link URL}. The name
-     * argument is a specifier that is relative to the url argument. 
-     * <p>
-     * This method always returns immediately, whether or not the 
-     * image exists. When this applet attempts to draw the image on
-     * the screen, the data will be loaded. The graphics primitives 
-     * that draw the image will incrementally paint on the screen. 
+     * @author wasfy
+     * this is test
      *
-     * @param  url  an absolute URL giving the base location of the image
-     * @param  name the location of the image, relative to the url argument
-     * @return      the image at the specified URL
-     * @see         Image
      */
     private int[][] multi(final int[][] poly1, final int[][] poly2) {
         // TODO Auto-generated method stub
@@ -544,7 +592,7 @@ public class PolynomialSolver implements IPolynomialSolver {
             }
         }
         if (j == 0) {
-            return new int[][]{{0 , 0}};
+            return new int[][]{{0, 0}};
         }
         int[][] result = new int[j][2];
         for (i = poly1[0][1]
@@ -557,21 +605,12 @@ public class PolynomialSolver implements IPolynomialSolver {
             }
         }
         return result;
-    } 
+ }
+
     /**
-     * Returns an Image object that can then be painted on the screen. 
-     * The url argument must specify an absolute {@link URL}. The name
-     * argument is a specifier that is relative to the url argument. 
-     * <p>
-     * This method always returns immediately, whether or not the 
-     * image exists. When this applet attempts to draw the image on
-     * the screen, the data will be loaded. The graphics primitives 
-     * that draw the image will incrementally paint on the screen. 
+     * @author wasfy
+     * this is test
      *
-     * @param  url  an absolute URL giving the base location of the image
-     * @param  name the location of the image, relative to the url argument
-     * @return      the image at the specified URL
-     * @see         Image
      */
     private int[][] toArray(final OurSingleLinked a, final OurSingleLinked b) {
         int[][] result = new int[a.size()][2];
@@ -581,20 +620,11 @@ public class PolynomialSolver implements IPolynomialSolver {
         }
         return result;
     }
+
     /**
-     * Returns an Image object that can then be painted on the screen. 
-     * The url argument must specify an absolute {@link URL}. The name
-     * argument is a specifier that is relative to the url argument. 
-     * <p>
-     * This method always returns immediately, whether or not the 
-     * image exists. When this applet attempts to draw the image on
-     * the screen, the data will be loaded. The graphics primitives 
-     * that draw the image will incrementally paint on the screen. 
+     * @author wasfy
+     * this is test
      *
-     * @param  url  an absolute URL giving the base location of the image
-     * @param  name the location of the image, relative to the url argument
-     * @return      the image at the specified URL
-     * @see         Image
      */
     public boolean isValid(final char poly) {
         if (poly == 'A') {
