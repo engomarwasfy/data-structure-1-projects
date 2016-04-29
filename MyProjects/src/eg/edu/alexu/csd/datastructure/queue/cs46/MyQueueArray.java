@@ -4,7 +4,7 @@ import eg.edu.alexu.csd.datastructure.queue.IQueue;
 
 public class MyQueueArray implements IQueue {
  
-    int n;
+    int n=1000;
     int f;
     int r;
     int count;
