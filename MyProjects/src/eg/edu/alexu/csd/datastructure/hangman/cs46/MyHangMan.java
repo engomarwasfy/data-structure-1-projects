@@ -71,7 +71,7 @@ public class MyHangMan implements IHangman {
 	  /**
 	   * @author wasfy
 	   * this is test
-	   *
+	   *@param words test
 	   */
 	public void setDictionary(final String[] words) {
 		try {
@@ -135,6 +135,11 @@ public class MyHangMan implements IHangman {
 
 		}
 
+	/**
+     * @author wasfy
+     * this is test
+     * @param max test
+     */
 	@Override
 	public void setMaxWrongGuesses(final Integer max) {
 		// TODO Auto-generated method stub
@@ -151,7 +156,10 @@ public class MyHangMan implements IHangman {
 	  /**
 	   * @author wasfy
 	   * this is test
-	   *
+	   * @param position test
+	   * @param ch test
+	   *@param str test
+	   *@return test
 	   */
 	public String changeCharInPosition(final int position, final char ch, final String str) {
 		char[] charArray = str.toCharArray();

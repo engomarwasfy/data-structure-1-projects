@@ -33,9 +33,9 @@ public nodeD next;
 	  /**
 	   * @author wasfy
 	   * this is test
-	   *
+	   *@param value test
 	   */
-	public nodeD(final Object value) {
+	 nodeD(final Object value) {
 		this.value = value;
 		next = null;
 		pre = null;
@@ -85,7 +85,8 @@ public class OurDoubleLinkedList implements ILinkedList {
 	  /**
 	   * @author wasfy
 	   * this is test
-	   *
+	   *@param index test
+	   *@param element test
 	   */
 	public void add(final int index, final Object element) {
 		if (index > size || element == null || index < 0) {
@@ -115,7 +116,7 @@ public class OurDoubleLinkedList implements ILinkedList {
 	  /**
 	   * @author wasfy
 	   * this is test
-	   *
+	   *@param element test
 	   */
 	public void add(final Object element) {
 		if (element != null) {
@@ -138,7 +139,8 @@ public class OurDoubleLinkedList implements ILinkedList {
 	  /**
 	   * @author wasfy
 	   * this is test
-	   *
+	   *@param index test
+	   *@return test
 	   */
 
 	public Object get(final int index) {
@@ -156,7 +158,8 @@ public class OurDoubleLinkedList implements ILinkedList {
 	  /**
 	   * @author wasfy
 	   * this is test
-	   *
+	   *@param index test
+	   *@param element test
 	   */
 
 	public void set(final int index, final Object element) {
@@ -184,7 +187,7 @@ public class OurDoubleLinkedList implements ILinkedList {
 	  /**
 	   * @author wasfy
 	   * this is test
-	   *
+	   *@return test
 	   */
 	public boolean isEmpty() {
 		return Head == null || size == 0;
@@ -221,7 +224,7 @@ public class OurDoubleLinkedList implements ILinkedList {
 	  /**
 	   * @author wasfy
 	   * this is test
-	   *
+	   *@return test
 	   */
 	public int size() {
 		return size;
@@ -254,7 +257,8 @@ public class OurDoubleLinkedList implements ILinkedList {
 	  /**
 	   * @author wasfy
 	   * this is test
-	   *
+	   *@param o test
+	   *@return test
 	   */
 	public boolean contains(final Object o) {
 		// TODO Auto-generated method stub

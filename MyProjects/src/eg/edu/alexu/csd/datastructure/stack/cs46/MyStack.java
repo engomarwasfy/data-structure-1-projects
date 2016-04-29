@@ -1,6 +1,4 @@
 package eg.edu.alexu.csd.datastructure.stack.cs46;
-
-import eg.edu.alexu.csd.datastructure.linkedList.cs46.OurDoubleLinkedList;
 import eg.edu.alexu.csd.datastructure.linkedList.cs46.OurSingleLinked;
 import eg.edu.alexu.csd.datastructure.stack.IStack;
 /**
@@ -8,8 +6,11 @@ import eg.edu.alexu.csd.datastructure.stack.IStack;
  * this is the stack implementation using linked list
  *
  */
-public class MyStack implements IStack { 
-
+public class MyStack implements IStack {
+    /**
+     * @author wasfy
+     * this is app of  project
+     */
 OurSingleLinked helplinked = new OurSingleLinked();
     @Override
     public void add(final int index, final Object element) {

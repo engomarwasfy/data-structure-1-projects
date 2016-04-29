@@ -138,8 +138,8 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
     /**
      * @author wasfy
      * this is app of  project
-     * @param x
-     * @ return boolean
+     * @param x test
+     * @return expression
      */
 
     public boolean isOperand(final char x) {
@@ -172,7 +172,8 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
     /**
      * @author wasfy
      * this is app of  project
-     * @param x
+     * @param x test
+     * @return expression
      */
     int GetOperatorval(final char x) {
         int weight = 0;
@@ -197,7 +198,9 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
     /**
      * @author wasfy
      * this is app of  project
-     *
+     * @param x test
+     * @param y test
+     * @return expression
      */
 
     boolean HasHigherPrec(final char x, final char y) {
@@ -206,7 +209,10 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
     /**
      * @author wasfy
      * this is app of  project
-     *
+     * @param op1 test
+     * @param op2 test
+     * @param ex test
+     * @return expression
      */
 
     float get(final float op1, final float op2, final char ex) {

@@ -24,12 +24,12 @@ class node {
 	   */
 	public node next;
 
-	  /**
-	   * @author wasfy
-	   * this is test
-	   *
-	   */
-	public node(final Object value) {
+	/**
+     * @author wasfy
+     * this is test
+     * @param value test
+     */
+	 node(final Object value) {
 		this.value = value;
 		next = null;
 	}
@@ -75,11 +75,12 @@ public class OurSingleLinked implements ILinkedList {
 		cur = Head;
 	}
 
-	  /**
-	   * @author wasfy
-	   * this is test
-	   *
-	   */
+	/**
+     * @author wasfy
+     * this is test
+     * @param index test
+     * @param element test
+     */
 	public void add(final int index, final Object element) {
 		if (index > size || element == null || index < 0) {
             throw new RuntimeException("Check your inputs");
@@ -102,11 +103,11 @@ public class OurSingleLinked implements ILinkedList {
 		size++;
 	}
 
-	  /**
-	   * @author wasfy
-	   * this is test
-	   *
-	   */
+	/**
+     * @author wasfy
+     * this is test
+     * @param element test
+     */
 	public void add(final Object element) {
 		if (element != null) {
 			node newElement = new node(element);
@@ -124,11 +125,12 @@ public class OurSingleLinked implements ILinkedList {
 		}
 	}
 
-	  /**
-	   * @author wasfy
-	   * this is test
-	   *
-	   */
+	/**
+     * @author wasfy
+     * this is test
+     * @param index test
+     * @return Object
+     */
 	public Object get(final int index) {
 		//throw new RuntimeException(String.valueOf(index));
 		if (index >= size || index < 0) {
@@ -141,11 +143,12 @@ public class OurSingleLinked implements ILinkedList {
 		return cur.value;
 	}
 
-	  /**
-	   * @author wasfy
-	   * this is test
-	   *
-	   */
+	/**
+     * @author wasfy
+     * this is test
+     * @param index test
+     * @param element test
+     */
 	public void set(final int index, final Object element) {
 		// TODO Auto-generated method stub
 		cur = Head;
@@ -169,17 +172,17 @@ public class OurSingleLinked implements ILinkedList {
 	  /**
 	   * @author wasfy
 	   * this is test
-	   *
+	   *@return test
 	   */
 	public boolean isEmpty() {
-		return Head == null ;
+		return Head == null;
 	}
 
-	  /**
-	   * @author wasfy
-	   * this is test
-	   *
-	   */
+	/**
+     * @author wasfy
+     * this is test
+     * @param index test
+     */
 	public void remove(final int index) {
 		// TODO Auto-generated method stub
 		if (index >= size || index < 0) {
@@ -207,11 +210,13 @@ public class OurSingleLinked implements ILinkedList {
 
 	}
 
-	  /**
-	   * @author wasfy
-	   * this is test
-	   *
-	   */
+	/**
+     * @author wasfy
+     * this is test
+     * @param fromIndex test
+     * @param toIndex test
+     * @return Object
+     */
 	public ILinkedList sublist(final int fromIndex, final int toIndex) {
 		// TODO Auto-generated method stub
 		if (fromIndex >= size || toIndex >= size || fromIndex < 0 || toIndex < 0) {
@@ -232,7 +237,8 @@ public class OurSingleLinked implements ILinkedList {
 	  /**
 	   * @author wasfy
 	   * this is test
-	   *
+	   *@param o test
+	   *@return test
 	   */
 	public boolean contains(final Object o) {
 		// TODO Auto-generated method stub

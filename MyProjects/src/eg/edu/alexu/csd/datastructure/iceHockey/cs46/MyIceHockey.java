@@ -100,7 +100,10 @@ public class MyIceHockey implements IPlayersFinder {
 	  /**
 	   * @author wasfy
 	   * this is test
-	   *
+	   *@param photo test
+	   *@param team test
+	   *@param threshold test
+	   *@return test
 	   */
 	public Point[] findPlayers(final String[] photo, final int team, final int threshold) {
 		// TODO Auto-generated method stub
@@ -192,7 +195,8 @@ public class MyIceHockey implements IPlayersFinder {
 	  /**
 	   * @author wasfy
 	   * this is test
-	   *
+	   *@param row test
+	   *@param col test
 	   */
 	public void findNext(final int row, final int col) {
 		try {
@@ -222,7 +226,7 @@ public class MyIceHockey implements IPlayersFinder {
 	  /**
 	   * @author wasfy
 	   * this is test
-	   *
+	   *@param arr test
 	   */
 
 	public void sort(final Point[] arr) {

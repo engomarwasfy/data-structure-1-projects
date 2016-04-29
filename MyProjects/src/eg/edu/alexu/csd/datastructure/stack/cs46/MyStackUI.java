@@ -13,7 +13,7 @@ public class MyStackUI {
     /**
      * @author wasfy
      * this is the stack UI
-     *@param args
+     *@param args test
      */
     public static void main(final String[] args) {
         // TODO Auto-generated method stub
@@ -65,7 +65,7 @@ public class MyStackUI {
             help.add(index, ob);
             break;
                 default :
-                    System.out.println("wrong choosen please enter again ");
+                    System.out.println("wrong choosen please enter again");
             }
             }
         }

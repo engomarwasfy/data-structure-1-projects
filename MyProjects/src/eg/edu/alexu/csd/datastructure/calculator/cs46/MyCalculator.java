@@ -14,13 +14,19 @@ public class MyCalculator implements ICalculator {
     /**
      * @author wasfy
      * this is test
-     *
+     *@param x test
+     *@param y test
      */
 	public int add(final int x, final int y) {
 		// TODO Auto-generated method stub
 		return x + y;
 	}
-
+    /**
+     * @author wasfy
+     * this is test
+     * @param x test
+     * @return y test
+     */
 	@Override
 	public float divide(final int x, final int y) {
 		// TODO Auto-generated method stub
