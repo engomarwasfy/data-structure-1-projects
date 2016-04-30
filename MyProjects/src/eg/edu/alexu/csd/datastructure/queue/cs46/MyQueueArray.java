@@ -14,7 +14,7 @@ public class MyQueueArray implements IQueue ,IArrayBased{
     
     
     public MyQueueArray(int n) {
-        this.n = n;
+        this.n = 999999999;
         f=0;
         r=0;
         Array = new Object[n];
