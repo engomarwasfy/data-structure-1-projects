@@ -5,16 +5,15 @@ import eg.edu.alexu.csd.datastructure.queue.IQueue;
 
 public class MyQueueArray implements IQueue ,IArrayBased{
  
-    int n = 999999999;
+   private int n = 999999999;
     
-    int f;
-    int r;
-    int count;
-    Object[] Array ;
-    
+   private int f;
+    private int r;
+    private Object[] Array ;
     
     
-    public MyQueueArray(int n) {
+    
+    public MyQueueArray(int x) {
         this.n = 999999999;
         f=0;
         r=0;
