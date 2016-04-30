@@ -13,7 +13,7 @@ public class MyQueueArray implements IQueue ,IArrayBased{
     
     
     
-    public MyQueueArray(int x) {
+    public MyQueueArray(int n) {
         this.n = 999999999;
         f=0;
         r=0;
