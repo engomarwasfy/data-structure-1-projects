@@ -5,7 +5,7 @@ import eg.edu.alexu.csd.datastructure.queue.IQueue;
 
 public class MyQueueArray implements IQueue ,IArrayBased{
  
-    int n ;
+    int n = 999999999;
     
     int f;
     int r;
@@ -15,21 +15,17 @@ public class MyQueueArray implements IQueue ,IArrayBased{
     
     
     public MyQueueArray(int n) {
-        this.n =n;
+        this.n = 999999999;
         f=0;
         r=0;
-        if(n>1){
-        Array = new Object[this.n+999999];}
-        else{
-            throw new RuntimeException("check your inputs");
-        }
+        Array = new Object[n];
     }
-//    public MyQueueArray() {
-//        this.n = 999999999;
-//        f=0;
-//        r=0;
-//        Array = new Object[this.n];
-//    }
+    public MyQueueArray() {
+        this.n = 999999999;
+        f=0;
+        r=0;
+        Array = new Object[n];
+    }
 
     @Override
     public void enqueue(Object item) {
@@ -66,4 +62,7 @@ public class MyQueueArray implements IQueue ,IArrayBased{
         // TODO Auto-generated method stub
         return (n - f + r) % n;
     }
+
+    
+    
 }
