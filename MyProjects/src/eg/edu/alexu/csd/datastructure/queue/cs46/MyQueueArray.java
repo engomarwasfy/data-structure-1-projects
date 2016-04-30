@@ -17,7 +17,6 @@ public class MyQueueArray implements IQueue ,IArrayBased{
         this.n = 999999999;
         f=0;
         r=0;
-        Array = new Object[n];
         throw new RuntimeException(""+n);
         
     }
