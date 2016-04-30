@@ -17,7 +17,7 @@ public class MyQueueArray implements IQueue ,IArrayBased{
     public MyQueueArray(int n) {
         f=0;
         r=0;
-        if(n>0){
+        if(n>1){
         Array = new Object[n];}
         else{
             throw new RuntimeException("check your inputs");
