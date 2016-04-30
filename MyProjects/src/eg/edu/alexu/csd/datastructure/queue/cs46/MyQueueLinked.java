@@ -13,7 +13,7 @@ public class MyQueueLinked implements IQueue ,ILinkedBased {
     @Override
     public void enqueue(Object item) {
         // TODO Auto-generated method stub
-        help.add(item);
+        help.add1(item);
     }
 
     @Override
