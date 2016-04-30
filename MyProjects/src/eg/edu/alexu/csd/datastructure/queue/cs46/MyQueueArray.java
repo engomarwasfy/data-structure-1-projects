@@ -1,8 +1,9 @@
 package eg.edu.alexu.csd.datastructure.queue.cs46;
 
+import eg.edu.alexu.csd.datastructure.queue.IArrayBased;
 import eg.edu.alexu.csd.datastructure.queue.IQueue;
 
-public class MyQueueArray implements IQueue {
+public class MyQueueArray implements IQueue ,IArrayBased{
  
     int n;
     int f;

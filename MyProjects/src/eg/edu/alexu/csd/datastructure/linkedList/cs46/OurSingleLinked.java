@@ -57,6 +57,7 @@ public class OurSingleLinked implements ILinkedList {
 	   *
 	   */
 	private node Head;
+	private node tail;
 
 	  /**
 	   * @author wasfy
@@ -73,6 +74,7 @@ public class OurSingleLinked implements ILinkedList {
 	public OurSingleLinked() {
 		Head = null;
 		cur = Head;
+		tail = Head ;
 	}
 
 	/**
@@ -251,4 +253,62 @@ public class OurSingleLinked implements ILinkedList {
 		}
 		return false;
 	}
+	
+	
+	
+	   
+	    public void add1(final Object element) {
+	        if (element != null) {
+	            node newElement = new node(element);
+	            if (Head == null) {
+	                Head = newElement;
+	                tail = newElement;
+	                tail.next =null;
+	            } else {
+	                tail.next  = newElement;
+	                newElement.next = null;
+	               tail = newElement;
+	            }
+	            size++;
+	        }
+	    }
+
+	    /**
+	     * @author wasfy
+	     * this is test
+	     * @param index test
+	     * @return Object
+	     */
+	    public Object get1() {
+	        //throw new RuntimeException(String.valueOf(index));
+	        if(Head==null){
+	            throw new RuntimeException("Check your inputs");
+	        }
+	       return Head.value;
+	    }
+
+	    /**
+	     * @author wasfy
+	     * this is test
+	     * @param index test
+	     */
+	    public void remove1() {
+	        // TODO Auto-generated method stub
+	        if (size==0) {
+	            throw new RuntimeException("Check your inputs");
+	        }
+	        else if (size == 1){
+	            Head = null;
+	            tail = Head;
+	        }
+	           else{
+	                Head =Head.next;
+	                // tail will remain unchanged
+	            }
+	        
+	        size--;
+
+	    }
 }
+
+	   
