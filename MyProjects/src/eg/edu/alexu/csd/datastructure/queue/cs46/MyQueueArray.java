@@ -15,10 +15,11 @@ public class MyQueueArray implements IQueue ,IArrayBased{
     
     
     public MyQueueArray(int n) {
+        this.n =n;
         f=0;
         r=0;
         if(n>1){
-        Array = new Object[n];}
+        Array = new Object[this.n];}
         else{
             throw new RuntimeException("check your inputs");
         }
