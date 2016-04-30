@@ -15,17 +15,20 @@ public class MyQueueArray implements IQueue ,IArrayBased{
     
     
     public MyQueueArray(int n) {
-        this.n = 999999999;
         f=0;
         r=0;
-        Array = new Object[this.n];
+        if(n>0){
+        Array = new Object[n];}
+        else{
+            throw new RuntimeException("check your inputs");
+        }
     }
-    public MyQueueArray() {
-        this.n = 999999999;
-        f=0;
-        r=0;
-        Array = new Object[this.n];
-    }
+//    public MyQueueArray() {
+//        this.n = 999999999;
+//        f=0;
+//        r=0;
+//        Array = new Object[this.n];
+//    }
 
     @Override
     public void enqueue(Object item) {
