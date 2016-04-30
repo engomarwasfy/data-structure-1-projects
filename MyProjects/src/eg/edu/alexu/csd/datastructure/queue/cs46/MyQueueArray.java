@@ -10,15 +10,21 @@ public class MyQueueArray implements IQueue ,IArrayBased{
     int f;
     int r;
     int count;
-    Object[] Array = new Object[n];
+    Object[] Array ;
     
     
     
     public MyQueueArray(int n) {
-       
+        this.n = 999999999;
+        f=0;
+        r=0;
+        Array = new Object[n];
     }
     public MyQueueArray() {
-        
+        this.n = 999999999;
+        f=0;
+        r=0;
+        Array = new Object[n];
     }
 
     @Override
