@@ -20,7 +20,7 @@ public class MyQueueArray implements IQueue ,IArrayBased{
         Array = new Object[n];
     }
     public MyQueueArray() {
-        this.n = 2000;
+        this.n = 999999999;
         f=0;
         r=0;
         Array = new Object[n];
