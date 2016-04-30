@@ -19,7 +19,7 @@ public class MyQueueArray implements IQueue ,IArrayBased{
         f=0;
         r=0;
         if(n>1){
-        Array = new Object[this.n+1];}
+        Array = new Object[this.n+999999];}
         else{
             throw new RuntimeException("check your inputs");
         }
