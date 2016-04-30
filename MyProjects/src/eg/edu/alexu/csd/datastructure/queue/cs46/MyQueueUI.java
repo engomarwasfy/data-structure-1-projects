@@ -13,8 +13,8 @@ public class MyQueueUI {
         Object ob;
         Object dequeued;
         boolean check;
-       // MyQueueLinked help = new MyQueueLinked();
-        MyQueueArray help = new MyQueueArray(3);
+        MyQueueLinked help = new MyQueueLinked();
+       // MyQueueArray help = new MyQueueArray(3);
         Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.println("please choose an operation");
