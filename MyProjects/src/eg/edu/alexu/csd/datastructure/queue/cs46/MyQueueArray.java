@@ -1,7 +1,5 @@
 package eg.edu.alexu.csd.datastructure.queue.cs46;
 
-import javax.management.RuntimeErrorException;
-
 import eg.edu.alexu.csd.datastructure.queue.IArrayBased;
 import eg.edu.alexu.csd.datastructure.queue.IQueue;
 
@@ -13,18 +11,20 @@ public class MyQueueArray implements IQueue ,IArrayBased{
     int r;
     int count;
     Object[] Array ;
+    
+    
+    
     public MyQueueArray(int n) {
         this.n = 999999999;
         f=0;
         r=0;
-        throw new RuntimeException(""+n);
-        
+        Array = new Object[this.n];
     }
     public MyQueueArray() {
         this.n = 999999999;
         f=0;
         r=0;
-        Array = new Object[n];
+        Array = new Object[this.n];
     }
 
     @Override
