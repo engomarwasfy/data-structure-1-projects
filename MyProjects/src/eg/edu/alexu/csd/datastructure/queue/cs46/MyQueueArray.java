@@ -14,13 +14,13 @@ public class MyQueueArray implements IQueue ,IArrayBased{
     
     
     public MyQueueArray(int n) {
-        this.n = 999999999;
+        this.n = Integer.MAX_VALUE;
         f=0;
         r=0;
         Array = new Object[n];
     }
     public MyQueueArray() {
-        this.n = 999999999;
+        this.n = Integer.MAX_VALUE;
         f=0;
         r=0;
         Array = new Object[n];
