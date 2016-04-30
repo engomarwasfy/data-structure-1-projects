@@ -293,14 +293,10 @@ public class OurSingleLinked implements ILinkedList {
 	     */
 	    public void remove1() {
 	        // TODO Auto-generated method stub
-	        if (size == 1){
-	            Head = null;
-	            tail = Head;
-	        }
-	           else{
+	   
+	           
 	                Head =Head.next;
 	                // tail will remain unchanged
-	            }
 	        
 	        size--;
 
