@@ -6,10 +6,10 @@ import eg.edu.alexu.csd.datastructure.linkedList.cs46.OurSingleLinkedList;
 import eg.edu.alexu.csd.datastructure.queue.ILinkedBased;
 import eg.edu.alexu.csd.datastructure.queue.IQueue;
 
-public class MyQueueLinked implements IQueue ,ILinkedBased {
+public class MyQueueLinked implements IQueue, ILinkedBased {
 
     OurSingleLinked help = new OurSingleLinked();
-    
+
     @Override
     public void enqueue(Object item) {
         // TODO Auto-generated method stub
@@ -19,8 +19,8 @@ public class MyQueueLinked implements IQueue ,ILinkedBased {
     @Override
     public Object dequeue() {
         // TODO Auto-generated method stub
-        Object e ;
-        e= help.get1();
+        Object e;
+        e = help.get1();
         help.remove1();
         return e;
     }

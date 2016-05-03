@@ -7,83 +7,70 @@ import eg.edu.alexu.csd.datastructure.linkedList.IPolynomialSolver;
  *
  */
 
-
 public class PolynomialSolver implements IPolynomialSolver {
 
-
     /**
-     * @author wasfy
-     * this is test
+     * @author wasfy this is test
      *
      */
     private OurSingleLinked Acoff = new OurSingleLinked();
 
     /**
-     * @author wasfy
-     * this is test
+     * @author wasfy this is test
      *
      */
     private OurSingleLinked Aexp = new OurSingleLinked();
 
     /**
-     * @author wasfy
-     * this is test
+     * @author wasfy this is test
      *
      */
     private OurSingleLinked Bcoff = new OurSingleLinked();
 
     /**
-     * @author wasfy
-     * this is test
+     * @author wasfy this is test
      *
      */
     private OurSingleLinked Bexp = new OurSingleLinked();
 
     /**
-     * @author wasfy
-     * this is test
+     * @author wasfy this is test
      *
      */
     private OurSingleLinked Ccoff = new OurSingleLinked();
 
     /**
-     * @author wasfy
-     * this is test
+     * @author wasfy this is test
      *
      */
     private OurSingleLinked Cexp = new OurSingleLinked();
 
     /**
-     * @author wasfy
-     * this is test
+     * @author wasfy this is test
      *
      */
     private OurSingleLinked Rcoff = new OurSingleLinked();
 
     /**
-     * @author wasfy
-     * this is test
+     * @author wasfy this is test
      *
      */
     private OurSingleLinked Rexp = new OurSingleLinked();
 
     /**
-     * @author wasfy
-     * this is test
+     * @author wasfy this is test
      *
      */
     private OurSingleLinked tmpexp = new OurSingleLinked();
 
     /**
-     * @author wasfy
-     * this is test
+     * @author wasfy this is test
      *
      */
     private OurSingleLinked tmpcoff = new OurSingleLinked();
 
     /**
-     * @author wasfy
-     * this is test
+     * @author wasfy this is test
      *
      */
     private boolean operation = false;
@@ -379,7 +366,7 @@ public class PolynomialSolver implements IPolynomialSolver {
         // TODO Auto-generated method stub
         if (poly1 == poly2) {
             operation = true;
-            int[][] returnValue = new int[][]{{0, 0 } };
+            int[][] returnValue = new int[][] { { 0, 0 } };
             if (poly1 == 'A' && !Aexp.isEmpty()) {
                 setPolynomial('R', returnValue);
                 operation = false;
@@ -476,6 +463,7 @@ public class PolynomialSolver implements IPolynomialSolver {
         }
         return null;
     }
+
     /**
      * @author wasfy good
      *
@@ -524,15 +512,13 @@ public class PolynomialSolver implements IPolynomialSolver {
             }
         }
         if (result[0][0] == 0) {
-            return new int[][]{{0, 0}};
+            return new int[][] { { 0, 0 } };
         }
         return result;
     }
 
-
     /**
-     * @author wasfy
-     * this is test
+     * @author wasfy this is test
      *
      */
     private String printpoly(final int[][] poly) {
@@ -568,10 +554,8 @@ public class PolynomialSolver implements IPolynomialSolver {
         return message;
     }
 
-
     /**
-     * @author wasfy
-     * this is test
+     * @author wasfy this is test
      *
      */
     private int[][] multi(final int[][] poly1, final int[][] poly2) {
@@ -592,7 +576,7 @@ public class PolynomialSolver implements IPolynomialSolver {
             }
         }
         if (j == 0) {
-            return new int[][]{{0, 0}};
+            return new int[][] { { 0, 0 } };
         }
         int[][] result = new int[j][2];
         for (i = poly1[0][1]
@@ -605,11 +589,10 @@ public class PolynomialSolver implements IPolynomialSolver {
             }
         }
         return result;
- }
+    }
 
     /**
-     * @author wasfy
-     * this is test
+     * @author wasfy this is test
      *
      */
     private int[][] toArray(final OurSingleLinked a, final OurSingleLinked b) {
@@ -622,8 +605,7 @@ public class PolynomialSolver implements IPolynomialSolver {
     }
 
     /**
-     * @author wasfy
-     * this is test
+     * @author wasfy this is test
      *
      */
     public boolean isValid(final char poly) {

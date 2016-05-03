@@ -6,8 +6,7 @@ import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
 
 //with check style
 /**
- * @author wasfy
- * this is app of stack project
+ * @author wasfy this is app of stack project
  *
  */
 public class MyExpressionEvaluator implements IExpressionEvaluator {
@@ -80,7 +79,8 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
             for (int i = 0; i < answer.length(); i++) {
                 if (isOperand(answer.charAt(i))) {
                     check.append('3');
- // replace with character 3 to test with evaluate or any number
+                    // replace with character 3 to test with evaluate or any
+                    // number
                 } else {
                     check.append(answer.charAt(i));
                 }
@@ -106,7 +106,8 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
                 if (ch == ' ') {
                     continue;
                 }
-                if (isOperand(ch) && isOperand(expression.charAt(i + 1)) && (i + 1) < expression.length()) {
+                if (isOperand(ch) && isOperand(expression.charAt(i + 1))
+                        && (i + 1) < expression.length()) {
                     ch2 = expression.charAt(i + 1);
                     String s = new StringBuilder().append(ch).append(ch2)
                             .toString();
@@ -135,10 +136,11 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
         }
         return 0;
     }
+
     /**
-     * @author wasfy
-     * this is app of  project
-     * @param x test
+     * @author wasfy this is app of project
+     * @param x
+     *            test
      * @return expression
      */
 
@@ -154,9 +156,9 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
         }
         return false;
     }
+
     /**
-     * @author wasfy
-     * this is app of  project
+     * @author wasfy this is app of project
      *
      */
 
@@ -170,9 +172,9 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
     }
 
     /**
-     * @author wasfy
-     * this is app of  project
-     * @param x test
+     * @author wasfy this is app of project
+     * @param x
+     *            test
      * @return expression
      */
     int GetOperatorval(final char x) {
@@ -195,23 +197,28 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
         }
         return weight;
     }
+
     /**
-     * @author wasfy
-     * this is app of  project
-     * @param x test
-     * @param y test
+     * @author wasfy this is app of project
+     * @param x
+     *            test
+     * @param y
+     *            test
      * @return expression
      */
 
     boolean HasHigherPrec(final char x, final char y) {
         return GetOperatorval(x) >= GetOperatorval(y);
     }
+
     /**
-     * @author wasfy
-     * this is app of  project
-     * @param op1 test
-     * @param op2 test
-     * @param ex test
+     * @author wasfy this is app of project
+     * @param op1
+     *            test
+     * @param op2
+     *            test
+     * @param ex
+     *            test
      * @return expression
      */
 

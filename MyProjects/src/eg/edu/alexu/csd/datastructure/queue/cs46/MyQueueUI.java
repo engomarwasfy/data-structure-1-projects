@@ -14,7 +14,7 @@ public class MyQueueUI {
         Object dequeued;
         boolean check;
         MyQueueLinked help = new MyQueueLinked();
-       // MyQueueArray help = new MyQueueArray(3);
+        // MyQueueArray help = new MyQueueArray(3);
         Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.println("please choose an operation");
@@ -24,32 +24,31 @@ public class MyQueueUI {
             System.out.println("4: Check if empty");
             choose = sc.nextInt();
             switch (choose) {
-            case 1: System.out.println("please enter a value");
-           ob = sc.next();
-          help.enqueue(ob);
-          break;
+            case 1:
+                System.out.println("please enter a value");
+                ob = sc.next();
+                help.enqueue(ob);
+                break;
             case 2:
-               dequeued = help.dequeue();
-               System.out.println("the dequed value is " + dequeued);
-               break;
-            case 3 :
+                dequeued = help.dequeue();
+                System.out.println("the dequed value is " + dequeued);
+                break;
+            case 3:
                 System.out.println("the size is " + help.size());
                 break;
             case 4:
                 check = help.isEmpty();
                 if (check) {
                     System.out.println("Queue is empty");
-                }
-                else {
+                } else {
                     System.out.println("Queue is not empty");
                 }
                 break;
-            
-                default :
-                    System.out.println("wrong choosen please enter again");
-            }
+
+            default:
+                System.out.println("wrong choosen please enter again");
             }
         }
-
     }
 
+}
