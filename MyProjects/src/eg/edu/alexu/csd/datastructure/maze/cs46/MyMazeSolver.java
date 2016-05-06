@@ -15,8 +15,8 @@ public class MyMazeSolver implements IMazeSolver {
     @Override
     public int[][] solveBFS(File maze) {
         // TODO Auto-generated method stub
-        array = reader.ReadFile(maze);
         try {
+            array = reader.ReadFile(maze);
             answer= bf.solve(array);
             if (answer == null){
                 return null;
@@ -32,8 +32,8 @@ public class MyMazeSolver implements IMazeSolver {
     public int[][] solveDFS(File maze) {
         // TODO Auto-generated method stub
         // String x = =maze;
-        array = reader.ReadFile(maze);
         try {
+            array = reader.ReadFile(maze);
             answer= df.solve(array);
             if (answer == null){
                 return null;
