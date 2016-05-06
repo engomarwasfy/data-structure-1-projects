@@ -14,9 +14,6 @@ public class ReadFileMaze {
         String[] strArray;
         int noRows;
         int noCol;
-        if (maze == null){
-            throw new RuntimeException("empty file");
-        }
         try (Scanner scanner = new Scanner(maze)) {
 
             while (scanner.hasNext()) {
