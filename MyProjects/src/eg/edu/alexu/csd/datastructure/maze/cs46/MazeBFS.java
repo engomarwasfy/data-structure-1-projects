@@ -33,7 +33,7 @@ public class MazeBFS {
 
         }
         if (!(Start && End)) {
-            return null;
+            throw new RuntimeException("wrong maze");
 
         }
 

@@ -32,15 +32,15 @@ public class MyMazeSolver implements IMazeSolver {
     public int[][] solveDFS(File maze) {
         // TODO Auto-generated method stub
         // String x = =maze;
+        array = reader.ReadFile(maze);
         try {
-            array = reader.ReadFile(maze);
             answer= df.solve(array);
             if (answer == null){
                 return null;
             }       
         } catch (Exception e) {
             // TODO: handle exception
-            return null;
+            throw new RuntimeException("wrong maze");
         }
         return answer;
     }

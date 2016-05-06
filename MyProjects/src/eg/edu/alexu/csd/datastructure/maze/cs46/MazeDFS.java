@@ -30,7 +30,7 @@ public class MazeDFS {
 
         }
         if (!(Start && End)) {
-            return null;
+            throw new RuntimeException("wrong maze");
         }
         s.push(new Node(current.x, current.y, null));
 
