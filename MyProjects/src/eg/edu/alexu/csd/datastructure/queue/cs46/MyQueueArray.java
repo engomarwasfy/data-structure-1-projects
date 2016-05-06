@@ -2,6 +2,7 @@ package eg.edu.alexu.csd.datastructure.queue.cs46;
 
 import eg.edu.alexu.csd.datastructure.queue.IArrayBased;
 import eg.edu.alexu.csd.datastructure.queue.IQueue;
+
 /**
  * @author wasfy
  *
@@ -11,7 +12,7 @@ public class MyQueueArray implements IQueue, IArrayBased {
      * @author wasfy
      *
      */
-    int n;
+    int n = 99999999;
     /**
      * @author wasfy
      *
@@ -34,14 +35,25 @@ public class MyQueueArray implements IQueue, IArrayBased {
     Object[] Array;
     /**
      * @author wasfy
-     * @param n test
+     *@param n test
      */
     public MyQueueArray(final int n) {
-        this.n = n;
+        this.n = n + 1;
         f = 0;
         r = 0;
-        Array = new Object[n + 51];
+        Array = new Object[n + 50];
     }
+    /**
+     * @author wasfy
+     *
+     */
+    public MyQueueArray() {
+        this.n = 99999999 + 1;
+        f = 0;
+        r = 0;
+        Array = new Object[this.n];
+    }
+
     @Override
     public void enqueue(final Object item) {
         // TODO Auto-generated method stub
