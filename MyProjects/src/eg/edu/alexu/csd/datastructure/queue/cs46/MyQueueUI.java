@@ -3,13 +3,18 @@ package eg.edu.alexu.csd.datastructure.queue.cs46;
 import java.util.Scanner;
 
 import eg.edu.alexu.csd.datastructure.stack.cs46.MyStack;
-
+/**
+ * @author wasfy
+ *
+ */
 public class MyQueueUI {
-
+    /**
+     * @author wasfy
+     *@param args test
+     */
     public static void main(final String[] args) {
         // TODO Auto-generated method stub
         int choose = 1;
-        int index;
         Object ob;
         Object dequeued;
         boolean check;

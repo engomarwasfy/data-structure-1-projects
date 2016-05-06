@@ -1,21 +1,34 @@
 package eg.edu.alexu.csd.datastructure.queue.cs46;
 
-import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 import eg.edu.alexu.csd.datastructure.linkedList.cs46.OurSingleLinked;
-import eg.edu.alexu.csd.datastructure.linkedList.cs46.OurSingleLinkedList;
 import eg.edu.alexu.csd.datastructure.queue.ILinkedBased;
 import eg.edu.alexu.csd.datastructure.queue.IQueue;
 
-public class MyQueueLinked implements IQueue, ILinkedBased {
+/**
+ * @author wasfy
+ *
+ */
 
+public class MyQueueLinked implements IQueue, ILinkedBased {
+    /**
+     * @author wasfy
+     *
+     */
     OurSingleLinked help = new OurSingleLinked();
 
     @Override
-    public void enqueue(Object item) {
+    /**
+     * @author wasfy
+     *
+     */
+    public void enqueue(final Object item) {
         // TODO Auto-generated method stub
         help.add1(item);
     }
-
+    /**
+     * @author wasfy
+     *
+     */
     @Override
     public Object dequeue() {
         // TODO Auto-generated method stub

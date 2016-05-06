@@ -2,32 +2,48 @@ package eg.edu.alexu.csd.datastructure.queue.cs46;
 
 import eg.edu.alexu.csd.datastructure.queue.IArrayBased;
 import eg.edu.alexu.csd.datastructure.queue.IQueue;
-
+/**
+ * @author wasfy
+ *
+ */
 public class MyQueueArray implements IQueue, IArrayBased {
-
-    int n = 99999999;
-
+    /**
+     * @author wasfy
+     *
+     */
+    int n;
+    /**
+     * @author wasfy
+     *
+     */
     int f;
+    /**
+     * @author wasfy
+     *
+     */
     int r;
+    /**
+     * @author wasfy
+     *
+     */
     int count;
+    /**
+     * @author wasfy
+     *
+     */
     Object[] Array;
-
-    public MyQueueArray(int n) {
-        this.n = n + 1;
+    /**
+     * @author wasfy
+     * @param n test
+     */
+    public MyQueueArray(final int n) {
+        this.n = n;
         f = 0;
         r = 0;
-        Array = new Object[n + 50];
+        Array = new Object[n + 51];
     }
-
-    public MyQueueArray() {
-        this.n = 99999999 + 1;
-        f = 0;
-        r = 0;
-        Array = new Object[this.n];
-    }
-
     @Override
-    public void enqueue(Object item) {
+    public void enqueue(final Object item) {
         // TODO Auto-generated method stub
         if (((n - f + r) % n) == (n - 1)) {
             throw new RuntimeException("Queue Full Exception");
