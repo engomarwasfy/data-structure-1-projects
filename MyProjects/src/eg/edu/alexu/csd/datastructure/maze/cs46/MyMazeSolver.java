@@ -26,7 +26,7 @@ public class MyMazeSolver implements IMazeSolver {
             }       
         } catch (Exception e) {
             // TODO: handle exception
-            if (e.getMessage().equals("check you inputs")){
+            if (!e.getMessage().equals("wrong maze")){
                 return null;
             }
             throw new RuntimeException("wrong maze");
@@ -48,7 +48,7 @@ public class MyMazeSolver implements IMazeSolver {
             }       
         } catch (Exception e) {
             // TODO: handle exception
-            if (e.getMessage().equals("check you inputs")){
+            if (!e.getMessage().equals("wrong maze")){
                 return null;
             }
             throw new RuntimeException("wrong maze");
