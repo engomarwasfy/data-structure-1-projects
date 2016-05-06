@@ -31,7 +31,6 @@ public class MazeDFS {
         }
         if (!(Start && End)) {
             return null;
-
         }
         s.push(new Node(current.x, current.y, null));
 
@@ -92,19 +91,6 @@ public class MazeDFS {
             }
         }
         Node e = (Node) s.peek();
-        Answer = new int[25][2];
-        // for(int i = s.size()-1;i >= 0;i--){
-        // Answer[i][0] = ((Node) s.peek()).x;
-        // Answer[i][1] = ((Node) s.pop()).y;
-        // }
-        // return Answer;
-        // int i=0;
-        // while(e!=null){
-        // Answer[i][0]=e.x;
-        // Answer[i][1]=e.y;
-        // e=e.Parent;
-        // i++;
-        // }
         Answer = new int[s.size()][2];
         for (int i = s.size() - 1; i >= 0; i--) {
             Node t = (Node) s.pop();
@@ -113,5 +99,7 @@ public class MazeDFS {
         }
         return Answer;
     }
-
 }
+
+
+

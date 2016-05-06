@@ -12,7 +12,7 @@ public class MyMazeSolverTest {
         MazeBFS help = new MazeBFS();
         char[][] array = new char[][]
 
-        { { 'E', '.', '.' }, { '.', '.', '.' }, { '.', '.', 'S' } };
+        { { '.', '.', '.' }, { '.', '.', '.' }, { '.', '.', 'S' } };
         return help.solve(array);
 
     }

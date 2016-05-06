@@ -10,21 +10,40 @@ public class MyMazeSolver implements IMazeSolver {
     MazeDFS df = new MazeDFS();
     
     char [][] array ;
+    int [][]answer ;
 
     @Override
     public int[][] solveBFS(File maze) {
         // TODO Auto-generated method stub
         array = reader.ReadFile(maze);
-
-        return bf.solve(array);
+        try {
+            answer= bf.solve(array);
+            if (answer == null){
+                return null;
+            }       
+        } catch (Exception e) {
+            // TODO: handle exception
+            return null;
+        }
+        return answer;
     }
-
+       
     @Override
     public int[][] solveDFS(File maze) {
         // TODO Auto-generated method stub
         // String x = =maze;
         array = reader.ReadFile(maze);
-        return df.solve(array);
+        try {
+            answer= df.solve(array);
+            if (answer == null){
+                return null;
+            }       
+        } catch (Exception e) {
+            // TODO: handle exception
+            return null;
+        }
+        return answer;
+    }
     }
 
-}
+
