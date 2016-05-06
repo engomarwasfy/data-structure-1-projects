@@ -6,14 +6,17 @@ import eg.edu.alexu.csd.datastructure.maze.IMazeSolver;
 
 public class MyMazeSolver implements IMazeSolver {
     ReadFileMaze reader = new ReadFileMaze();
-    char[][] array;
+    MazeBFS bf = new MazeBFS();
+    MazeDFS df = new MazeDFS();
+    
+    char [][] array ;
 
     @Override
     public int[][] solveBFS(File maze) {
         // TODO Auto-generated method stub
         array = reader.ReadFile(maze);
 
-        return null;
+        return bf.solve(array);
     }
 
     @Override
@@ -21,7 +24,7 @@ public class MyMazeSolver implements IMazeSolver {
         // TODO Auto-generated method stub
         // String x = =maze;
         array = reader.ReadFile(maze);
-        return null;
+        return df.solve(array);
     }
 
 }
