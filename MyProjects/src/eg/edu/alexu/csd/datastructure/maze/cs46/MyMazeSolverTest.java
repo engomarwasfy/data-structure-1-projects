@@ -24,7 +24,13 @@ public class MyMazeSolverTest {
         MazeDFS help = new MazeDFS();
         char[][] array = new char[][]
 
-        { { 'E', '.', '.' }, { '.', '.', '.' }, { '.', '.', 'S' } };
+        {  
+            {'#','.','.','.','S'},
+            {'.','.','#','.','.'},
+            {'#','#','#','.','.'},
+            {'E','#','#','.','#'},
+            {'.','#','.','.','#'}
+         };
         return help.solve(array);
     }
 

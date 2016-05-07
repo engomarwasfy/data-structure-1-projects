@@ -21,9 +21,6 @@ public class ReadFileMaze {
                 data.append(" ");
 
             }
-            if(true){
-                throw new RuntimeException(data.toString());
-            }
             strArray = data.toString().split(" ");
             noRows = Integer.parseInt(strArray[0]);
             noCol = Integer.parseInt(strArray[1]);
