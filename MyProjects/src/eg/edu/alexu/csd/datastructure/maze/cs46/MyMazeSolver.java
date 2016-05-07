@@ -8,7 +8,6 @@ public class MyMazeSolver implements IMazeSolver {
     ReadFileMaze reader = new ReadFileMaze();
     MazeBFS bf = new MazeBFS();
     MazeDFS df = new MazeDFS();
-    
     char [][] array ;
     int [][]answer ;
 
@@ -48,10 +47,10 @@ public class MyMazeSolver implements IMazeSolver {
             }       
         } catch (Exception e) {
             // TODO: handle exception
-            if (!e.getMessage().equals("wrong maze")){
-                return null;
-            }
-            throw new RuntimeException("wrong maze");
+            //if (!e.getMessage().equals("wrong maze")){
+             //   return null;
+            //}
+           // throw new RuntimeException("wrong maze");
         }
         return answer;
     }
