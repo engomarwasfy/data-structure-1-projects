@@ -47,9 +47,6 @@ public class MyMazeSolver implements IMazeSolver {
             }       
         } catch (Exception e) {
             // TODO: handle exception
-            if (!e.getMessage().equals("wrong maze")){
-                throw new RuntimeException("wrong maze");
-            }
             throw new RuntimeException("wrong maze");
         }
         return answer;

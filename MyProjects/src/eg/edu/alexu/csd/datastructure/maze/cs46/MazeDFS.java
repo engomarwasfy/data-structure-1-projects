@@ -32,64 +32,70 @@ public class MazeDFS {
         if (!(Start && End)) {
             throw new RuntimeException("wrong maze");
         }
-        s.push(new Node(current.x, current.y, null));
+        try {
+            s.push(new Node(current.x, current.y, null));
 
-        while (array[current.x][current.y] != 'E') {
-            // North Heading
-            visited[current.x][current.y] = true;
-            // System.out.println(current.x+","+current.y);
-            if (current.x - 1 >= 0 && array[current.x - 1][current.y] != '#'
-                    && !visited[current.x - 1][current.y]) {
-                s.push(new Node(current.x - 1, current.y, (Node) s.peek()));
-                // System.out.println(
-                // ((Node) s.peek()).x + "," + ((Node) s.peek()).y +"North");
-
-                visited[current.x - 1][current.y] = true;
-                current = (Node) s.peek();
-            }
-            // east Heading
-            else if (current.y + 1 < array[0].length
-                    && array[current.x][current.y + 1] != '#'
-                    && !visited[current.x][current.y + 1]) {
-
-                s.push(new Node(current.x, current.y + 1, (Node) s.peek()));
-                // System.out.println(
-                // ((Node) s.peek()).x + "," + ((Node) s.peek()).y+"east");
-
-                visited[current.x][current.y + 1] = true;
-                current = (Node) s.peek();
-            }
-            // South Heading
-            else if (current.x + 1 < array.length
-                    && array[current.x + 1][current.y] != '#'
-                    && !visited[current.x + 1][current.y]) {
-                s.push(new Node(current.x + 1, current.y, (Node) s.peek()));
-                // System.out.println(
-                // ((Node) s.peek()).x + "," + ((Node) s.peek()).y+"south");
-
-                visited[current.x + 1][current.y] = true;
-                current = (Node) s.peek();
-            }
-            // west Heading
-            else if (current.y - 1 >= 0
-                    && array[current.x][current.y - 1] != '#'
-                    && !visited[current.x][current.y - 1]) {
-                s.push(new Node(current.x, current.y - 1, (Node) s.peek()));
-                // System.out.println(
-                // ((Node) s.peek()).x + "," + ((Node) s.peek()).y+"west");
-
-                visited[current.x][current.y - 1] = true;
-                current = (Node) s.peek();
-            } else {
+            while (array[current.x][current.y] != 'E') {
+                // North Heading
                 visited[current.x][current.y] = true;
-                Node e = (Node) s.pop();
-                // System.out.println(e.x+","+e.y+"POPED");
+                // System.out.println(current.x+","+current.y);
+                if (current.x - 1 >= 0 && array[current.x - 1][current.y] != '#'
+                        && !visited[current.x - 1][current.y]) {
+                    s.push(new Node(current.x - 1, current.y, (Node) s.peek()));
+                    // System.out.println(
+                    // ((Node) s.peek()).x + "," + ((Node) s.peek()).y +"North");
 
-                current = (Node) s.peek();
+                    visited[current.x - 1][current.y] = true;
+                    current = (Node) s.peek();
+                }
+                // east Heading
+                else if (current.y + 1 < array[0].length
+                        && array[current.x][current.y + 1] != '#'
+                        && !visited[current.x][current.y + 1]) {
 
-                // current = ((Node)s.pop()).Parent;
+                    s.push(new Node(current.x, current.y + 1, (Node) s.peek()));
+                    // System.out.println(
+                    // ((Node) s.peek()).x + "," + ((Node) s.peek()).y+"east");
+
+                    visited[current.x][current.y + 1] = true;
+                    current = (Node) s.peek();
+                }
+                // South Heading
+                else if (current.x + 1 < array.length
+                        && array[current.x + 1][current.y] != '#'
+                        && !visited[current.x + 1][current.y]) {
+                    s.push(new Node(current.x + 1, current.y, (Node) s.peek()));
+                    // System.out.println(
+                    // ((Node) s.peek()).x + "," + ((Node) s.peek()).y+"south");
+
+                    visited[current.x + 1][current.y] = true;
+                    current = (Node) s.peek();
+                }
+                // west Heading
+                else if (current.y - 1 >= 0
+                        && array[current.x][current.y - 1] != '#'
+                        && !visited[current.x][current.y - 1]) {
+                    s.push(new Node(current.x, current.y - 1, (Node) s.peek()));
+                    // System.out.println(
+                    // ((Node) s.peek()).x + "," + ((Node) s.peek()).y+"west");
+
+                    visited[current.x][current.y - 1] = true;
+                    current = (Node) s.peek();
+                } else {
+                    visited[current.x][current.y] = true;
+                    Node e = (Node) s.pop();
+                    // System.out.println(e.x+","+e.y+"POPED");
+
+                    current = (Node) s.peek();
+
+                    // current = ((Node)s.pop()).Parent;
+                }
             }
+        } catch (Exception e) {
+            // TODO: handle exception
+            return null;
         }
+        
         Node e = (Node) s.peek();
         Answer = new int[s.size()][2];
         for (int i = s.size() - 1; i >= 0; i--) {

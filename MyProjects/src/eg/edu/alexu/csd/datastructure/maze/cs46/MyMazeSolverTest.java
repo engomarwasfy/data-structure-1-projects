@@ -31,7 +31,17 @@ public class MyMazeSolverTest {
             {'E','#','#','.','#'},
             {'.','#','.','.','#'}
          };
-        return help.solve(array);
+         try {
+             return help.solve(array);
+        } catch (Exception e) {
+            // TODO: handle exception
+           
+           }
+                
+         return help.solve(array);
+        
+         
+         
     }
 
 }

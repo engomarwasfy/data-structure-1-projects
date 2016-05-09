@@ -36,40 +36,46 @@ public class MazeBFS {
             throw new RuntimeException("wrong maze");
 
         }
+        try {
+            while (array[current.x][current.y] != 'E') {
+                // North Heading
+                // System.out.println(current.x + "," + current.y);
+                if (current.x - 1 >= 0 && array[current.x - 1][current.y] != '#'
+                        && !visited[current.x - 1][current.y]) {
+                    q.enqueue((new Node(current.x - 1, current.y, current)));
+                    visited[current.x - 1][current.y] = true;
+                }
+                // east Heading
+                if (current.y + 1 < array[0].length
+                        && array[current.x][current.y + 1] != '#'
+                        && !visited[current.x][current.y + 1]) {
 
-        while (array[current.x][current.y] != 'E') {
-            // North Heading
-            // System.out.println(current.x + "," + current.y);
-            if (current.x - 1 >= 0 && array[current.x - 1][current.y] != '#'
-                    && !visited[current.x - 1][current.y]) {
-                q.enqueue((new Node(current.x - 1, current.y, current)));
-                visited[current.x - 1][current.y] = true;
-            }
-            // east Heading
-            if (current.y + 1 < array[0].length
-                    && array[current.x][current.y + 1] != '#'
-                    && !visited[current.x][current.y + 1]) {
+                    q.enqueue((new Node(current.x, current.y + 1, current)));
+                    visited[current.x][current.y + 1] = true;
 
-                q.enqueue((new Node(current.x, current.y + 1, current)));
-                visited[current.x][current.y + 1] = true;
-
+                }
+                // South Heading
+                if (current.x + 1 < array.length
+                        && array[current.x + 1][current.y] != '#'
+                        && !visited[current.x + 1][current.y]) {
+                    q.enqueue((new Node(current.x + 1, current.y, current)));
+                    visited[current.x + 1][current.y] = true;
+                }
+                // west Heading
+                if (current.y - 1 >= 0 && array[current.x][current.y - 1] != '#'
+                        && !visited[current.x][current.y - 1]) {
+                    q.enqueue((new Node(current.x, current.y - 1, current)));
+                    visited[current.x][current.y - 1] = true;
+                }
+                visited[current.x][current.y] = true;
+                current = (Node) q.dequeue();
             }
-            // South Heading
-            if (current.x + 1 < array.length
-                    && array[current.x + 1][current.y] != '#'
-                    && !visited[current.x + 1][current.y]) {
-                q.enqueue((new Node(current.x + 1, current.y, current)));
-                visited[current.x + 1][current.y] = true;
-            }
-            // west Heading
-            if (current.y - 1 >= 0 && array[current.x][current.y - 1] != '#'
-                    && !visited[current.x][current.y - 1]) {
-                q.enqueue((new Node(current.x, current.y - 1, current)));
-                visited[current.x][current.y - 1] = true;
-            }
-            visited[current.x][current.y] = true;
-            current = (Node) q.dequeue();
+        } catch (Exception e) {
+            // TODO: handle exception
+            return null;
         }
+
+       
         Node e = current;
         while (e != null) {
             // System.out.println(e.x + ",," + e.y);
