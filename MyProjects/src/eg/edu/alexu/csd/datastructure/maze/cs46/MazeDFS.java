@@ -1,15 +1,12 @@
 package eg.edu.alexu.csd.datastructure.maze.cs46;
 
-import java.awt.Point;
-import java.util.Stack;
-
 import eg.edu.alexu.csd.datastructure.stack.cs46.MyStack;
 
 public class MazeDFS {
     Node current;
     boolean[][] visited = new boolean[1000][1000];
     int[][] Answer;
-    Stack s = new Stack();
+    MyStack s = new MyStack();
     // x is row order
     // y is col order
     boolean Start;
@@ -43,7 +40,8 @@ public class MazeDFS {
                         && !visited[current.x - 1][current.y]) {
                     s.push(new Node(current.x - 1, current.y, (Node) s.peek()));
                     // System.out.println(
-                    // ((Node) s.peek()).x + "," + ((Node) s.peek()).y +"North");
+                    // ((Node) s.peek()).x + "," + ((Node) s.peek()).y
+                    // +"North");
 
                     visited[current.x - 1][current.y] = true;
                     current = (Node) s.peek();
@@ -95,7 +93,7 @@ public class MazeDFS {
             // TODO: handle exception
             return null;
         }
-        
+
         Node e = (Node) s.peek();
         Answer = new int[s.size()][2];
         for (int i = s.size() - 1; i >= 0; i--) {
@@ -108,4 +106,3 @@ public class MazeDFS {
 }
 
 //
-

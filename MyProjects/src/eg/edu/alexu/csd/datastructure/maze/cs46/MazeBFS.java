@@ -1,8 +1,5 @@
 package eg.edu.alexu.csd.datastructure.maze.cs46;
 
-import java.util.Queue;
-import java.util.Stack;
-
 import eg.edu.alexu.csd.datastructure.queue.cs46.MyQueueLinked;
 import eg.edu.alexu.csd.datastructure.stack.cs46.MyStack;
 
@@ -75,7 +72,6 @@ public class MazeBFS {
             return null;
         }
 
-       
         Node e = current;
         while (e != null) {
             // System.out.println(e.x + ",," + e.y);
