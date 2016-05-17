@@ -13,7 +13,7 @@ public class ReadFileMaze {
      * @param maze test
      *@return array test
      */
-    public char[][] ReadFile(File maze) {
+    public char[][] ReadFile(final File maze) {
 
         StringBuilder data = new StringBuilder();
         char[][] array = null;

@@ -11,6 +11,16 @@ import eg.edu.alexu.csd.datastructure.stack.cs46.MyStack;
 public class MyQueueUI {
     /**
      * @author wasfy
+     *
+     */
+    private static final int MAG_3 = 3;
+    /**
+     * @author wasfy
+     *
+     */
+    private static final int MAG_4 = 4;
+    /**
+     * @author wasfy
      * @param args
      *            test
      */
@@ -40,10 +50,10 @@ public class MyQueueUI {
                 dequeued = help.dequeue();
                 System.out.println("the dequed value is " + dequeued);
                 break;
-            case 3:
+            case  MAG_3 :
                 System.out.println("the size is " + help.size());
                 break;
-            case 4:
+            case  MAG_4 :
                 check = help.isEmpty();
                 if (check) {
                     System.out.println("Queue is empty");

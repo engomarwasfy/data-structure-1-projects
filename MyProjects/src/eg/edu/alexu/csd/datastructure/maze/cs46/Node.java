@@ -1,5 +1,8 @@
 package eg.edu.alexu.csd.datastructure.maze.cs46;
-
+/**
+ * @author wasfy this
+ *
+ */
 public class Node {
     /**
      * @author wasfy this

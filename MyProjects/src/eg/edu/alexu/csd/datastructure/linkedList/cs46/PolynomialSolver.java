@@ -466,7 +466,7 @@ public class PolynomialSolver implements IPolynomialSolver {
 
     /**
      * @author wasfy good
-     *@param poly1 test
+     *@param poly1
      *@param poly2 test
      *@return test
      */

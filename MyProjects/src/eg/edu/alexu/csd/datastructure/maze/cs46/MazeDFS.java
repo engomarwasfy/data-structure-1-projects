@@ -2,6 +2,7 @@ package eg.edu.alexu.csd.datastructure.maze.cs46;
 
 import eg.edu.alexu.csd.datastructure.stack.cs46.MyStack;
 
+
 /**
  * @author wasfy this
  *
@@ -11,12 +12,17 @@ public class MazeDFS {
      * @author wasfy this
      *
      */
+    private static final int MAG_1000 = 1000;
+    /**
+     * @author wasfy this
+     *
+     */
     Node current;
     /**
      * @author wasfy this
      *
      */
-    boolean[][] visited = new boolean[1000][1000];
+    boolean[][] visited = new boolean[MAG_1000][MAG_1000];
     /**
      * @author wasfy this
      *
