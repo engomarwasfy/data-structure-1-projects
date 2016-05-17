@@ -94,6 +94,58 @@ public class MyIceHockey implements IPlayersFinder {
      *            test
      * @return test
      */
+    /**
+     * @author wasfy this is test
+     *
+     */
+    private static final int MAG_1000 = 1000;
+    /**
+     * @author wasfy this is test
+     *
+     */
+    private static final int MAG_3 = 3;
+    /**
+     * @author wasfy this is test
+     *
+     */
+    private static final int MAG_4 = 4;
+    /**
+     * @author wasfy this is test
+     *
+     */
+    private static final int MAG_5 = 5;
+    /**
+     * @author wasfy this is test
+     *
+     */
+    private static final int MAG_6 = 6;
+    /**
+     * @author wasfy this is test
+     *
+     */
+    private static final int MAG_7 = 7;
+    /**
+     * @author wasfy this is test
+     *
+     */
+    private static final int MAG_8 = 8;
+    /**
+     * @author wasfy this is test
+     *
+     */
+    private static final int MAG_9 = 9;
+    /**
+     * @author wasfy this is test
+     *
+     */
+    private static final int MAG_10 = 10;
+    /**
+     * @author wasfy this is test
+     *@param photo test
+     *@param team test
+     *@param threshold test
+     *@return array
+     */
     public Point[] findPlayers(final String[] photo, final int team,
             final int threshold) {
         // TODO Auto-generated method stub
@@ -101,8 +153,8 @@ public class MyIceHockey implements IPlayersFinder {
         maxCol = 0;
         minCol = 0;
         minRow = 0;
-        firstarr = new Point[1000];
-        visited = new boolean[1000][1000];
+        firstarr = new Point[MAG_1000];
+        visited = new boolean[MAG_1000][MAG_1000];
         length = 0;
         pointCounter = 0;
         if (photo.length != 0) {
@@ -117,25 +169,25 @@ public class MyIceHockey implements IPlayersFinder {
             case 2:
                 this.team = '2';
                 break;
-            case 3:
+            case MAG_3:
                 this.team = '3';
                 break;
-            case 4:
+            case MAG_4:
                 this.team = '4';
                 break;
-            case 5:
+            case MAG_5:
                 this.team = '5';
                 break;
-            case 6:
+            case MAG_6:
                 this.team = '6';
                 break;
-            case 7:
+            case MAG_7:
                 this.team = '7';
                 break;
-            case 8:
+            case MAG_8:
                 this.team = '8';
                 break;
-            case 9:
+            case MAG_9:
                 this.team = '9';
                 break;
             default:

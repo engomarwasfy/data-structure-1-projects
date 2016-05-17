@@ -13,7 +13,7 @@ public class MyQueueLinkedListTest {
      * @author wasfy this
      *
      */
-    private static final int m5 = 5;
+    private static final int MAG_5 = 5;
     /**
      * @author wasfy this
      *
@@ -31,7 +31,7 @@ public class MyQueueLinkedListTest {
     @Test
     public void testIsEmpty2() {
         MyQueueLinked queue = new MyQueueLinked();
-        queue.enqueue(m5);
+        queue.enqueue(MAG_5);
         assertTrue(!queue.isEmpty());
     }
     /**
@@ -42,7 +42,7 @@ public class MyQueueLinkedListTest {
     @Test
     public void testEnqueue() {
         MyQueueLinked queue = new MyQueueLinked();
-        queue.enqueue(m5);
+        queue.enqueue(MAG_5);
     }
     /**
      * @author wasfy this
@@ -52,8 +52,8 @@ public class MyQueueLinkedListTest {
     @Test
     public void testDequeue() {
         MyQueueLinked queue = new MyQueueLinked();
-        queue.enqueue(m5);
-        assertTrue(m5 == (int) queue.dequeue());
+        queue.enqueue(MAG_5);
+        assertTrue(MAG_5 == (int) queue.dequeue());
     }
     /**
      * @author wasfy this
@@ -63,12 +63,12 @@ public class MyQueueLinkedListTest {
     @Test
     public void testGetRightOrder() {
         MyQueueLinked queue = new MyQueueLinked();
-        queue.enqueue(m5);
-        queue.enqueue(m5);
-        queue.enqueue(m5);
-        assertEquals(m5, queue.dequeue());
-        assertEquals(m5, queue.dequeue());
-        assertEquals(m5, queue.dequeue());
+        queue.enqueue(MAG_5);
+        queue.enqueue(MAG_5);
+        queue.enqueue(MAG_5);
+        assertEquals(MAG_5, queue.dequeue());
+        assertEquals(MAG_5, queue.dequeue());
+        assertEquals(MAG_5, queue.dequeue());
     }
     /**
      * @author wasfy this
@@ -89,7 +89,7 @@ public class MyQueueLinkedListTest {
     @Test
     public void testEmpty() {
         MyQueueLinked queue = new MyQueueLinked();
-        queue.enqueue(m5);
+        queue.enqueue(MAG_5);
         queue.dequeue();
         assertTrue(queue.isEmpty());
     }

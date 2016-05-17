@@ -14,7 +14,7 @@ public class MyQueueArrayBasedTest {
      *
      */
 
-    private static final int m5 = 5;
+    private static final int MAG_5 = 5;
     /**
      * @author wasfy this
      *
@@ -22,7 +22,7 @@ public class MyQueueArrayBasedTest {
 
     @Test
     public void testIsEmpty1() {
-        MyQueueArray queue = new MyQueueArray(m5);
+        MyQueueArray queue = new MyQueueArray(MAG_5);
         assertTrue(queue.isEmpty());
     }
     /**
@@ -32,8 +32,8 @@ public class MyQueueArrayBasedTest {
 
     @Test
     public void testIsEmpty2() {
-        MyQueueArray queue = new MyQueueArray(m5);
-        queue.enqueue(m5);
+        MyQueueArray queue = new MyQueueArray(MAG_5);
+        queue.enqueue(MAG_5);
         assertTrue(!queue.isEmpty());
     }
     /**
@@ -43,8 +43,8 @@ public class MyQueueArrayBasedTest {
 
     @Test
     public void testEnqueue() {
-        MyQueueArray queue = new MyQueueArray(m5);
-        queue.enqueue(m5);
+        MyQueueArray queue = new MyQueueArray(MAG_5);
+        queue.enqueue(MAG_5);
     }
     /**
      * @author wasfy this
@@ -53,9 +53,9 @@ public class MyQueueArrayBasedTest {
 
     @Test
     public void testDequeue() {
-        MyQueueArray queue = new MyQueueArray(m5);
-        queue.enqueue(m5);
-        assertTrue(m5 == (int) queue.dequeue());
+        MyQueueArray queue = new MyQueueArray(MAG_5);
+        queue.enqueue(MAG_5);
+        assertTrue(MAG_5 == (int) queue.dequeue());
     }
     /**
      * @author wasfy this
@@ -64,13 +64,13 @@ public class MyQueueArrayBasedTest {
 
     @Test
     public void testGetRightOrder() {
-        MyQueueArray queue = new MyQueueArray(m5);
-        queue.enqueue(m5);
-        queue.enqueue(m5);
-        queue.enqueue(m5);
-        assertEquals(m5, queue.dequeue());
-        assertEquals(m5, queue.dequeue());
-        assertEquals(m5, queue.dequeue());
+        MyQueueArray queue = new MyQueueArray(MAG_5);
+        queue.enqueue(MAG_5);
+        queue.enqueue(MAG_5);
+        queue.enqueue(MAG_5);
+        assertEquals(MAG_5, queue.dequeue());
+        assertEquals(MAG_5, queue.dequeue());
+        assertEquals(MAG_5, queue.dequeue());
     }
     /**
      * @author wasfy this
@@ -79,7 +79,7 @@ public class MyQueueArrayBasedTest {
 
     @Test(expected = RuntimeException.class)
     public void testDequeueEmpty() {
-        MyQueueArray queue = new MyQueueArray(m5);
+        MyQueueArray queue = new MyQueueArray(MAG_5);
         queue.dequeue();
     }
     /**
@@ -89,8 +89,8 @@ public class MyQueueArrayBasedTest {
 
     @Test
     public void testEmpty() {
-        MyQueueArray queue = new MyQueueArray(m5);
-        queue.enqueue(m5);
+        MyQueueArray queue = new MyQueueArray(MAG_5);
+        queue.enqueue(MAG_5);
         queue.dequeue();
         assertTrue(queue.isEmpty());
     }

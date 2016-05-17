@@ -7,7 +7,36 @@ import java.util.Scanner;
  *
  */
 public class MyStackUI {
-
+    /**
+     * @author wasfy this is the stack UI
+     *
+     */
+    private static final int MAG_1 = 1;
+    /**
+     * @author wasfy this is the stack UI
+     *
+     */
+    private static final int MAG_2 = 2;
+    /**
+     * @author wasfy this is the stack UI
+     *
+     */
+    private static final int MAG_3 = 3;
+    /**
+     * @author wasfy this is the stack UI
+     *
+     */
+    private static final int MAG_4 = 4;
+    /**
+     * @author wasfy this is the stack UI
+     *
+     */
+    private static final int MAG_5 = 5;
+    /**
+     * @author wasfy this is the stack UI
+     *
+     */
+    private static final int MAG_6 = 6;
     /**
      * @author wasfy this is the stack UI
      * @param args
@@ -41,13 +70,13 @@ public class MyStackUI {
                 poped = help.pop();
                 System.out.println("the poped value is " + poped);
                 break;
-            case 3:
+            case MAG_3:
                 System.out.println("the peeked value is" + help.peek());
                 break;
-            case 4:
+            case MAG_4:
                 System.out.println("the size is " + help.size());
                 break;
-            case 5:
+            case MAG_5:
                 check = help.isEmpty();
                 if (check) {
                     System.out.println("stack is empty");
@@ -55,7 +84,7 @@ public class MyStackUI {
                     System.out.println("stack is not empty");
                 }
                 break;
-            case 6:
+            case MAG_6:
                 System.out.println("Enter index");
                 index = sc.nextInt();
                 System.out.println("Enter value");

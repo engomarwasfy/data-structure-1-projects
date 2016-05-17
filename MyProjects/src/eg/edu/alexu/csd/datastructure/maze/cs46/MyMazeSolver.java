@@ -49,7 +49,7 @@ public class MyMazeSolver implements IMazeSolver {
      */
 
     @Override
-    public int[][] solveBFS(File maze) {
+    public int[][] solveBFS(final File maze) {
         // TODO Auto-generated method stub
         if (!maze.exists()) {
             throw new RuntimeException("file doesn't exist");
@@ -76,7 +76,7 @@ public class MyMazeSolver implements IMazeSolver {
      * @return array
      *
      */
-    public int[][] solveDFS(File maze) {
+    public int[][] solveDFS(final File maze) {
         // TODO Auto-generated method stub
         // String x = =maze;
         if (!maze.exists()) {
