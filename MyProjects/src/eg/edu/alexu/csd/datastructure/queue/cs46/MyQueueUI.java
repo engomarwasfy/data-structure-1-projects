@@ -2,8 +2,6 @@ package eg.edu.alexu.csd.datastructure.queue.cs46;
 
 import java.util.Scanner;
 
-import eg.edu.alexu.csd.datastructure.stack.cs46.MyStack;
-
 /**
  * @author wasfy
  *

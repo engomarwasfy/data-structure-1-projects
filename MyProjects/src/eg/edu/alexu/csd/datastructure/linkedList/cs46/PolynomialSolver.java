@@ -366,7 +366,7 @@ public class PolynomialSolver implements IPolynomialSolver {
         // TODO Auto-generated method stub
         if (poly1 == poly2) {
             operation = true;
-            int[][] returnValue = new int[][] { { 0, 0 } };
+            int[][] returnValue = new int[][] {{0, 0}};
             if (poly1 == 'A' && !Aexp.isEmpty()) {
                 setPolynomial('R', returnValue);
                 operation = false;
@@ -466,7 +466,7 @@ public class PolynomialSolver implements IPolynomialSolver {
 
     /**
      * @author wasfy good
-     *@param poly1
+     *@param poly1 test
      *@param poly2 test
      *@return test
      */
@@ -514,7 +514,7 @@ public class PolynomialSolver implements IPolynomialSolver {
             }
         }
         if (result[0][0] == 0) {
-            return new int[][] { { 0, 0 } };
+            return new int[][] {{0, 0}};
         }
         return result;
     }
@@ -581,7 +581,7 @@ public class PolynomialSolver implements IPolynomialSolver {
             }
         }
         if (j == 0) {
-            return new int[][] { { 0, 0 } };
+            return new int[][] {{0, 0}};
         }
         int[][] result = new int[j][2];
         for (i = poly1[0][1]
