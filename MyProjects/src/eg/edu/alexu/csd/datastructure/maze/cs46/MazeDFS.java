@@ -81,9 +81,8 @@ public class MazeDFS {
 
                     visited[current.x - 1][current.y] = true;
                     current = (Node) s.peek();
-                }
                 // east Heading
-                else if (current.y + 1 < array[0].length
+                } else if (current.y + 1 < array[0].length
                         && array[current.x][current.y + 1] != '#'
                         && !visited[current.x][current.y + 1]) {
 
@@ -93,9 +92,8 @@ public class MazeDFS {
 
                     visited[current.x][current.y + 1] = true;
                     current = (Node) s.peek();
-                }
                 // South Heading
-                else if (current.x + 1 < array.length
+                } else if (current.x + 1 < array.length
                         && array[current.x + 1][current.y] != '#'
                         && !visited[current.x + 1][current.y]) {
                     s.push(new Node(current.x + 1, current.y, (Node) s.peek()));
@@ -104,9 +102,8 @@ public class MazeDFS {
 
                     visited[current.x + 1][current.y] = true;
                     current = (Node) s.peek();
-                }
                 // west Heading
-                else if (current.y - 1 >= 0
+                } else if (current.y - 1 >= 0
                         && array[current.x][current.y - 1] != '#'
                         && !visited[current.x][current.y - 1]) {
                     s.push(new Node(current.x, current.y - 1, (Node) s.peek()));

@@ -193,7 +193,7 @@ public class OurSingleLinked implements ILinkedList {
 
     /**
      * @author wasfy this is test
-     *
+     *@return test
      */
     public int size() {
         return size;
@@ -243,7 +243,11 @@ public class OurSingleLinked implements ILinkedList {
         }
         return false;
     }
-
+    /**
+     * @author wasfy this is test
+     * @param element
+     *            test
+     */
     public void add1(final Object element) {
         node newElement = new node(element);
         if (Head == null) {
@@ -260,7 +264,6 @@ public class OurSingleLinked implements ILinkedList {
 
     /**
      * @author wasfy this is test
-     * @param index
      *            test
      * @return Object
      */
@@ -274,8 +277,6 @@ public class OurSingleLinked implements ILinkedList {
 
     /**
      * @author wasfy this is test
-     * @param index
-     *            test
      */
     public void remove1() {
         // TODO Auto-generated method stub

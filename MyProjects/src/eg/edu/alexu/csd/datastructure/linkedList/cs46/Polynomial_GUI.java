@@ -173,9 +173,9 @@ public class Polynomial_GUI {
 
     /**
      * @author wasfy this is test
-     *
+     *@param operation test
      */
-    public static void take(char operation) {
+    public static void take(final char operation) {
         char varName1 = ' ';
         char varName2 = ' ';
         boolean finished = false;

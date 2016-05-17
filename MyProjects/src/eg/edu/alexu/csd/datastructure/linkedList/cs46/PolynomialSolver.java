@@ -466,7 +466,9 @@ public class PolynomialSolver implements IPolynomialSolver {
 
     /**
      * @author wasfy good
-     *
+     *@param poly1 test
+     *@param poly2 test
+     *@return test
      */
     private int[][] merge(final int[][] poly1, final int[][] poly2) {
         // TODO Auto-generated method stub
@@ -519,7 +521,8 @@ public class PolynomialSolver implements IPolynomialSolver {
 
     /**
      * @author wasfy this is test
-     *
+     *@param poly test
+     *@return test
      */
     private String printpoly(final int[][] poly) {
         // TODO Auto-generated method stub
@@ -556,7 +559,9 @@ public class PolynomialSolver implements IPolynomialSolver {
 
     /**
      * @author wasfy this is test
-     *
+     *@param poly1 test
+     *@param poly2 test
+     *@return test
      */
     private int[][] multi(final int[][] poly1, final int[][] poly2) {
         // TODO Auto-generated method stub
@@ -593,7 +598,9 @@ public class PolynomialSolver implements IPolynomialSolver {
 
     /**
      * @author wasfy this is test
-     *
+     *@param a test
+     *@param b test
+     *@return array
      */
     private int[][] toArray(final OurSingleLinked a, final OurSingleLinked b) {
         int[][] result = new int[a.size()][2];
@@ -606,7 +613,8 @@ public class PolynomialSolver implements IPolynomialSolver {
 
     /**
      * @author wasfy this is test
-     *
+     *@param poly test
+     *@return test
      */
     public boolean isValid(final char poly) {
         if (poly == 'A') {

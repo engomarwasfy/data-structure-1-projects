@@ -181,7 +181,7 @@ public class OurDoubleLinkedList implements ILinkedList {
 
     /**
      * @author wasfy this is test
-     *
+     *@param index test
      */
 
     public void remove(final int index) {
@@ -216,7 +216,9 @@ public class OurDoubleLinkedList implements ILinkedList {
 
     /**
      * @author wasfy this is test
-     *
+     *@param fromIndex test
+     *@param toIndex test
+     *@return test
      */
 
     public ILinkedList sublist(final int fromIndex, final int toIndex) {

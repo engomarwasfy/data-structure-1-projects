@@ -68,9 +68,8 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
                 s.pop();
             }
 
-        }
 
-        else {
+        } else {
             throw new RuntimeException("Check your inputs");
         }
         if (answer.charAt(1) >= '0' && answer.charAt(1) <= '9') {
@@ -159,7 +158,8 @@ public class MyExpressionEvaluator implements IExpressionEvaluator {
 
     /**
      * @author wasfy this is app of project
-     *
+     *@param x test
+     *@return test
      */
 
     public boolean isoperator(final char x) {
