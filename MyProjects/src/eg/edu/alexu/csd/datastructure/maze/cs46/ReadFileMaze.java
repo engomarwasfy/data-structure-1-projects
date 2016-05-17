@@ -3,12 +3,18 @@ package eg.edu.alexu.csd.datastructure.maze.cs46;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
-
+/**
+ * @author wasfy this
+ *
+ */
 public class ReadFileMaze {
-
+    /**
+     * @author wasfy this
+     * @param maze test
+     *@return array test
+     */
     public char[][] ReadFile(File maze) {
 
-        
         StringBuilder data = new StringBuilder();
         char[][] array = null;
         String[] strArray;

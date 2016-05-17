@@ -3,6 +3,7 @@ package eg.edu.alexu.csd.datastructure.queue.cs46;
 import java.util.Scanner;
 
 import eg.edu.alexu.csd.datastructure.stack.cs46.MyStack;
+
 /**
  * @author wasfy
  *
@@ -10,7 +11,8 @@ import eg.edu.alexu.csd.datastructure.stack.cs46.MyStack;
 public class MyQueueUI {
     /**
      * @author wasfy
-     *@param args test
+     * @param args
+     *            test
      */
     public static void main(final String[] args) {
         // TODO Auto-generated method stub

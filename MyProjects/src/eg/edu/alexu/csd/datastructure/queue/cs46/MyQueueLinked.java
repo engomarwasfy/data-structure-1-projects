@@ -25,6 +25,7 @@ public class MyQueueLinked implements IQueue, ILinkedBased {
         // TODO Auto-generated method stub
         help.add1(item);
     }
+
     /**
      * @author wasfy
      *

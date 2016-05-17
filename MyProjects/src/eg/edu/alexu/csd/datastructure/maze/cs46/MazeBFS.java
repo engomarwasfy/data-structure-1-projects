@@ -3,18 +3,56 @@ package eg.edu.alexu.csd.datastructure.maze.cs46;
 import eg.edu.alexu.csd.datastructure.queue.cs46.MyQueueLinked;
 import eg.edu.alexu.csd.datastructure.stack.cs46.MyStack;
 
+/**
+ * @author wasfy this
+ *
+ */
 public class MazeBFS {
-
+    /**
+     * @author wasfy this
+     *
+     */
     Node current;
+    /**
+     * @author wasfy this
+     *
+     */
     boolean[][] visited = new boolean[1000][1000];
+    /**
+     * @author wasfy this
+     *
+     */
     int[][] Answer;
+    /**
+     * @author wasfy this
+     *
+     */
     MyStack s = new MyStack();
+    /**
+     * @author wasfy this
+     *
+     */
     MyQueueLinked q = new MyQueueLinked();
     // x is row order
     // y is col order
+    /**
+     * @author wasfy this
+     *
+     */
     boolean Start;
+    /**
+     * @author wasfy this
+     *
+     */
     boolean End;
 
+    /**
+     * @author wasfy this
+     * @param array
+     *            test
+     * @return test
+     *
+     */
     public int[][] solve(final char[][] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
@@ -68,7 +106,6 @@ public class MazeBFS {
                 current = (Node) q.dequeue();
             }
         } catch (Exception e) {
-            // TODO: handle exception
             return null;
         }
 

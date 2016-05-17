@@ -33,9 +33,11 @@ public class MyQueueArray implements IQueue, IArrayBased {
      *
      */
     Object[] Array;
+
     /**
      * @author wasfy
-     *@param n test
+     * @param n
+     *            test
      */
     public MyQueueArray(final int n) {
         this.n = n + 1;
@@ -43,6 +45,7 @@ public class MyQueueArray implements IQueue, IArrayBased {
         r = 0;
         Array = new Object[n + 50];
     }
+
     /**
      * @author wasfy
      *
