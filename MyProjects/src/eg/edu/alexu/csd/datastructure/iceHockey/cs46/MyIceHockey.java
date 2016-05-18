@@ -289,7 +289,7 @@ public class MyIceHockey implements IPlayersFinder {
                 }
             });
         } catch (Exception e) {
-
+            System.out.println("hello");
         }
     }
 

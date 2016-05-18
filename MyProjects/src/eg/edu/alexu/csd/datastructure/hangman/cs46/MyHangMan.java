@@ -8,13 +8,17 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
  *
  */
 public class MyHangMan implements IHangman {
+    /**
+     * @author wasfy this is test
+     *
+     */
+    private static final int MAG_100 = 100;
 
     /**
      * @author wasfy this is test
      *
      */
-    
-    public String[] words = new String[100];
+    public String[] words = new String[MAG_100];
     /**
      * @author wasfy this is test
      *
@@ -71,6 +75,7 @@ public class MyHangMan implements IHangman {
             countWords = words.length;
             this.words = words;
         } catch (Exception e) {
+            System.out.println("hello");
         }
 
     }
@@ -144,7 +149,7 @@ public class MyHangMan implements IHangman {
             }
             maxMistakes = max.intValue();
         } catch (AssertionError | Exception e) {
-
+         System.out.println("hello");
         }
     }
 

@@ -28,7 +28,7 @@ public class Polynomial_GUI {
 
     /**
      * @author wasfy this is test
-     *
+     *@Param args test
      */
     public static void main(final String[] args) {
         // TODO Auto-generated method stub
@@ -45,7 +45,7 @@ public class Polynomial_GUI {
             System.out.println("6- Evaluate a polynomial at some point");
             System.out.println("7- Clear a polynomial variable");
             System.out.println(
-                    "====================================================================");
+                    "======================================");
             chooseOperation = sc.nextLine();
             switch (chooseOperation) {
             case "1":
@@ -55,7 +55,7 @@ public class Polynomial_GUI {
                 if (VarName == 'A' || VarName == 'B' || VarName == 'C') {
                     try {
                         System.out.println(
-                                "Insert the polynomial terms in the form : (coeff1 , exponent1 ), (coeff2 , exponent2 ), ..");
+                                "Insert the form : (coeff1 , exponent1 )");
                         String polyTaker = sc.nextLine();
                         polyTaker = polyTaker.replace(" ", "");
                         polyTaker = polyTaker.replace(",", " ");
@@ -128,7 +128,7 @@ public class Polynomial_GUI {
                 float point;
 
                 System.out.println(
-                        "Insert polynomial variable name : A, B, C or E to go to main");
+                        "Insert polynomial variable name : A, B, C or E ");
                 VarName = sc.nextLine().charAt(0);
                 if (poly.isValid(VarName)) {
                     finished = true;
@@ -182,7 +182,7 @@ public class Polynomial_GUI {
         int[][] result;
         while (!finished) {
             System.out.println(
-                    "Insert first operand variable name : A, B, C or E to go to the main ");
+                    "Insert first operand variable name : A, B, C OR E ");
             varName1 = sc.nextLine().charAt(0);
             if (poly.isValid(varName1)) {
                 finished = true;
