@@ -205,7 +205,7 @@ public class MyIceHockey implements IPlayersFinder {
                             minRow = i;
                             findNext(i, j);
 
-                            if (length * 4 >= threshold) {
+                            if (length * MAG_4 >= threshold) {
                                 firstarr[pointCounter] = new Point(
                                         maxCol + minCol + 1,
                                         maxRow + minRow + 1);
@@ -218,7 +218,7 @@ public class MyIceHockey implements IPlayersFinder {
                     }
                 }
             } catch (Exception e) {
-
+               System.out.println("hi");
             }
             if (pointCounter != 0) {
                 arr = new Point[pointCounter];
@@ -264,7 +264,7 @@ public class MyIceHockey implements IPlayersFinder {
                 return;
             }
         } catch (Exception e) {
-
+           System.out.println("hello");
         }
 
     }
