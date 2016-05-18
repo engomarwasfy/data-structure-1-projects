@@ -12,12 +12,7 @@ public class MyQueueArray implements IQueue, IArrayBased {
      * @author wasfy
      *
      */
-    private static final int MAG_10 = 9999999;
-    /**
-     * @author wasfy
-     *
-     */
-    int n = MAG_10;
+    int n = 99999999;
     /**
      * @author wasfy
      *
@@ -48,7 +43,7 @@ public class MyQueueArray implements IQueue, IArrayBased {
         this.n = n + 1;
         f = 0;
         r = 0;
-        Array = new Object[n];
+        Array = new Object[n + 50];
     }
 
     /**
@@ -56,7 +51,7 @@ public class MyQueueArray implements IQueue, IArrayBased {
      *
      */
     public MyQueueArray() {
-        this.n = MAG_10 + 1;
+        this.n = 99999999 + 1;
         f = 0;
         r = 0;
         Array = new Object[this.n];
