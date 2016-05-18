@@ -24,11 +24,11 @@ public class Node {
      * @author wasfy this
      * @param x
      *            test
-     * @param y
-     *            test @ param parent test
+     * @param ytest
+     *@param Parent test
      */
 
-    Node(int x, int y, Node Parent) {
+    Node(final int x, final int y, final Node Parent) {
         this.x = x;
         this.y = y;
         this.Parent = Parent;
