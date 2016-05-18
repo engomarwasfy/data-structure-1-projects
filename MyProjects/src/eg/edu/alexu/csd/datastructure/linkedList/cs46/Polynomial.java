@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @author wasfy this is test
  *
  */
-public class Polynomial_GUI {
+public class Polynomial {
 
     /**
      * @author wasfy this is test

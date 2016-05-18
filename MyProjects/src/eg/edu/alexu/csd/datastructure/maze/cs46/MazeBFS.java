@@ -12,12 +12,17 @@ public class MazeBFS {
      * @author wasfy this
      *
      */
+    private static final int MAG = 1000;
+    /**
+     * @author wasfy this
+     *
+     */
     Node current;
     /**
      * @author wasfy this
      *
      */
-    boolean[][] visited = new boolean[1000][1000];
+    boolean[][] visited = new boolean[MAG][MAG];
     /**
      * @author wasfy this
      *

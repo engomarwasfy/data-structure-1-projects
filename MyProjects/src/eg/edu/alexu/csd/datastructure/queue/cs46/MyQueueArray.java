@@ -13,8 +13,15 @@ public class MyQueueArray implements IQueue, IArrayBased {
      *
      */
     private static final int MAG = 99999999;
+    /**
+     * @author wasfy
+     *
+     */
     private static final int MAGO = 50;
-    
+    /**
+     * @author wasfy
+     *
+     */
     int n = MAG;
     /**
      * @author wasfy
